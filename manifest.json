@@ -1,0 +1,33 @@
+{
+   "manifest_version": 2,
+   "name": "Nolim App Demo",
+   "version": "1.0",
+   "description": "Расширение для Tilda Publishing от команды Nolim",
+   "icons": {
+       "128": "image.png"
+   },
+   "browser_action": {
+            "default_popup": "popup.html"
+        },
+   "content_scripts": [
+       {
+           "matches": [ "https://tilda.cc/page/*" ],
+           "js": [
+                "libs/jquery-1.10.2.min.js",
+                "background.js"
+            ]
+       }
+   ],
+   "web_accessible_resources": [
+                "/app.js",
+                "/nolimBlocks.js",
+                "/popup/subscription_ended.js",
+                "/fonts/KyivTypeSans-Medium.woff",
+                "/fonts/KyivTypeSans-Bold.woff",
+                "/fonts/KyivTypeSans-Regular.woff",
+                "/app.css"
+    ],
+    "permissions": [
+        "storage"
+    ]
+}

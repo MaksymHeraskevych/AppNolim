@@ -1,0 +1,134 @@
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo"></div>
+        <div class="popup_close"></div>
+    </div>
+
+    <div class="preloader" style="padding-bottom: 20px;">
+    <div class="nl_reploader_father500">
+        <div class="nl_preloader500">
+            <div class="loader500">Loading...</div>
+        </div>
+    </div>
+    </div>
+
+    <div class="authorization_screen" style="display:none;">
+        <div class="linediv">
+            <p class="login_text">Чтобы продолжить, войдите в профиль</p>
+            
+        </div>
+        <form id="authorization">
+            <input type="text" name="login" placeholder="Эл. почта" id="login">
+            <input type="password" name="password" placeholder="Пароль" id="password">
+            <div class="errors">
+            </div>
+            <div class="error_box" style="display:none;">Неправильное имя пользователя или пароль.</div>
+          <a class="recovery_btn" style="display:none;">Забыли пароль?</a>
+            <div class="linediv submit_linediv">
+                <button type="submit" name="authorization">ВОЙТИ</button>
+                
+            </div>
+          <div class="line"></div>
+          <div class="preregistration">Нет аккаунта?</div>
+          <a href="https://nolim.cc/extension/signup" style="text-decoration: none;" target="_blank">
+          <div class="registration"><div class="cont"><div class="log"></div><div class="txt">РЕГИСТРАЦИЯ В NOLIM</div></div></div></a>
+        </form>
+    </div>
+
+    <div class="account_screen" style="display:none;">
+        <div class="account_message"><span>С возвращением, </span><span class="account_name">...</span>!</div>
+
+        <div class="account_substatus">
+        <div class="account_timer">
+            <span class="today">00</span>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<span class="thour">00</span>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<span class="tmin">00</span>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<span class="tsec">00</span>
+        </div>
+            <a href="https://nolim.cc" style="text-decoration: none;" target="_blank">
+            <div class="linediv submit_linediv">
+                <div  class="btn_pay">ПРОДЛИТЬ ПОДПИСКУ</div>
+            </div>
+            </a>
+        </div>
+
+        <div class="socials_icons">
+            <a href="https://vk.com/nolimcorp" style="text-decoration: none;" target="_blank"><div class="social_icon vk"></div></a>
+            <a href="https://t.me/nolimcorp" style="text-decoration: none;" target="_blank"><div class="social_icon telegram"></div></a>
+            <a href="https://www.instagram.com/nolimcorp/" style="text-decoration: none;" target="_blank"><div class="social_icon insta"></div></a>
+            <a href="https://www.youtube.com/channel/UCjYUGR_Yp3bK8bRUIx_mzxQ" style="text-decoration: none;" target="_blank"><div class="social_icon youtube"></div></a>
+        </div>
+        <div class="line"></div>
+
+        <div class="foot">
+            <a href="https://t.me/nolimsupport_bot" style="text-decoration: none;" target="_blank">
+        <div class="tech_sup">
+            <div class="cont">
+                <div class="log"></div>
+                <div class="txt">ТЕХПОДДЕРЖКА</div>
+            </div>
+
+        </div>
+        </a>
+
+        <div class="logout">
+            <div class="cont">
+                <div class="log"></div>
+                <div class="txt">ВЫЙТИ</div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+
+
+
+   <div class="recovery_screen" style="display:none;">
+        <div class="linediv">
+            <p class="login_text">Сброс пароля</p>
+            <p class="recovery_text">Введите адрес <b>электронной почты</b>, который вы указали при регистрации. Мы отправим вам письмо с ссылкой для сброса пароля.</p>
+        </div>
+        <form id="recovery">
+            <input type="text" name="login" placeholder="Эл. почта" id="login">
+            <div class="errors">
+            </div>
+            <div class="error_recovery">Указанный адрес электронной почты не привязан
+к аккаунту nolim. Вы можете ввести другой адрес или <a class="recovery_reg">Зарегистрироваться</a></div>
+
+            <div class="linediv submit_linediv">
+                <button type="submit" name="authorization">Сбросить</button>
+                
+            </div>
+          <div class="line"></div>
+          <div class="recovery_text_footer">Если вам нужна помощь, обратитесь
+</br>в <a class="text_footer_a">службу поддержки nolim.</a></div>
+        </form>
+    </div>
+
+
+    
+
+
+
+
+    <div class="footer">
+        
+    </div>
+    <script src="/libs/jquery-1.10.2.min.js">
+    </script>
+    <script src="popup.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</body>
+
+</html>
+
+
+
+
+

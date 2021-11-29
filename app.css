@@ -1,0 +1,56 @@
+.nolim-save-button {
+    background-color: #ff855d;
+}
+[href="#nolimvideo"] .pe-label::after {
+    content: '';
+    position: relative;
+    top: 1px;
+    margin-right: 3px;
+    padding-left: 17px;
+    background-image: url(https://tilda.cc/tpl/img/page/edit-content-help-link.svg);
+    background-repeat: no-repeat;
+    background-position: 7px center;
+    background-size: auto;
+    box-sizing: border-box;
+}
+
+[href="#nolimvideo"] .pe-label {
+    position: relative;
+    display: inline;
+    font-weight: 700;
+    text-decoration: underline;
+    color: #000!important;
+        cursor: pointer;
+}
+
+[href="#nolimvideo"]{
+    padding-top: 15px;
+    display: block;
+    cursor: pointer;
+}
+
+[data-elem-type="button"].active {
+    border: 3px solid #0058ff!important; /*#f00*/
+}
+
+[data-elem-type="button"].pe-recordpiker {
+    border: 1px solid #0058ff;
+}
+
+
+.nolim_picker {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 16px);
+    margin-top: auto;
+    cursor: pointer;
+    background-image: url(https://static.tildacdn.com/tild6133-3635-4138-b066-623232393035/Group_148.png);
+    background-size: 30px;
+}
+
+
+.nolim_closelayer_off {
+    opacity: 0!important
+}
