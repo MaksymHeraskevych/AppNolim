@@ -2171,8 +2171,8 @@ modsettings: `[
         "title": "Иконки:",
         "type": "select",
         "options": {
-            "Слева": "left",
-            "Справа": "right"
+            "Слева": "right",
+            "Справа": "left"
         },
         "value": ""
     },
@@ -2233,9 +2233,11 @@ modsettings: `[
             .t395__col {
                 overflow: auto;
             }
+
+            ${name[1] == "0" ? ".t395__title { font-size: 0px!important; }" : ""}
         
-            .t395__wrapper :before {
-                padding-left: 0px !important;
+            .t395__wrapper:before {
+                padding-${name[2]}: 0px !important;
             }
         }
         
