@@ -1294,53 +1294,22 @@ for(let i = 0; i < name[0].length; i++){
 }; 
 
 return strurl16.join(",");
+}, function modcontentfunc(name) {
+    let strurl16 = [];
+    let keurkl16 
+            keurkl16 = name[0][0][0]
+        
+            keurkl16 = ''+keurkl16+'';
+            strurl16.push(keurkl16);
+    
+    return strurl16
 }
 ],
 moddefaultsettings: '["","","","0",[["","",""]] ]',
 modcontent: function modcontentfunc(name,i) {
     return `
 
-<script> 
-    
-    function numberWithSpaces(x, srt) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, srt);
-    }
-    $(document).ready(function () {
-        var number = [${nolimBlocks[i].modoptions[0]([name[4]])}];
-        var numberstart = [${nolimBlocks[i].modoptions[1]([name[4]])}];
-        var numberfinish = [${nolimBlocks[i].modoptions[2]([name[4]])}];
-        var blockStatus = ["0", "0", "0"];
-        var scrollEvent = [];
-        var digit_block = [];
-        $(window).scroll(function () {
-            for (let i = 0; i < number.length; i++) {
-                digit_block[i] = number[i] + ' .tn-atom';
-                var n1 = Number(numberstart[i]);
-                var n2 = Number(numberfinish[i]);
-                scrollEvent[i] = ($(window).scrollTop() > ($(number[i]).offset().top - $(window).height()));
-                if (scrollEvent[i] && blockStatus[i] == '0') {
-                    console.log(blockStatus[i]);
-                    blockStatus[i] = '1';
-                    $({
-                        numberValue: n1
-                    }).animate({
-                        numberValue: n2
-                    }, {
-                        duration: ${n2i(name[0], '5')}000,
-                        easing: "swing",
-                        step: function (val) {
-                            let op = Math.ceil(val);
-                            op = numberWithSpaces(op, '${name[3] == "0" ? " " : name[3] == "1" ? "." : name[3] == "2" ? "," : ""}');
-                            $(digit_block[i]).html('${n2i(name[1], 'До')}' + op + '${n2i(name[2], 'руб.')}');
-                        }
-                    });
-                }
-            };
-        });
-        $(window).scroll();
-    });
-
-</script> 
+<script> function numberWithSpaces(x, srt) { return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, srt); } $(document).ready(function () { let checkCls = setInterval(function(){ if($('.${nolimBlocks[i].modoptions[3]([name[4]])}').length > 0) { clearInterval(checkCls); var number = [${nolimBlocks[i].modoptions[0]([name[4]])}]; var numberstart = [${nolimBlocks[i].modoptions[1]([name[4]])}]; var numberfinish = [${nolimBlocks[i].modoptions[2]([name[4]])}]; var blockStatus = ["0", "0", "0"]; var scrollEvent = []; var digit_block = []; $(window).scroll(function () { for (let i = 0; i < number.length; i++) { digit_block[i] = number[i] + ' .tn-atom'; var n1 = Number(numberstart[i]); var n2 = Number(numberfinish[i]); scrollEvent[i] = ($(window).scrollTop() > ($(number[i]).offset().top - $(window).height())); if (scrollEvent[i] && blockStatus[i] == '0') { console.log(blockStatus[i]); blockStatus[i] = '1'; $({ numberValue: n1 }).animate({ numberValue: n2 }, { duration: ${n2i(name[0], '5')}000, easing: "swing", step: function (val) { let op = Math.ceil(val); op = numberWithSpaces(op, '${name[3] == "0" ? " " : name[3] == "1" ? "." : name[3] == "2" ? "," : ""}'); $(digit_block[i]).html('${n2i(name[1], 'До')}' + op + '${n2i(name[2], 'руб.')}'); } }); } }; }); $(window).scroll(); } },50); }); </script> 
 
 `;
 },
