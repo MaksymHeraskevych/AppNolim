@@ -716,84 +716,84 @@ id: "131",
 inlib: "y",
 title: "Добавляем изображения в выпадающий список",
 modsettings: `[
-      {
-          "id": "1",
-          "title": "Имя поля",
-          "type": "input",
-          "placeholder": "nolimDropdown",
-          "value": ""
-      },
-      {
-          "id": "2",
-          "title": "Цвет пункта при наведении",
-          "type": "color",
-          "value": ""
-      },
-      {
-          "id": "3",
-          "title": "Цвет активного пункта",
-          "type": "color",
-          "value": ""
-      },
-      {
-          "id": "4",
-          "title": "Толщина border",
-          "type": "select",
-          "options": {
-              "1px": "1px",
-              "2px": "2px",
-              "3px": "3px",
-              "4px": "4px",
-              "5px": "5px"
-          },
-          "value": ""
-      },
-      {
-          "id": "5",
-          "title": "border - radius (px)",
-          "type": "number",
-          "placeholder": "10",
-          "value": ""
-      },
-      {
-          "id": "6",
-          "title": "Цвет border",
-          "type": "color",
-          "value": ""
-      },
-      {
-          "id": "7",
-          "title": "Шрифт",
-          "type": "select",
-          "options": {
-              "Для заголовков": "0",
-              "Для текста": "1"
-          },
-          "value": ""
-      },
-      {
-          "id": "8",
-          "title": "Цвет текста",
-          "type": "color",
-          "value": ""
-      },
-      {
-      "id": "9",
-      "title": "+ Добавить изображение",
-      "type": "groupCards",
-      "options": [
-          {
-              "title": "Ссылка на изображение",
-              "type": "image",
-              "placeholder": "",
-              "value": ""
-          }
-          ],
-      "limit": "14",
-      "placeholder": "class",
-      "value": "1"
-      }  
-      ]`,
+    {
+        "id": "1",
+        "title": "Имя поля",
+        "type": "input",
+        "placeholder": "nolimDropdown",
+        "value": ""
+    },
+    {
+        "id": "2",
+        "title": "Цвет пункта при наведении",
+        "type": "color",
+        "value": ""
+    },
+    {
+        "id": "3",
+        "title": "Цвет активного пункта",
+        "type": "color",
+        "value": ""
+    },
+    {
+        "id": "4",
+        "title": "Толщина border",
+        "type": "select",
+        "options": {
+            "1px": "1px",
+            "2px": "2px",
+            "3px": "3px",
+            "4px": "4px",
+            "5px": "5px"
+        },
+        "value": ""
+    },
+    {
+        "id": "5",
+        "title": "border - radius (px)",
+        "type": "number",
+        "placeholder": "10",
+        "value": ""
+    },
+    {
+        "id": "6",
+        "title": "Цвет border",
+        "type": "color",
+        "value": ""
+    },
+    {
+        "id": "7",
+        "title": "Шрифт",
+        "type": "select",
+        "options": {
+            "Для заголовков": "0",
+            "Для текста": "1"
+        },
+        "value": ""
+    },
+    {
+        "id": "8",
+        "title": "Цвет текста",
+        "type": "color",
+        "value": ""
+    },
+    {
+    "id": "9",
+    "title": "+ Добавить изображение",
+    "type": "groupCards",
+    "options": [
+        {
+            "title": "Ссылка на изображение",
+            "type": "image",
+            "placeholder": "",
+            "value": ""
+        }
+        ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": "1"
+    }  
+    ]`,
     moddefaultsettings: '["nolimDropdown","","","1px","","","0","", [ [""] ] ]',
     modoptions: [function modcontentfunc(name,nameCard) {
         let linkCode = ``;
@@ -1370,10 +1370,10 @@ modoptions: [function modcontentfunc(name) {
 
 moddefaultsettings: '["","",""]',
 modcontent: function modcontentfunc(name, i) {
-  return `
+    return `
 
     ${name[1] == "0" ? nolimBlocks[i].modoptions[0]([name[0]]) : name[1] == "1" ? nolimBlocks[i].modoptions[1]([name[0]], [name[2]]) : name[1] == "2" ? nolimBlocks[i].modoptions[2]([name[0]]) : ""}
-  
+
 `;
 },
 instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
@@ -1388,9 +1388,6 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 4. Нажимаем кнопку "Сохранить и закрыть";<br><br>
 </div>`
 });
-
-
-
 
 
 
@@ -1417,7 +1414,7 @@ modsettings: `[
 
 moddefaultsettings: '[""]',
 modcontent: function modcontentfunc(name) {
-  return `
+    return `
 
 <script> $(document).ready(function(){ setTimeout(function(){ $('[href="${name[0]}"]').click(function(e){history.go(-1); event.preventDefault();}); },600); }) </script>
 
@@ -1478,6 +1475,7 @@ modcontent: function modcontentfunc(name) {
   return `
 
 <style> .${n2i(name[0],'nolimtexteffect')} .tn-atom{ display: inline-block; overflow: hidden; white-space: nowrap; } ${name[2] == "0" ? "@media screen and (min-width: 1200px){" : ""} .${n2i(name[0],'nolimtexteffect')}:hover .letter, .${n2i(name[0],'nolimtexteffect')}.play .letter { transform: translateY(-100%); } .${n2i(name[0],'nolimtexteffect')} .block:last-child { color: ${n2i(name[1],'#000000')}; } .${n2i(name[0],'nolimtexteffect')} .letter { display: inline-block; transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1); } .letter:nth-child(1) { transition-delay: 0s; } .letter:nth-child(2) { transition-delay: 0.015s; } .letter:nth-child(3) { transition-delay: 0.03s; } .letter:nth-child(4) { transition-delay: 0.045s; } .letter:nth-child(5) { transition-delay: 0.06s; } .letter:nth-child(6) { transition-delay: 0.075s; } .letter:nth-child(7) { transition-delay: 0.09s; } .letter:nth-child(8) { transition-delay: 0.105s; } .letter:nth-child(9) { transition-delay: 0.12s; } .letter:nth-child(10) { transition-delay: 0.135s; } .letter:nth-child(11) { transition-delay: 0.15s; } .letter:nth-child(12) { transition-delay: 0.165s; } .letter:nth-child(13) { transition-delay: 0.18s; } .letter:nth-child(14) { transition-delay: 0.195s; } .letter:nth-child(15) { transition-delay: 0.21s; } .letter:nth-child(16) { transition-delay: 0.225s; } .letter:nth-child(17) { transition-delay: 0.24s; } .letter:nth-child(18) { transition-delay: 0.255s; } .letter:nth-child(19) { transition-delay: 0.27s; } .letter:nth-child(20) { transition-delay: 0.285s; } .letter:nth-child(21) { transition-delay: 0.3s; } .letter:nth-child(22) { transition-delay: 0.315s; } .letter:nth-child(23) { transition-delay: 0.33s; } .letter:nth-child(24) { transition-delay: 0.345s; } .letter:nth-child(25) { transition-delay: 0.36s; } .letter:nth-child(26) { transition-delay: 0.375s; } .letter:nth-child(27) { transition-delay: 0.39s; } .letter:nth-child(28) { transition-delay: 0.405s; } .letter:nth-child(29) { transition-delay: 0.42s; } .letter:nth-child(30) { transition-delay: 0.435s; } .letter:nth-child(31) { transition-delay: 0.45s; } .letter:nth-child(32) { transition-delay: 0.465s; } .letter:nth-child(33) { transition-delay: 0.48s; }.letter:nth-child(34) { transition-delay: 0.495s; } .letter:nth-child(35) { transition-delay: 0.51s; } .letter:nth-child(36) { transition-delay: 0.525s; } .letter:nth-child(37) { transition-delay: 0.54s; } .letter:nth-child(38) { transition-delay: 0.555s; } .letter:nth-child(39) { transition-delay: 0.57s; } .letter:nth-child(40) { transition-delay: 0.585s; } .letter:nth-child(41) { transition-delay: 0.6s; } .letter:nth-child(42) { transition-delay: 0.615s; } .letter:nth-child(43) { transition-delay: 0.63s; } .letter:nth-child(44) { transition-delay: 0.645s; } .letter:nth-child(45) { transition-delay: 0.66s; } .letter:nth-child(46) { transition-delay: 0.675s; } .letter:nth-child(47) { transition-delay: 0.69s; } .letter:nth-child(48) { transition-delay: 0.705s; } .letter:nth-child(49) { transition-delay: 0.72s; } .letter:nth-child(50) { transition-delay: 0.735s; } .letter:nth-child(51) { transition-delay: 0.75s; } .letter:nth-child(52) { transition-delay: 0.765s; } .letter:nth-child(53) { transition-delay: 0.78s; } .letter:nth-child(54) { transition-delay: 0.795s; } .letter:nth-child(55) { transition-delay: 0.810s; } .letter:nth-child(56) { transition-delay: 0.825s; } .letter:nth-child(57) { transition-delay: 0.84s; } .letter:nth-child(58) { transition-delay: 0.855s; } .letter:nth-child(59) { transition-delay: 0.87s; } .letter:nth-child(60) { transition-delay: 0.885s; } ${name[2] == "0" ? "}" : ""} </style> <script> ${name[2] == "0" ? "if ($(window).width() >= 1200){" : ""} function onresizeAnimText${n2i(name[0],'nolimtexteffect')}(){ let animtextheight = $('.${n2i(name[0],'nolimtexteffect')}'+' .tn-atom .block:eq(0)').css('height'); $('.${n2i(name[0],'nolimtexteffect')}'+' .tn-atom .block').css('height', animtextheight); } $(document).ready(function(){ var animtextheight = $('.${n2i(name[0],'nolimtexteffect')}'+' .tn-atom').css('height'); let elements = document.querySelectorAll('.${n2i(name[0],'nolimtexteffect')}'+' .tn-atom'); elements.forEach(element => { let innerText = element.innerText; element.innerHTML = ''; let textContainer = document.createElement('div'); textContainer.classList.add('block'); for (let letter of innerText) { let span = document.createElement('span'); span.innerText = letter.trim() === '' ? '\xa0': letter; span.classList.add('letter'); textContainer.appendChild(span); } element.appendChild(textContainer); element.appendChild(textContainer.cloneNode(true)); }); setTimeout(() => { elements.forEach(element => { element.classList.add('play'); }) }, 600); elements.forEach(element => { element.addEventListener('mouseover', () => { element.classList.remove('play'); }); }); $('.${n2i(name[0],'nolimtexteffect')}'+' .tn-atom').css('height', animtextheight); }); ${name[2] == "0" ? "}" : ""} </script>
+
 `;
 },
 instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
@@ -1599,7 +1597,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 nolimBlocks.push({
-     video: "ws70iTlTFLs",
+video: "ws70iTlTFLs",
 name: "",
 cod: "NLM032",
 descr: "",
@@ -2133,6 +2131,128 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 </div>`
 });
 
+
+
+nolimBlocks.push({
+video: "hUk_NWa-_kw",
+name: "",
+cod: "NLM037",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild6534-3366-4734-a433-636664343530/nlm_11.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Добавляем свои иконки в кнопки меню ME602 Tilda",
+modsettings: `[
+    {
+        "id": "1",
+        "title": "В мобильной версии:",
+        "type": "select",
+        "options": {
+            "Табы": "0",
+            "Выпадающий список": "1"
+        },
+        "value": ""
+    },
+    {
+        "id": "2",
+        "title": "В мобильной версии текст:",
+        "type": "select",
+        "options": {
+            "Скрыт": "0",
+            "Показан": "1"
+        },
+        "value": ""
+    },
+    {
+        "id": "3",
+        "title": "Иконки:",
+        "type": "select",
+        "options": {
+            "Слева": "left",
+            "Справа": "right"
+        },
+        "value": ""
+    },
+    {
+    "id": "4",
+    "title": "+ Добавить иконку",
+    "type": "groupCards",
+    "options": [
+        {
+            "title": "Активная иконка",
+            "type": "image",
+            "placeholder": "",
+            "value": ""
+        },
+        {
+            "title": "Неактивная иконка",
+            "type": "image",
+            "placeholder": "",
+            "value": ""
+        }
+        ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+    }  
+    ]`,
+    moddefaultsettings: '["0","0","left", [ ["",""] ] ]',
+    modoptions: [function modcontentfunc(name,nameCard) {
+        let linkCode = ``;
+
+        for(let i = 0; i < nameCard.length; i++){
+            if(nameCard[i][0] != ''){
+                linkCode += `
+                div.t395__wrapper>div:nth-child(${i+1}).t395__tab_active>div:after { content: url('${nameCard[i][0]}'); display: inline-block; padding-${name}: 10px; }
+                div.t395__wrapper>div:nth-child(${i+1}):not(.t395__tab_active)>div:after { content: url('${nameCard[i][1]}'); display: inline-block; padding-${name}: 10px; }
+                `;
+            }
+        }
+        return linkCode
+    }],
+    modcontent: function modcontentfunc(name, i) {
+        return `
+
+        <style>   
+        @media screen and (max-width: 960px) {
+            .t395__wrapper {
+                display: ${name[0] == "0" ? "block" : "none"} !important;
+            }
+        
+            .t395__wrapper_mobile {
+                display: ${name[0] == "0" ? "none" : "block"} !important;
+            }
+        
+            .t395__tab {
+                width: 200px;
+            }
+        
+            .t395__col {
+                overflow: auto;
+            }
+        
+            .t395__wrapper :before {
+                padding-left: 0px !important;
+            }
+        }
+        
+        .t395__title {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        ${nolimBlocks[i].modoptions[0](name[2],name[3])}
+        
+        </style>
+    
+`;
+},
+instruction: ``
+});
 
 
 nolimBlocks.push({
