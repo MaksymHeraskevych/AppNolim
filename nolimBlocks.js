@@ -455,6 +455,89 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 nolimBlocks.push({
 video: "wEQuHwk-Mhs",
 name: "",
+cod: "NLM008",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild6464-3766-4934-a364-646535636431/Frame_9.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Как добавить иконки мессенджеров в стандартное меню или подвал TILDA?",
+modsettings: `[
+{
+"id": "1",
+"title": "+ Добавить иконку",
+"type": "groupCards",
+"options": [
+    {
+    "title": "Ваша ссылка",
+    "type": "input",
+    "placeholder": "name",
+    "value": ""
+    },
+    {
+    "title": "Увеличение при наведении (scale)",
+    "type": "select",
+    "options": {
+        "Без увеличения": "0",
+        "5%": "1",
+        "10%": "2",
+        "15%": "3",
+        "20%": "4",
+        "25%": "5"
+    },
+    "value": ""
+    },
+    {
+    "title": "Ссылка на иконку",
+    "type": "image",
+    "placeholder": "https://static.tildacdn.com/...",
+    "value": ""
+    },
+    {
+    "title": "Ссылка на иконку при наведении (если не нужна оставьте поле пустым)",
+    "type": "image",
+    "placeholder": "https://static.tildacdn.com/...",
+    "value": ""
+    }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": "1"
+}
+]`,
+
+moddefaultsettings: '[ [ ["","","",""] ] ]',
+modcontent: function modcontentfunc(name) {
+    return `
+
+<script>$(document).ready(function() { var id = "${name[0]}"; if ($(id).length > 0) { var newMenu = $(id).addClass("fixed${name[0].replace('#rec','')} unpinned${name[0].replace('#rec','')}"); var hideMenu = false; if (hideMenu) { $(id)[0].remove(); } var needMobile = ${name[1] == "0" ? 'false' : 'true'}; if (!isMobile || (isMobile && needMobile)) { ${name[2] == '' || name[2] == 0 ? `newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}");` : ``}  $(window).scroll(function() { var top = $(document).scrollTop();  if (top >= ${name[2] == '' ? 0 : name[2]}) { $('.nolim_forMenu').attr('nolim-search-state', '0'); newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}"); ${name[3] == "0" ? `` : `if(($(window).scrollTop() >= $(document).height() - $(window).height() - 70) && $("#allrecords").next("div").length > 0) {newMenu.removeClass("pinned${name[0].replace('#rec','')}");newMenu.addClass("unpinned${name[0].replace('#rec','')}");}`} } else { $('.nolim_forMenu').hide(); $('.nolim_forMenu').attr('nolim-search-state', '1'); newMenu.removeClass("pinned${name[0].replace('#rec','')}"); newMenu.addClass("unpinned${name[0].replace('#rec','')}"); } }); } else { newMenu.hide(); } } }); </script> <style> .fixed${name[0].replace('#rec','')} { position: fixed; ${name[3] == "0" ? 'top' : 'bottom'}: 0; width: 100%; transition: transform 250ms linear; z-index: 998; } .pinned${name[0].replace('#rec','')} { transform: translateY(0%); } .unpinned${name[0].replace('#rec','')} { transform: translateY(${name[3] == "0" ? '-100%' : '100%'}); } </style>
+
+`;
+},
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+Как это работает:<br><br>
+
+1. Выбираем нужный зеро блок;<br>
+2. Выбираем показывать ли в мобильной версии;<br>
+3. Если нужно добавить появление через n пикселей, указываем число пикселей. Если нет - оставляем пустым или 0;<br>
+4. Выбираем где будет зафиксированно меню, сверху или снизу;<br>
+5. Загружаем или выбираем иконку для корзины:<br>
+6. Устанавливаем блок корзины (ST100) на страницу и настраиваем ее для расширений до 981px;<br>
+7. Нажимаем кнопку "Сохранить и закрыть";<br><br>
+<b>
+ВАЖНО: В случае если выбрали фиксацию меню снизу, а у Вас на сайте есть внизу плашка "Made on Tilda", меню будет автоматически скрываться.
+</b><br><br>
+Это сделано для того, что бы не нарушать пользовательское соглашение Тильды, где вкратце говорится о запрете скрытия лейбла любыми способами. Официально ее можно убрать оплатив любой из предложенных тарифов на год.<br><br>
+Подробнее <a href="https://tilda.cc/ru/answers/a/white-label/" target="_blank">тут</a>
+</div>`
+});
+
+
+nolimBlocks.push({
+video: "wEQuHwk-Mhs",
+name: "",
 cod: "NLM009",
 descr: "",
 descr_ru: "",
@@ -1435,6 +1518,82 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 nolimBlocks.push({
 name: "",
+cod: "NLM026",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild6530-6634-4562-b862-353639613733/Frame_25.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Эффект рентгена для изображений",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Class блок с фото",
+    "type": "input",
+    "placeholder": "nolimxray",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Отображения эффекта на экранах",
+    "type": "select",
+    "options": {
+        "От 1200 px": "0",
+        "На всех экранах": "1"
+    },
+    "value": "0"
+},
+{
+    "id": "3",
+    "title": "Размер круга рентгена (без рх)",
+    "type": "number",
+    "placeholder": "50",
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Добавить border кругу",
+    "type": "checkbox",
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Цвет border",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Толщина border (без px)",
+    "type": "number",
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Ссылка на 2 фото",
+    "type": "image",
+    "placeholder": "https://images.unsplash.com/photo-1625285049426-5dbed0167ea8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80",
+    "value": ""
+}
+]`,
+
+moddefaultsettings: '["","0","","","","",""]',
+modcontent: function modcontentfunc(name) {
+    return `
+
+<style> .svg-wr { position: relative; } .svg-wr img, .svg-wr image { width: 100%; } .svg-wr svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } </style> <script> function createxray(){ let svgWR = document.querySelectorAll(".svg-wr"); for( let i = 0; i < svgWR.length; i++){ let svgElement = document.querySelectorAll('.svg-wr svg')[i]; let imageElement = document.querySelectorAll('.svg-wr image')[i]; let maskedElement = document.querySelectorAll('.svg-wr .mask-circle')[i]; let circleFeedback = document.querySelectorAll('.svg-wr .circle-shadow')[i]; let svgPoint = svgElement.createSVGPoint(); function cursorPoint(e, svg) { svgPoint.x = e.clientX; svgPoint.y = e.clientY; return svgPoint.matrixTransform(svg.getScreenCTM().inverse()); } function update(svgCoords) { maskedElement.setAttribute('cx', svgCoords.x); maskedElement.setAttribute('cy', svgCoords.y); circleFeedback.setAttribute('cx', svgCoords.x); circleFeedback.setAttribute('cy', svgCoords.y); } window.addEventListener('resize', function() { imageElement.style.width = svgWR.offsetWidth; imageElement.style.height = svgWR.offsetHeight; }); window.addEventListener('mousemove', function(e) { update(cursorPoint(e, svgElement)); }, false); document.addEventListener('touchmove', function(e) { e.preventDefault(); let touch = e.targetTouches[0]; if (touch) { update(cursorPoint(touch, svgElement)); } }, false); } } $(document).ready(function(){  ${name[1] == "0" ? "if ($(window).width() >= 1200){" : ""}  $('.${name[0]}'+' img').wrap("<div class='svg-wr'></div>"); var strgn = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink"><defs><clipPath id="'+'${name[0]}'+'mask1"><circle class="mask-circle" cx="50%" cy="50%" r="'+'${n2i(name[2],'50')}px'+'" style="fill: #ffffff"/></clipPath></defs><g clip-path="url(#'+'${name[0]}'+'mask1)"><image xmlns:xlink= "http://www.w3.org/1999/xlink" xlink:href="'+'${name[6]}'+'" /></g><circle class="circle-shadow" cx="50%" cy="50%" r="'+'${n2i(name[2],'50')}px'+'" style="stroke: '+'${n2i(name[4],'#fff')}'+'; fill: transparent; stroke-width: '+'${n2i(name[5],'0')}'+';"/></svg>'; $('.${name[0]}'+' img').after(strgn); setTimeout(function(){ createxray(); },600);  ${name[1] == "0" ? "}" : ""}  }); </script> 
+
+`;
+},
+instruction: ``
+});
+
+
+
+nolimBlocks.push({
+name: "",
 cod: "NLM027",
 descr: "",
 descr_ru: "",
@@ -2199,7 +2358,7 @@ modsettings: `[
     "value": ""
     }  
     ]`,
-    moddefaultsettings: '["0","0","left", [ ["",""] ] ]',
+    moddefaultsettings: '["0","0","right", [ ["",""] ] ]',
     modoptions: [function modcontentfunc(name,nameCard) {
         let linkCode = ``;
 
