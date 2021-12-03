@@ -516,23 +516,9 @@ modcontent: function modcontentfunc(name) {
 
 `;
 },
-instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
-Как это работает:<br><br>
-
-1. Выбираем нужный зеро блок;<br>
-2. Выбираем показывать ли в мобильной версии;<br>
-3. Если нужно добавить появление через n пикселей, указываем число пикселей. Если нет - оставляем пустым или 0;<br>
-4. Выбираем где будет зафиксированно меню, сверху или снизу;<br>
-5. Загружаем или выбираем иконку для корзины:<br>
-6. Устанавливаем блок корзины (ST100) на страницу и настраиваем ее для расширений до 981px;<br>
-7. Нажимаем кнопку "Сохранить и закрыть";<br><br>
-<b>
-ВАЖНО: В случае если выбрали фиксацию меню снизу, а у Вас на сайте есть внизу плашка "Made on Tilda", меню будет автоматически скрываться.
-</b><br><br>
-Это сделано для того, что бы не нарушать пользовательское соглашение Тильды, где вкратце говорится о запрете скрытия лейбла любыми способами. Официально ее можно убрать оплатив любой из предложенных тарифов на год.<br><br>
-Подробнее <a href="https://tilda.cc/ru/answers/a/white-label/" target="_blank">тут</a>
-</div>`
+instruction: ``
 });
+
 
 
 nolimBlocks.push({
@@ -2336,7 +2322,17 @@ modsettings: `[
         "value": ""
     },
     {
-    "id": "4",
+        "id": "4",
+        "title": "Размер иконки:",
+        "type": "select",
+        "options": {
+            "30px": "30px",
+            "40px": "40px"
+        },
+        "value": ""
+    },
+    {
+    "id": "5",
     "title": "+ Добавить иконку",
     "type": "groupCards",
     "options": [
@@ -2358,15 +2354,15 @@ modsettings: `[
     "value": ""
     }  
     ]`,
-    moddefaultsettings: '["0","0","right", [ ["",""] ] ]',
-    modoptions: [function modcontentfunc(name,nameCard) {
+    moddefaultsettings: '["0","0","right","30px", [ ["",""] ] ]',
+    modoptions: [function modcontentfunc(nameS,name,nameCard) {
         let linkCode = ``;
 
         for(let i = 0; i < nameCard.length; i++){
             if(nameCard[i][0] != ''){
                 linkCode += `
-                div.t395__wrapper>div:nth-child(${i+1}).t395__tab_active>div:after { content: url('${nameCard[i][0]}'); display: inline-block; padding-${name}: 10px; }
-                div.t395__wrapper>div:nth-child(${i+1}):not(.t395__tab_active)>div:after { content: url('${nameCard[i][1]}'); display: inline-block; padding-${name}: 10px; }
+                div.t395__wrapper>div:nth-child(${i+1}).t395__tab_active>div:${name == "right" ? "before" : "after"} { content: ''; background-image: url(${nameCard[i][0]}); background-repeat: no-repeat; background-size: 100%; width: ${nameS}; height: ${nameS}; display: inline-block; margin-${name}: 10px; }
+                div.t395__wrapper>div:nth-child(${i+1}):not(.t395__tab_active)>div:${name == "right" ? "before" : "after"} { content: ''; background-image: url(${nameCard[i][1]}); background-repeat: no-repeat; background-size: 100%; width: ${nameS}; height: ${nameS}; display: inline-block; margin-${name}: 10px; }
                 `;
             }
         }
@@ -2375,40 +2371,7 @@ modsettings: `[
     modcontent: function modcontentfunc(name, i) {
         return `
 
-        <style>   
-        @media screen and (max-width: 960px) {
-            .t395__wrapper {
-                display: ${name[0] == "0" ? "block" : "none"} !important;
-            }
-        
-            .t395__wrapper_mobile {
-                display: ${name[0] == "0" ? "none" : "block"} !important;
-            }
-        
-            .t395__tab {
-                width: 200px;
-            }
-        
-            .t395__col {
-                overflow: auto;
-            }
-
-            ${name[1] == "0" ? ".t395__title { font-size: 0px!important; }" : ""}
-        
-            .t395__wrapper:before {
-                padding-${name[2]}: 0px !important;
-            }
-        }
-        
-        .t395__title {
-            align-items: center;
-            justify-content: center;
-            display: flex;
-        }
-
-        ${nolimBlocks[i].modoptions[0](name[2],name[3])}
-        
-        </style>
+    <style> @media screen and (max-width: 960px) { .t395__wrapper { display: ${name[0] == "0" ? "block" : "none"} !important; } .t395__wrapper_mobile { display: ${name[0] == "0" ? "none" : "block"} !important; } .t395__tab { width: 200px; } .t395__col { overflow: auto; } ${name[1] == "0" ? `.t395__title { font-size: 0px!important; } .t395__wrapper:before{ padding-${name[2]}: 0px !important; }` : ""} } .t395__title { align-items: center; justify-content: center; display: flex; } ${nolimBlocks[i].modoptions[0](name[3],name[2],name[4])} ${name[1] == "0" ? `@media screen and (max-width:960px) { div.t395__wrapper>div.t395__tab_active>div:before { margin-${name[2]}: 0px !important; } div.t395__wrapper>div:not(.t395__tab_active)>div:before { margin-${name[2]}: 0px !important; } }` : `` } </style>
     
 `;
 },
@@ -2429,45 +2392,45 @@ inlib: "y",
 title: "Своя кнопка когда товара нет в наличии",
 modsettings: `[
 {
-     "id": "1",
-     "title": "Текст кнопки",
-     "type": "input",
-     "placeholder": "Консультация",
-     "value": ""
- },
- {
-     "id": "2",
-     "title": "Ссылка для кнопки",
-     "type": "input",
-     "placeholder": "#popup:myform",
-     "value": ""
- },
- {
-     "id": "3",
-     "title": "Ссылка для описания",
-     "type": "input",
-     "placeholder": "#offproduct",
-     "value": ""
- },
- {
-     "id": "4",
-     "title": "Имя скрытого поля",
-     "type": "input",
-     "placeholder": "myinput",
-     "value": ""
- },
- {
-     "id": "5",
-     "title": "Ссылка для названия товара",
-     "type": "input",
-     "placeholder": "#myproduct",
-     "value": ""
- }
- ]`,
+    "id": "1",
+    "title": "Текст кнопки",
+    "type": "input",
+    "placeholder": "Консультация",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Ссылка для кнопки",
+    "type": "input",
+    "placeholder": "#popup:myform",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Ссылка для описания",
+    "type": "input",
+    "placeholder": "#offproduct",
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Имя скрытого поля",
+    "type": "input",
+    "placeholder": "myinput",
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Ссылка для названия товара",
+    "type": "input",
+    "placeholder": "#myproduct",
+    "value": ""
+}
+]`,
 
- moddefaultsettings: '["","","","",""]',
- modcontent: function modcontentfunc(name) {
-   return `
+moddefaultsettings: '["","","","",""]',
+modcontent: function modcontentfunc(name) {
+return `
 
 <style> 
 
