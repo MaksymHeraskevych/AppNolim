@@ -52,7 +52,7 @@ moddefaultsettings: '["","","","0",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<script> $(document).ready(function(){ let sI = setInterval(function() { if ($("${name[0]}").length > 0) { clearInterval(sI); var redid1 = "${name[0]}"; var redid2 = "${name[1]}"; var postscript = "${name[4]}"; var postbool = ${name[3]}; var hurl = "${name[2]}"; if(postbool==0){ var postscript = ''; } $(redid2+' .t-form__inputsbox .t-input-group').remove(); $(redid1+' .js-tilda-rule').each(function(index) { var inputname = $(this).attr('name'); if(inputname.includes(postscript)){ var inp = inputname.replace(postscript,""); var gg = '<div class="t-input-group t-input-group_in"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no"></div> <div class="t-input-block"> <input type="text" name="'+inp+'" class="t-input js-tilda-rule " value="" placeholder="'+inp+'" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div>'; if($(redid1+' .js-tilda-rule').eq(index).attr('type') == 'radio' && $(redid2+' [name="'+inp+'"]').length >= 1){} else { $(redid2+' .t-form__inputsbox').prepend(gg); } } }); $(redid1+' [type="hidden"][tabindex="-1"]:not(.js-tilda-rule)').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); var gg = '<div class="t-input-group t-input-group_in"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no"></div> <div class="t-input-block"> <input type="text" name="'+inp+'" class="t-input js-tilda-rule " value="" placeholder="'+inp+'" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div>'; $(redid2+' .t-form__inputsbox').prepend(gg); }); $('[href="'+hurl+'"]').click(function(){ var a = redid1.replace("#rec",""); a = $('[name="form'+a+'"]'); window.tildaForm.hideErrors(a); o = window.tildaForm.validate(a); window.tildaForm.showErrors(a, o); if(tildaForm.showErrorInPopup(a, o)){ } else { $(redid1+' .js-tilda-rule').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); if ($(redid1+' .js-tilda-rule').eq(index).attr('type') == 'checkbox'){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-radio')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-checkbox')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-img-select')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else { $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]').val()); } }); $(redid1+' [type="hidden"][tabindex="-1"]:not(.js-tilda-rule)').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]').val()); }); $(redid2 + ' .t-submit').click(); } }); var zeroForma = function ($form) { if(window.NolimSuccessFunction${name[1].replace('#rec','')} == 1){
+<script> $(document).ready(function(){ let sI = setInterval(function() { if ($("${name[0]}").length > 0) { clearInterval(sI); var redid1 = "${name[0]}"; var redid2 = "${name[1]}"; var postscript = "${name[4]}"; var postbool = ${name[3]}; var hurl = "${name[2]}"; if(postbool==0){ var postscript = ''; } $(redid2+' .t-form__inputsbox .t-input-group').remove(); $(redid1+' .js-tilda-rule').each(function(index) { var inputname = $(this).attr('name'); if(inputname.includes(postscript)){ var inp = inputname.replace(postscript,""); var gg = '<div class="t-input-group t-input-group_in"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no"></div> <div class="t-input-block"> <input type="text" name="'+inp+'" class="t-input js-tilda-rule " value="" placeholder="'+inp+'" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div>'; if($(redid1+' .js-tilda-rule').eq(index).attr('type') == 'radio' && $(redid2+' [name="'+inp+'"]').length >= 1){} else { $(redid2+' .t-form__inputsbox').prepend(gg); } } }); $(redid1+' [type="hidden"][tabindex="-1"]:not(.js-tilda-rule)').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); var gg = '<div class="t-input-group t-input-group_in"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no"></div> <div class="t-input-block"> <input type="text" name="'+inp+'" class="t-input js-tilda-rule " value="" placeholder="'+inp+'" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div>'; $(redid2+' .t-form__inputsbox').prepend(gg); }); $('${n2i(name[0],'#rec000000')} [href="'+hurl+'"]').click(function(){ var a = redid1.replace("#rec",""); a = $('[name="form'+a+'"]'); window.tildaForm.hideErrors(a); o = window.tildaForm.validate(a); window.tildaForm.showErrors(a, o); if(tildaForm.showErrorInPopup(a, o)){ } else { $(redid1+' .js-tilda-rule').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); if ($(redid1+' .js-tilda-rule').eq(index).attr('type') == 'checkbox'){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-radio')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-checkbox')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-img-select')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else { $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]').val()); } }); $(redid1+' [type="hidden"][tabindex="-1"]:not(.js-tilda-rule)').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]').val()); }); $(redid2 + ' .t-submit').click(); } }); var zeroForma = function ($form) { if(window.NolimSuccessFunction${name[1].replace('#rec','')} == 1){
 var st = $(redid2+' .js-successbox').html(); window.tildaForm.showSuccessPopup(); $('#tildaformsuccesspopuptext').html(st); var successUrl = $form.attr('data-success-url'); if (successUrl !== undefined && successUrl !== '') { window.location.href = successUrl; } } }; if(typeof window.NolimSuccessFunction${name[1].replace('#rec','')} == 'undefined') { window.NolimSuccessFunction${name[1].replace('#rec','')} = []; window.NolimSuccessFunction${name[1].replace('#rec','')}[0] = zeroForma} else { window.NolimSuccessFunction${name[1].replace('#rec','')}.push(zeroForma)}; window.mySuccessFunction${name[1].replace('#rec','')} = function ($form) { for (var i = 0; i < window.NolimSuccessFunction${name[1].replace('#rec','')}.length; i++) { window.NolimSuccessFunction${name[1].replace('#rec','')}[i]($form) }; };setInterval(function() { $(redid2+' .js-form-proccess').each(function () { $(this).data('success-callback', 'window.mySuccessFunction${name[1].replace('#rec','')}'); }); }, 1000); $(redid1).on('keyup keypress', function(e) { var keyCode = e.keyCode || e.which; if (keyCode === 13) { e.preventDefault(); $('[href="'+hurl+'"]').click(); return false; } }); }; }, 50); }); </script> <style> ${n2i(name[0],'#rec000000')} .t-submit, ${n2i(name[1],'#rec000000')} { display:none!important; } </style>
 
   `;
@@ -466,7 +466,21 @@ inlib: "y",
 title: "Как добавить иконки мессенджеров в стандартное меню или подвал TILDA?",
 modsettings: `[
 {
-"id": "1",
+    "id": "1",
+    "title": "Фильтр для цвета",
+    "type": "select",
+    "options": {
+        "Без увеличения": "1",
+        "5%": "1.05",
+        "10%": "1.1",
+        "15%": "1.15",
+        "20%": "1.2",
+        "25%": "1.25"
+    },
+    "value": ""
+},
+{
+"id": "2",
 "title": "+ Добавить иконку",
 "type": "groupCards",
 "options": [
@@ -480,12 +494,12 @@ modsettings: `[
     "title": "Увеличение при наведении (scale)",
     "type": "select",
     "options": {
-        "Без увеличения": "0",
-        "5%": "1",
-        "10%": "2",
-        "15%": "3",
-        "20%": "4",
-        "25%": "5"
+        "Без увеличения": "1",
+        "5%": "1.05",
+        "10%": "1.1",
+        "15%": "1.15",
+        "20%": "1.2",
+        "25%": "1.25"
     },
     "value": ""
     },
@@ -509,10 +523,26 @@ modsettings: `[
 ]`,
 
 moddefaultsettings: '[ [ ["","","",""] ] ]',
-modcontent: function modcontentfunc(name) {
+modoptions: [function modcontentfunc(scale,yourLink,linkIcon,linkHover) {
+    let linkCode = ``;
+
+    for(let i = 0; i < nameCard.length; i++){
+        if(nameCard[i][0] != ''){
+            linkCode += `
+            [href="${yourLink[i][0]}"] svg{background-image:url("${linkIcon[i][1]}");background-position:center center;background-size:cover;transition:all .1s ease}[href="${yourLink[i][0]}"] svg *{display:none}[href="${yourLink[i][0]}"] svg:hover{transform:scale(${scale[i][1]}); background-image:url("${linkIcon[i][1]}")} 
+            `;
+        }
+    }
+    return linkCode
+}],
+modcontent: function modcontentfunc(name, i) {
     return `
 
-<script>$(document).ready(function() { var id = "${name[0]}"; if ($(id).length > 0) { var newMenu = $(id).addClass("fixed${name[0].replace('#rec','')} unpinned${name[0].replace('#rec','')}"); var hideMenu = false; if (hideMenu) { $(id)[0].remove(); } var needMobile = ${name[1] == "0" ? 'false' : 'true'}; if (!isMobile || (isMobile && needMobile)) { ${name[2] == '' || name[2] == 0 ? `newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}");` : ``}  $(window).scroll(function() { var top = $(document).scrollTop();  if (top >= ${name[2] == '' ? 0 : name[2]}) { $('.nolim_forMenu').attr('nolim-search-state', '0'); newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}"); ${name[3] == "0" ? `` : `if(($(window).scrollTop() >= $(document).height() - $(window).height() - 70) && $("#allrecords").next("div").length > 0) {newMenu.removeClass("pinned${name[0].replace('#rec','')}");newMenu.addClass("unpinned${name[0].replace('#rec','')}");}`} } else { $('.nolim_forMenu').hide(); $('.nolim_forMenu').attr('nolim-search-state', '1'); newMenu.removeClass("pinned${name[0].replace('#rec','')}"); newMenu.addClass("unpinned${name[0].replace('#rec','')}"); } }); } else { newMenu.hide(); } } }); </script> <style> .fixed${name[0].replace('#rec','')} { position: fixed; ${name[3] == "0" ? 'top' : 'bottom'}: 0; width: 100%; transition: transform 250ms linear; z-index: 998; } .pinned${name[0].replace('#rec','')} { transform: translateY(0%); } .unpinned${name[0].replace('#rec','')} { transform: translateY(${name[3] == "0" ? '-100%' : '100%'}); } </style>
+    <style> 
+
+    ${nolimBlocks[i].modoptions[2](name[3],name[2],name[4])}
+    
+    </style>
 
 `;
 },
@@ -4370,7 +4400,7 @@ moddefaultsettings: '["","",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<style> @media screen and (max-width: 980px) { ${name[0]} { display: none; } } @media screen and (min-width: 980px) { ${name[0]} { width: 100%; z-index: 9995; display: none; position: fixed; } .${name[1]} { cursor: pointer; } .${name[1]}:hover { transform: scale(1.05); background-image: relative; } } </style> <script> if ($(window).width() >= 980) { $(document).ready(function() { var t838 = "${name[0]}"; var t838nolim = $('${name[0]}.t-rec').addClass('nolim_forMenu'); var searchIcon = $(".${name[1]}"); var idM = $('.${name[1]}').parents('.t-rec'); var idMh = $('.${name[1]}').parents('.t-rec').children().children(); idMh = $(idMh).css('height'); $(t838).css('top', idMh); searchIcon.on('click', function(e) { e.preventDefault(); if ($('.nolim_forMenu').attr('nolim-search-state') == '1') { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } else if ($('.nolim_forMenu').attr('nolim-search-state') == '0') { $(t838).${name[2] == "0" ? "slideDown()" : "fadeIn()"}; $('[nolim-search-state]').attr('nolim-search-state', '1'); } }); $(document).on('pointerup mouseup', (function(e) { if ($(t838).has(e.target).length === 0 && $(idM).has(e.target).length === 0 && !$(t838).is(e.target)) { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } })); }); }; </script>
+<style> ${name[0]} { width: 100%; z-index: 9995; display: none; position: fixed; } .${name[1]} { cursor: pointer; } .${name[1]}:hover { transform: scale(1.05); background-image: relative; } </style> <script> $(document).ready(function() { var t838 = "${name[0]}"; var t838nolim = $('${name[0]}.t-rec').addClass('nolim_forMenu'); var searchIcon = $(".${name[1]}"); var idM = $('.${name[1]}').parents('.t-rec'); var idMh = $('.${name[1]}').parents('.t-rec').children().children(); idMh = $(idMh).css('height'); $(t838).css('top', idMh); searchIcon.on('click', function(e) { e.preventDefault(); if ($('.nolim_forMenu').attr('nolim-search-state') == '1') { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } else if ($('.nolim_forMenu').attr('nolim-search-state') == '0') { $(t838).${name[2] == "0" ? "slideDown()" : "fadeIn()"}; $('[nolim-search-state]').attr('nolim-search-state', '1'); } }); $(document).on('pointerup mouseup', (function(e) { if ($(t838).has(e.target).length === 0 && $(idM).has(e.target).length === 0 && !$(t838).is(e.target)) { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } })); }); </script>
 
 `;
 },
