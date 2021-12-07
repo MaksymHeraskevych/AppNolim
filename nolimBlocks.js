@@ -3106,7 +3106,6 @@ modoptions: [function modcontentfunc(name) {
 }
 ],
 modcontent: function modcontentfunc(name,i) {
-
     return `
 
 <script>
@@ -3153,6 +3152,171 @@ modcontent: function modcontentfunc(name,i) {
         }, 1000);
     });
 </script>
+
+`;
+},
+instruction: ``
+});
+
+
+function sumName(name1,name2) {
+    name1 = Number(name1);
+    name2 = Number(name2);
+    var sum1 = name1 + name2;
+    return sum1;
+};
+
+nolimBlocks.push({
+name: "",
+cod: "NLM049",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild6661-3961-4164-b531-373036383566/Frame_53.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Вместо точек в галерее ZeroBlock в виде миниатюр",
+modsettings: `[
+    
+{
+    "id": "1",
+    "title": "Пагинация",
+    "type": "select",
+    "options": {
+        "Все картинки": "0",
+        "Три активных": "1"
+    },
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Расположение:",
+    "type": "select",
+    "options": {
+        "Слева": "left",
+        "По центру": "center",
+        "Справа": "right"
+    },
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Класс элемента",
+    "type": "input",
+    "placeholder": "customslider",
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Отступ от слайдера (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Ширина (px)",
+    "type": "number",
+    "placeholder": "50",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Высота (px)",
+    "type": "number",
+    "placeholder": "50",
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Настройки для экранов 960-1200 (px)",
+    "type": "checkbox",
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Отступ от слайдера (px)",
+    "type": "number",
+    "placeholder": "10",
+    "value": ""
+},
+{
+    "id": "9",
+    "title": "Ширина (px)",
+    "type": "number",
+    "placeholder": "40",
+    "value": ""
+},
+{
+    "id": "10",
+    "title": "Высота (px)",
+    "type": "number",
+    "placeholder": "40",
+    "value": ""
+},
+{
+    "id": "11",
+    "title": "Настройки для экранов 640-960 (px)",
+    "type": "checkbox",
+    "value": ""
+},
+{
+    "id": "12",
+    "title": "Отступ от слайдера (px)",
+    "type": "number",
+    "placeholder": "10",
+    "value": ""
+},
+{
+    "id": "13",
+    "title": "Ширина (px)",
+    "type": "number",
+    "placeholder": "40",
+    "value": ""
+},
+{
+    "id": "14",
+    "title": "Высота (px)",
+    "type": "number",
+    "placeholder": "40",
+    "value": ""
+},
+{
+    "id": "15",
+    "title": "Настройки для экранов 320-640 (px)",
+    "type": "checkbox",
+    "value": ""
+},
+{
+    "id": "16",
+    "title": "Отступ от слайдера (px)",
+    "type": "number",
+    "placeholder": "10",
+    "value": ""
+},
+{
+    "id": "17",
+    "title": "Ширина (px)",
+    "type": "number",
+    "placeholder": "40",
+    "value": ""
+},
+{
+    "id": "18",
+    "title": "Высота (px)",
+    "type": "number",
+    "placeholder": "40",
+    "value": ""
+}
+]`,
+
+
+moddefaultsettings: '["0","left","","","","","","","","","","","","","","","",""]',
+modcontent: function modcontentfunc(name) {
+    return `
+
+<script> ${name[0] == "1" ? `function wslideractive(l) { var t = $(l + " .t-slds__bullet_active").attr("data-slide-bullet-for"), e = (t = Number(t)) - 1, a = t + 1; 1 == t && (e = t + 2); var d = $(l + " .t-slds__bullet:eq(-1)").attr("data-slide-bullet-for"); t == (d = Number(d)) && (e = d - 2, a = d - 1), $(l + " .t-slds__bullet").hide(), $(l + ' [data-slide-bullet-for="' + t + '"]').show(), $(l + ' [data-slide-bullet-for="' + e + '"]').show(), $(l + ' [data-slide-bullet-for="' + a + '"]').show() }` : `` } $(document).ready(function () { let sliderclass = ".${name[2]}"; let sliderint = setInterval(function () { if ($(sliderclass+' .tn-atom__slds-img').length > 0){ clearInterval(sliderint); ${name[0] == "1" ? `$(sliderclass+' .t-slds__bullet').hide(); $(sliderclass+' [data-slide-bullet-for="1"]').show(); $(sliderclass+' [data-slide-bullet-for="2"]').show(); $(sliderclass+' [data-slide-bullet-for="3"]').show(); wslideractive(sliderclass); $(sliderclass+' .t-slds__bullet').click(function(){ wslideractive(sliderclass); }); $(sliderclass+' .t-slds__arrow_wrapper').click(function(){ wslideractive(sliderclass); });` : ``} $(sliderclass).each(function (index,item) { $(item).find('.tn-atom__slds-img').each(function (index) { if ("y" === window.lazy) { let urlbg = $(this).attr('data-original'); $(this).closest('.t-slds').find('.t-slds__bullet[data-slide-bullet-for="' + index + '"]').css('background-image', 'url(' + urlbg + ')'); } else { let urlbg = $(this).css('background-image'); $(this).closest('.t-slds').find('.t-slds__bullet[data-slide-bullet-for="' + index + '"]').css('background-image', urlbg); } }); }); } },50) }); </script> <style> .${name[2]} .t-slds__bullet_body{display:none} .${name[2]} .t-slds__bullet_wrapper{bottom:-${sumName(name[3],name[5])}px!important;text-align:${name[1]}} .${name[2]} .t-slds__bullet{background-position: center;margin:0px!important;display:inline-table;width:${name[4]}px;height:${name[5]}px;background-size:cover;background-repeat:no-repeat;opacity:.5;transform:scale(.9);filter:grayscale(1);transition:all .3s ease-in-out;border-radius:0px!important} .${name[2]} .t-slds__bullet.t-slds__bullet_active{opacity:1;transform:scale(1);filter:none} ${typeof name[9] != "undefined" && name[9] != '' ? `@media only screen and (min-width:960px) and (max-width:1200px){.${name[2]} .t-slds__bullet{width:${name[8]}px;height:${name[9]}px} .${name[2]} .t-slds__bullet_wrapper{bottom:-${sumName(name[7],name[9])}px!important}}` : ``} ${typeof name[13] != "undefined" && name[13] != '' ? `@media only screen and (min-width:640px) and (max-width:960px){.${name[2]} .t-slds__bullet{width:${name[12]}px;height:${name[13]}px} .${name[2]} .t-slds__bullet_wrapper{bottom:-${sumName(name[11],name[13])}px!important}}` : ``} ${typeof name[17] != "undefined" && name[17] != '' ? `@media only screen and (min-width:320px) and (max-width:640px){.${name[2]} .t-slds__bullet{width:${name[16]}px;height:${name[17]}px} .${name[2]} .t-slds__bullet_wrapper{bottom:-${sumName(name[15],name[17])}px!important}}` : ``} </style>
 
 `;
 },
