@@ -3474,15 +3474,15 @@ modcontent: function modcontentfunc(name,i) {
             });
             for (let o = 0; o < e.length; o++) null != n[e[o]] && (localStorage.setItem(e[o], n[e[o]]), console.log(localStorage.getItem(e[o])))
         };
-        if (typeof window.nolimSuccessFunction${name[0].replace('#rec','')} == 'undefined') {
-            window.nolimSuccessFunction${name[0].replace('#rec','')} = [];
-            window.nolimSuccessFunction${name[0].replace('#rec','')}[0] = funcAutozapoln
+        if (typeof window.NolimSuccessFunction${name[0].replace('#rec','')} == 'undefined') {
+            window.NolimSuccessFunction${name[0].replace('#rec','')} = [];
+            window.NolimSuccessFunction${name[0].replace('#rec','')}[0] = funcAutozapoln
         } else {
-            window.nolimSuccessFunction${name[0].replace('#rec','')}.push(funcAutozapoln)
+            window.NolimSuccessFunction${name[0].replace('#rec','')}.push(funcAutozapoln)
         };
         window.mySuccessFunction${name[0].replace('#rec','')} = function($form) {
-            for (var i = 0; i < window.nolimSuccessFunction${name[0].replace('#rec','')}.length; i++) {
-                window.nolimSuccessFunction${name[0].replace('#rec','')}[i]($form)
+            for (var i = 0; i < window.NolimSuccessFunction${name[0].replace('#rec','')}.length; i++) {
+                window.NolimSuccessFunction${name[0].replace('#rec','')}[i]($form)
             }
         };
     });
@@ -3741,9 +3741,13 @@ moddefaultsettings: '["","",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<script> $(document).ready(function() { var o = "${name[0]}"; $('[href="${name[2]}"]').click(function() { $('.t-body').removeClass('t-body_success-popup-showed'); $('.t-body').removeClass('t-body_scroll-locked');$("${name[0]}").fadeOut(), $("html,body").css("overflow", "visible"), $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() }), $("${name[0]}" + " .t396__filter").click(function() { $('.t-body').removeClass('t-body_success-popup-showed'); $('.t-body').removeClass('t-body_scroll-locked'); $("${name[0]}").fadeOut(), $("html,body").css("overflow", "visible"), $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() });
+<script> $(document).ready(function() { var o = "${name[0]}"; $('[href="${name[2]}"]').click(function() { 
+    $('.t-body').removeClass('t-body_success-popup-showed'); 
+    $('.t-body').removeClass('t-body_scroll-locked');
+    $('.t-body').removeClass('t-body_popupshowed');
+    $("${name[0]}").fadeOut(), $("html,body").css("overflow", "visible"), $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() }), $("${name[0]}" + " .t396__filter").click(function() { $('.t-body').removeClass('t-body_success-popup-showed'); $('.t-body').removeClass('t-body_scroll-locked'); $("${name[0]}").fadeOut(), $('.t-body').addClass('t-body_popupshowed'); $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() });
 
- var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $("html,body").css("overflow", "hidden"), $("${name[0]}").css("overflow", "auto"), "y" === window.lazy && t_lazyload_update(), $("${name[1]} .t706").hide(), $('.t-form-success-popup').hide(); setTimeout(function() { $('${name[1]} .t-popup__close').trigger('click'); $('.nolim_popup_close').click(); }, 100); $('${name[1]} .js-successbox').hide(); $('${name[1]} .t653 .js-successbox').show(); typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}'); };
+ var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $('.t-body').addClass('t-body_popupshowed'); $("${name[0]}").css("overflow", "auto"), "y" === window.lazy && t_lazyload_update(), $("${name[1]} .t706").hide(), $('.t-form-success-popup').hide(); setTimeout(function() { $('${name[1]} .t-popup__close').trigger('click'); $('.nolim_popup_close').click(); }, 100); $('${name[1]} .js-successbox').hide(); $('${name[1]} .t653 .js-successbox').show(); typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}'); };
 
     if(typeof window.NolimSuccessFunction${name[1].replace('#rec','')} == "undefined") {
         window.NolimSuccessFunction${name[1].replace('#rec','')} = [];
