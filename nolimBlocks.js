@@ -576,14 +576,14 @@ modsettings: `[
     "title": "Показывать в мобилке",
     "type": "select",
     "options": {
-        "Нет": "0",
-        "Да": "1"
+        "Нет": "false",
+        "Да": "true"
     },
     "value": ""
 },
 {
     "id": "3",
-    "title": "Появление при прокруте от начала страницы",
+    "title": "Появление при прокрутке от начала страницы",
     "type": "number",
     "placeholder": "0",
     "value": ""
@@ -597,14 +597,68 @@ modsettings: `[
         "Снизу": "1"
     },
     "value": ""
+},
+{
+    "id": "5",
+    "title": "Анимация появления меню",
+    "type": "select",
+    "options": {
+        "Плавная": "0",
+        "Слайдом": "1"
+    },
+    "value": ""
 }
 ]`,
 
-moddefaultsettings: '["","","",""]',
+moddefaultsettings: '["","false","","0","0"]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<script>$(document).ready(function() { var id = "${name[0]}"; if ($(id).length > 0) { var newMenu = $(id).addClass("fixed${name[0].replace('#rec','')} unpinned${name[0].replace('#rec','')}"); var hideMenu = false; if (hideMenu) { $(id)[0].remove(); } var needMobile = ${name[1] == "0" ? 'false' : 'true'}; if (!isMobile || (isMobile && needMobile)) { ${name[2] == '' || name[2] == 0 ? `newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}");` : ``}  $(window).scroll(function() { var top = $(document).scrollTop();  if (top >= ${name[2] == '' ? 0 : name[2]}) { $('.nolim_forMenu').attr('nolim-search-state', '0'); newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}"); ${name[3] == "0" ? `` : `if(($(window).scrollTop() >= $(document).height() - $(window).height() - 70) && $("#allrecords").next("div").length > 0) {newMenu.removeClass("pinned${name[0].replace('#rec','')}");newMenu.addClass("unpinned${name[0].replace('#rec','')}");}`} } else { $('.nolim_forMenu').hide(); $('.nolim_forMenu').attr('nolim-search-state', '1'); newMenu.removeClass("pinned${name[0].replace('#rec','')}"); newMenu.addClass("unpinned${name[0].replace('#rec','')}"); } }); } else { newMenu.hide(); } } }); </script> <style> .fixed${name[0].replace('#rec','')} { position: fixed; ${name[3] == "0" ? 'top' : 'bottom'}: 0; width: 100%; transition: transform 250ms linear; z-index: 998; } .pinned${name[0].replace('#rec','')} { transform: translateY(0%); } .unpinned${name[0].replace('#rec','')} { transform: translateY(${name[3] == "0" ? '-100%' : '100%'}); } </style>
+<script>
+
+    $(document).ready(function() { 
+        var id = "${name[0]}";
+        ${name[2] != '0' && name[4] == '1' ? `$(id).hide();` : ``}
+            if ($(id).length > 0) { 
+                var newMenu = $(id).addClass("fixed${name[0].replace('#rec','')} ${name[4] == '1' ? `unpinned${name[0].replace('#rec','')}` : ''}"); 
+                ${name[2] == '' || name[2] == '0' && name[4] == '0' ? `$("${name[0]}").addClass("op${name[0].replace('#rec','')}");` : ``}
+                var needMobile = ${name[1]}; 
+                if (!isMobile || (isMobile && needMobile)) { 
+                    ${name[2] == '' || name[2] == '0' && name[4] == '1' ? `newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}");` : ``}  
+                    $(window).scroll(function() { 
+                        var top = $(window).scrollTop();  
+                        if (top >= ${name[2] == '0' ? '-1000' : name[2]}) {
+                            ${name[2] != '0' && name[4] == '1' ? '$(id).slideDown();' : ''}
+                            $('.nolim_forMenu').attr('nolim-search-state', '0'); 
+                            ${name[4] == '1' ? `newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); 
+                            newMenu.addClass("pinned${name[0].replace('#rec','')}");` : `$("${name[0]}").addClass("op${name[0].replace('#rec','')}");`}
+                        } else{
+                            $('.nolim_forMenu').hide();
+                            $('.nolim_forMenu').attr('nolim-search-state', '1');
+                            ${name[4] == '1' ? `newMenu.addClass("unpinned${name[0].replace('#rec','')}"); 
+                            newMenu.removeClass("pinned${name[0].replace('#rec','')}");` : `$("${name[0]}").removeClass("op${name[0].replace('#rec','')}");`}
+                        }    
+                    });
+                } else {
+                    newMenu.hide();
+                }
+            }
+        });
+</script> 
+
+<style> 
+
+    ${name[4] == '1' ? `
+    .fixed${name[0].replace('#rec','')} { position: fixed; ${name[3] == "0" ? 'top' : 'bottom'}: 0; width: 100%; transition: transform 250ms linear; z-index: 998; } 
+    .pinned${name[0].replace('#rec','')} { transform: translateY(0%); } 
+    .unpinned${name[0].replace('#rec','')} { transform: translateY(${name[3] == '0' ? '-100%' : '100%'}); } 
+    ` : `
+    ${name[0]} {transition: opacity 1s ease-in-out; opacity:0;}
+    .fixed${name[0].replace('#rec','')} { position: fixed; ${name[3] == "0" ? 'top' : 'bottom'}: 0; width: 100%; z-index: 998; } 
+    .op${name[0].replace('#rec','')} { opacity:1 !important; } 
+    `}
+
+</style>
 
 `;
 },
@@ -3745,9 +3799,9 @@ modcontent: function modcontentfunc(name) {
     $('.t-body').removeClass('t-body_success-popup-showed'); 
     $('.t-body').removeClass('t-body_scroll-locked');
     $('.t-body').removeClass('t-body_popupshowed');
-    $("${name[0]}").fadeOut(), $("html,body").css("overflow", "visible"), $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() }), $("${name[0]}" + " .t396__filter").click(function() { $('.t-body').removeClass('t-body_success-popup-showed'); $('.t-body').removeClass('t-body_scroll-locked'); $("${name[0]}").fadeOut(), $('.t-body').addClass('t-body_popupshowed'); $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() });
+    $("${name[0]}").fadeOut(), $("html").css("overflow", "visible"), $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() }), $("${name[0]}" + " .t396__filter").click(function() { $('.t-body').removeClass('t-body_success-popup-showed'); $('.t-body').removeClass('t-body_scroll-locked'); $("${name[0]}").fadeOut(), $('.t-body').removeClass('t-body_popupshowed'); $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() });
 
- var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $('.t-body').addClass('t-body_popupshowed'); $("${name[0]}").css("overflow", "auto"), "y" === window.lazy && t_lazyload_update(), $("${name[1]} .t706").hide(), $('.t-form-success-popup').hide(); setTimeout(function() { $('${name[1]} .t-popup__close').trigger('click'); $('.nolim_popup_close').click(); }, 100); $('${name[1]} .js-successbox').hide(); $('${name[1]} .t653 .js-successbox').show(); typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}'); };
+var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $('.t-body').addClass('t-body_popupshowed'); $("${name[0]}").css("overflow", "auto"), "y" === window.lazy && t_lazyload_update(), $("${name[1]} .t706").hide(), $('.t-form-success-popup').hide(); setTimeout(function() { $('${name[1]} .t-popup__close').trigger('click'); $('.nolim_popup_close').click(); }, 100); $('${name[1]} .js-successbox').hide(); $('${name[1]} .t653 .js-successbox').show(); typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}'); };
 
     if(typeof window.NolimSuccessFunction${name[1].replace('#rec','')} == "undefined") {
         window.NolimSuccessFunction${name[1].replace('#rec','')} = [];
@@ -3762,9 +3816,9 @@ modcontent: function modcontentfunc(name) {
         }
     };
 
- setInterval(function(){ $("${name[1]} .js-form-proccess").each(function() { $(this).data("success-callback", 'window.mySuccessFunction${name[1].replace('#rec','')}') }) },1000); }); 
+setInterval(function(){ $("${name[1]} .js-form-proccess").each(function() { $(this).data("success-callback", 'window.mySuccessFunction${name[1].replace('#rec','')}') }) },1000); }); 
 
- </script> <style> ${name[0]} .t396__filter{cursor:pointer}${name[0]}{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:100005;} ${name[1]} .t281__input-wrapper, ${name[1]} .t274__wrapper{ opacity: 1 !important; max-height: unset !important;} </style>
+</script> <style> ${name[0]} .t396__filter{cursor:pointer}${name[0]}{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:100005;} ${name[1]} .t281__input-wrapper, ${name[1]} .t274__wrapper{ opacity: 1 !important; max-height: unset !important; .t-body_popupshowed{ height: 100vh; min-height: 100vh; overflow: hidden; } </style>
 
 `;
 },
@@ -3794,7 +3848,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 nolimBlocks.push({
-     video: "9Gtz2-X08hA",
+video: "9Gtz2-X08hA",
 name: "",
 cod: "NLM057",
 descr: "",
@@ -4312,7 +4366,30 @@ moddefaultsettings: '["","",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<a href="${name[1]}" class="nolimpopupshow" style="display:none;"></a> <script> $(document).ready(function() { var e = "${name[0]} .t396", c = '[href="${name[1]}"]'; $("${name[0]} .t396" + " .t396__filter").click(function() { $("${name[0]} .t396").fadeOut(), $("html,body").css("overflow", "visible"), $("${name[0]} .t396").css("overflow", "hidden") }), $(c).click(function() { $("${name[0]} .t396").fadeIn(), $("html,body").css("overflow", "hidden"), $("${name[0]} .t396").css("overflow", "auto"), "y" === window.lazy && t_lazyload_update(), typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}') }), $('.${name[2]}').addClass('nolim_popup_close').click(function() { $("${name[0]} .t396").fadeOut(), $("html,body").css("overflow", "visible"), $("${name[0]} .t396").css("overflow", "hidden") }) }); </script> <style> ${name[0]} .t396 .t396__filter, .${name[2]}.nolim_popup_close{cursor:pointer} ${name[0]} .t396{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:9999} </style>
+<a href="${name[1]}" class="nolimpopupshow" style="display:none;"></a> 
+
+<script> 
+
+$(document).ready(function() { 
+
+    var e = "${name[0]} .t396", c = '[href="${name[1]}"]'; 
+
+    $("${name[0]} .t396" + " .t396__filter").click(function() { 
+            $("${name[0]} .t396").fadeOut(), $("html").css("overflow", "visible"), $('.t-body').removeClass('nolimPopUp'); 
+    }), $(c).click(function() { 
+            $("${name[0]} .t396").fadeIn(),  
+            $('.t-body').addClass('nolimPopUp'); 
+            $("html").css("overflow", "hidden"), 
+            "y" === window.lazy && t_lazyload_update(), typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}') 
+    }), $('.${name[2]}').addClass('nolim_popup_close').click(function() { 
+            $("${name[0]} .t396").fadeOut(), $('.t-body').removeClass('nolimPopUp'); $("html").css("overflow", "visible");
+    }) 
+
+}); 
+
+</script> 
+
+<style> ${name[0]} .t396 .t396__filter, .${name[2]}.nolim_popup_close{cursor:pointer} ${name[0]} .t396{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:9999} .nolimPopUp{height:100vh; min-height:100vh; overflow:visible;}</style>
 
 `;
 },
