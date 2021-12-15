@@ -618,17 +618,17 @@ modcontent: function modcontentfunc(name) {
 
     $(document).ready(function() { 
         var id = "${name[0]}";
-        ${name[2] != '0' && name[4] == '1' ? `$(id).hide();` : ``}
+        ${Number(name[2]) > 0 && name[4] == '1' ? `$(id).hide();` : ``}
             if ($(id).length > 0) { 
                 var newMenu = $(id).addClass("fixed${name[0].replace('#rec','')} ${name[4] == '1' ? `unpinned${name[0].replace('#rec','')}` : ''}"); 
-                ${name[2] == '' || name[2] == '0' && name[4] == '0' ? `$("${name[0]}").addClass("op${name[0].replace('#rec','')}");` : ``}
-                var needMobile = ${name[1]}; 
+                ${Number(name[2]) <= 0 && name[4] == '0' ? `$("${name[0]}").addClass("op${name[0].replace('#rec','')}");` : ``}
+                var needMobile = ${name[1]};
                 if (!isMobile || (isMobile && needMobile)) { 
-                    ${name[2] == '' || name[2] == '0' && name[4] == '1' ? `newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}");` : ``}  
+                    ${Number(name[2]) <= 0 && name[4] == '1' ? `newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}");` : ``}
                     $(window).scroll(function() { 
                         var top = $(window).scrollTop();  
-                        if (top >= ${name[2] == '0' ? '-1000' : name[2]}) {
-                            ${name[2] != '0' && name[4] == '1' ? '$(id).slideDown();' : ''}
+                        if (top >= ${Number(name[2]) <= 0 ? '-1000' : name[2]}) {
+                            ${Number(name[2]) > 0 && name[4] == '1' ? '$(id).slideDown();' : ''}
                             $('.nolim_forMenu').attr('nolim-search-state', '0'); 
                             ${name[4] == '1' ? `newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); 
                             newMenu.addClass("pinned${name[0].replace('#rec','')}");` : `$("${name[0]}").addClass("op${name[0].replace('#rec','')}");`}
@@ -644,6 +644,7 @@ modcontent: function modcontentfunc(name) {
                 }
             }
         });
+
 </script> 
 
 <style> 
@@ -1469,6 +1470,76 @@ modcontent: function modcontentfunc(name,i) {
 instruction: ``
 });
 
+
+
+nolimBlocks.push({
+name: "",
+cod: "NLM020",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild6161-3933-4561-b736-323863636131/Frame_20.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "popup из Zero Block со своей кнопкой закрытия",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Id zero блока",
+    "type": "block",
+    "placeholder": "#rec000000",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Ссылка для открытия popup",
+    "type": "input",
+    "placeholder": "#open",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Класс для закрытия popup",
+    "type": "input",
+    "placeholder": "close",
+    "value": ""
+}
+]`,
+
+moddefaultsettings: '["","",""]',
+modcontent: function modcontentfunc(name) {
+    return `
+
+<a href="${name[1]}" class="nolimpopupshow" style="display:none;"></a> 
+
+<script> 
+
+$(document).ready(function() { 
+
+    var e = "${name[0]} .t396", c = '[href="${name[1]}"]'; 
+
+    $("${name[0]} .t396" + " .t396__filter").click(function() { 
+            $("${name[0]} .t396").fadeOut(), $("html").css("overflow", "visible"), $('.t-body').removeClass('nolimPopUp'); 
+    }), $(c).click(function() { 
+            $("${name[0]} .t396").fadeIn(),  
+            $('.t-body').addClass('nolimPopUp'); 
+            $("html").css("overflow", "hidden"), 
+            "y" === window.lazy && t_lazyload_update(), typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}') 
+    }), $('.${name[2]}').addClass('nolim_popup_close').click(function() { 
+            $("${name[0]} .t396").fadeOut(), $('.t-body').removeClass('nolimPopUp'); $("html").css("overflow", "visible");
+    }) 
+
+}); 
+
+</script> 
+
+<style> ${name[0]} .t396 .t396__filter, .${name[2]}.nolim_popup_close{cursor:pointer} ${name[0]} .t396{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:9999} .nolimPopUp{height:100vh; min-height:100vh; overflow:visible;}</style>
+
+`;
+},
+
+});
 
 
 nolimBlocks.push({
@@ -3076,11 +3147,11 @@ cod: "NLM047",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3465-6465-4230-a164-393032393231/Frame_38.jpg",
+icon: "https://static.tildacdn.com/tild6532-3061-4363-a539-616336633561/Frame_47.jpg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
-title: "Страница успеха зависимая от выбора",
+title: "Разные страницы успеха в зависимости от выбора значения в форме",
 modsettings: `[
 {
     "id": "1",
@@ -3447,15 +3518,66 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 nolimBlocks.push({
 name: "",
+cod: "NLM051",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3035-3133-4735-a165-346132343034/Frame_51.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Выпадающий “Поиск” из меню в Zero Block",
+modsettings: `[
+{
+    "id": "1",
+    "title": "id блока T838",
+    "type": "block",
+    "placeholder": "#rec000000",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Класс иконки",
+    "type": "input",
+    "placeholder": "nolimSearchZero",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Анимация скрытия/показа блока:",
+    "type": "select",
+    "options": {
+        "Слайдом": "0",
+        "Обычная": "1"
+    },
+    "value": ""
+}
+]`,
+
+moddefaultsettings: '["","",""]',
+modcontent: function modcontentfunc(name) {
+  return `
+
+<style> ${name[0]} { width: 100%; z-index: 9995; display: none; position: fixed; } .${name[1]} { cursor: pointer; } .${name[1]}:hover { transform: scale(1.05); background-image: relative; } </style> <script> $(document).ready(function() { var t838 = "${name[0]}"; var t838nolim = $('${name[0]}.t-rec').addClass('nolim_forMenu'); var searchIcon = $(".${name[1]}"); var idM = $('.${name[1]}').parents('.t-rec'); var idMh = $('.${name[1]}').parents('.t-rec').children().children(); idMh = $(idMh).css('height'); $(t838).css('top', idMh); searchIcon.on('click', function(e) { e.preventDefault(); if ($('.nolim_forMenu').attr('nolim-search-state') == '1') { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } else if ($('.nolim_forMenu').attr('nolim-search-state') == '0') { $(t838).${name[2] == "0" ? "slideDown()" : "fadeIn()"}; $('[nolim-search-state]').attr('nolim-search-state', '1'); } }); $(document).on('pointerup mouseup', (function(e) { if ($(t838).has(e.target).length === 0 && $(idM).has(e.target).length === 0 && !$(t838).is(e.target)) { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } })); }); </script>
+
+`;
+},
+instruction: ``
+});
+
+
+
+nolimBlocks.push({
+name: "",
 cod: "NLM052",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3465-6465-4230-a164-393032393231/Frame_38.jpg",
+icon: "https://static.tildacdn.com/tild3863-3763-4863-b939-643932616365/Frame_52.jpg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
-title: "Автозаполнение полей",
+title: "Автозаполнение полей в формах",
 modsettings: `[
 {
     "id": "1",
@@ -4333,77 +4455,6 @@ cod: "NLM068",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3838-3763-4064-b063-616332313866/Frame_61.jpg",
-icon2: "/files/tplsthumbs/other-block-02.png",
-id: "131",
-inlib: "y",
-title: "popup из Zero Block со своей кнопкой закрытия",
-modsettings: `[
-{
-    "id": "1",
-    "title": "Id zero блока",
-    "type": "block",
-    "placeholder": "#rec000000",
-    "value": ""
-},
-{
-    "id": "2",
-    "title": "Ссылка для открытия popup",
-    "type": "input",
-    "placeholder": "#open",
-    "value": ""
-},
-{
-    "id": "3",
-    "title": "Класс для закрытия popup",
-    "type": "input",
-    "placeholder": "close",
-    "value": ""
-}
-]`,
-
-moddefaultsettings: '["","",""]',
-modcontent: function modcontentfunc(name) {
-  return `
-
-<a href="${name[1]}" class="nolimpopupshow" style="display:none;"></a> 
-
-<script> 
-
-$(document).ready(function() { 
-
-    var e = "${name[0]} .t396", c = '[href="${name[1]}"]'; 
-
-    $("${name[0]} .t396" + " .t396__filter").click(function() { 
-            $("${name[0]} .t396").fadeOut(), $("html").css("overflow", "visible"), $('.t-body').removeClass('nolimPopUp'); 
-    }), $(c).click(function() { 
-            $("${name[0]} .t396").fadeIn(),  
-            $('.t-body').addClass('nolimPopUp'); 
-            $("html").css("overflow", "hidden"), 
-            "y" === window.lazy && t_lazyload_update(), typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}') 
-    }), $('.${name[2]}').addClass('nolim_popup_close').click(function() { 
-            $("${name[0]} .t396").fadeOut(), $('.t-body').removeClass('nolimPopUp'); $("html").css("overflow", "visible");
-    }) 
-
-}); 
-
-</script> 
-
-<style> ${name[0]} .t396 .t396__filter, .${name[2]}.nolim_popup_close{cursor:pointer} ${name[0]} .t396{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:9999} .nolimPopUp{height:100vh; min-height:100vh; overflow:visible;}</style>
-
-`;
-},
-
-});
-
-
-
-nolimBlocks.push({
-name: "",
-cod: "NLM070",
-descr: "",
-descr_ru: "",
-disableforplan0: "y",
 icon: "https://images.unsplash.com/photo-1593643946890-b5b85ade6451?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3178&q=80",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
@@ -4455,7 +4506,7 @@ modcontent: function modcontentfunc(name) {
 
 nolimBlocks.push({
 name: "",
-cod: "NLM071",
+cod: "NLM069",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
@@ -4523,7 +4574,7 @@ modcontent: function modcontentfunc(name) {
 
 nolimBlocks.push({
 name: "",
-cod: "NLM072",
+cod: "NLM070",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
@@ -4584,7 +4635,7 @@ modsettings: `[
 },
 {
     "id": "8",
-    "title": "Цвет фона",
+    "title": "Цвет фона scrollbara",
     "type": "color",
     "placeholder": "#cecece",
     "value": ""
@@ -4602,56 +4653,6 @@ modcontent: function modcontentfunc(name) {
 
 });
 
-
-
-nolimBlocks.push({
-name: "",
-cod: "NLM073",
-descr: "",
-descr_ru: "",
-disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3465-6465-4230-a164-393032393231/Frame_38.jpg",
-icon2: "/files/tplsthumbs/other-block-02.png",
-id: "131",
-inlib: "y",
-title: "Иконка поиск в zero меню",
-modsettings: `[
-{
-    "id": "1",
-    "title": "id блока T838",
-    "type": "block",
-    "placeholder": "#rec000000",
-    "value": ""
-},
-{
-    "id": "2",
-    "title": "Класс иконки",
-    "type": "input",
-    "placeholder": "nolimSearchZero",
-    "value": ""
-},
-{
-    "id": "3",
-    "title": "Анимация скрытия/показа блока:",
-    "type": "select",
-    "options": {
-        "Слайдом": "0",
-        "Обычная": "1"
-    },
-    "value": ""
-}
-]`,
-
-moddefaultsettings: '["","",""]',
-modcontent: function modcontentfunc(name) {
-  return `
-
-<style> ${name[0]} { width: 100%; z-index: 9995; display: none; position: fixed; } .${name[1]} { cursor: pointer; } .${name[1]}:hover { transform: scale(1.05); background-image: relative; } </style> <script> $(document).ready(function() { var t838 = "${name[0]}"; var t838nolim = $('${name[0]}.t-rec').addClass('nolim_forMenu'); var searchIcon = $(".${name[1]}"); var idM = $('.${name[1]}').parents('.t-rec'); var idMh = $('.${name[1]}').parents('.t-rec').children().children(); idMh = $(idMh).css('height'); $(t838).css('top', idMh); searchIcon.on('click', function(e) { e.preventDefault(); if ($('.nolim_forMenu').attr('nolim-search-state') == '1') { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } else if ($('.nolim_forMenu').attr('nolim-search-state') == '0') { $(t838).${name[2] == "0" ? "slideDown()" : "fadeIn()"}; $('[nolim-search-state]').attr('nolim-search-state', '1'); } }); $(document).on('pointerup mouseup', (function(e) { if ($(t838).has(e.target).length === 0 && $(idM).has(e.target).length === 0 && !$(t838).is(e.target)) { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } })); }); </script>
-
-`;
-},
-instruction: ``
-});
 
 
 
