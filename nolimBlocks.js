@@ -467,69 +467,53 @@ title: "Как добавить иконки мессенджеров в ста�
 modsettings: `[
 {
     "id": "1",
-    "title": "Фильтр для цвета",
-    "type": "select",
-    "options": {
-        "Без увеличения": "1",
-        "5%": "1.05",
-        "10%": "1.1",
-        "15%": "1.15",
-        "20%": "1.2",
-        "25%": "1.25"
-    },
-    "value": ""
-},
-{
-"id": "2",
-"title": "+ Добавить иконку",
-"type": "groupCards",
-"options": [
+    "title": "+ Добавить иконку",
+    "type": "groupCards",
+    "options": [
     {
-    "title": "Ваша ссылка",
-    "type": "input",
-    "placeholder": "name",
-    "value": ""
+        "title": "Ваша ссылка",
+        "type": "input",
+        "placeholder": "name",
+        "value": ""
     },
     {
-    "title": "Увеличение при наведении (scale)",
-    "type": "select",
-    "options": {
-        "Без увеличения": "1",
-        "5%": "1.05",
-        "10%": "1.1",
-        "15%": "1.15",
-        "20%": "1.2",
-        "25%": "1.25"
-    },
-    "value": ""
-    },
-    {
-    "title": "Ссылка на иконку",
-    "type": "image",
-    "placeholder": "https://static.tildacdn.com/...",
-    "value": ""
+        "title": "Увеличение при наведении (scale)",
+        "type": "select",
+        "options": {
+            "Без увеличения": "1",
+            "5%": "1.05",
+            "10%": "1.1",
+            "15%": "1.15",
+            "20%": "1.2",
+            "25%": "1.25"
+        },
+        "value": ""
     },
     {
-    "title": "Ссылка на иконку при наведении (если не нужна оставьте поле пустым)",
-    "type": "image",
-    "placeholder": "https://static.tildacdn.com/...",
-    "value": ""
+        "title": "Ссылка на иконку",
+        "type": "image",
+        "placeholder": "",
+        "value": ""
+    },   
+    {
+        "title": "Ссылка на иконку при наведении (если не нужна оставьте поле пустым)",
+        "type": "image",
+        "placeholder": "",
+        "value": ""
     }
-    ],
-    "limit": "14",
-    "placeholder": "class",
-    "value": "1"
+],
+"limit": "14",
+"placeholder": "class",
+"value": "1"
 }
 ]`,
-
-moddefaultsettings: '[ [ ["","","",""] ] ]',
-modoptions: [function modcontentfunc(scale,yourLink,linkIcon,linkHover) {
+moddefaultsettings: '["", [["","","",""] ]]',
+modoptions: [function modcontentfunc(nameCard) {
     let linkCode = ``;
 
     for(let i = 0; i < nameCard.length; i++){
         if(nameCard[i][0] != ''){
-            linkCode += `
-            [href="${yourLink[i][0]}"] svg{background-image:url("${linkIcon[i][1]}");background-position:center center;background-size:cover;transition:all .1s ease}[href="${yourLink[i][0]}"] svg *{display:none}[href="${yourLink[i][0]}"] svg:hover{transform:scale(${scale[i][1]}); background-image:url("${linkIcon[i][1]}")} 
+            linkCode += `[href="${nameCard[i][0]}"] svg{background-image:url("${nameCard[i][2]}");background-position:center center;background-size:cover;transition:all .1s ease}[href="${nameCard[i][0]}"] svg *{display:none}[href="${nameCard[i][0]}"] svg:hover{transform:scale(${nameCard[i][1]}); background-image:url("${nameCard[i][3]}")};
             `;
         }
     }
@@ -540,7 +524,7 @@ modcontent: function modcontentfunc(name, i) {
 
     <style> 
 
-    ${nolimBlocks[i].modoptions[2](name[3],name[2],name[4])}
+    ${nolimBlocks[i].modoptions[0](name[0])}
     
     </style>
 
@@ -1795,6 +1779,65 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 nolimBlocks.push({
 name: "",
+cod: "NLM028",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3361-3930-4136-a330-316238323562/Frame_28.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Эффект неона для текста",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Class текста",
+    "type": "input",
+    "placeholder": "myclass",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Цвет фона текста:",
+    "placeholder": "#095efb",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Мерцание неона",
+    "type": "select",
+    "options": {
+        "Включить": "0",
+        "Выключить": "1"
+    },
+    "value": "0"
+}
+]`,
+moddefaultsettings: '["","","0"]',
+modcontent: function modcontentfunc(name) {
+  return `
+
+    <style> :root { --neon-text-color${name[1].replace('#','')}: ${name[1]}; } .${name[0]} { animation: flicker 1.5s infinite alternate; animation-play-state:${name[2] == "0" ? "running" : "paused"}; } .${name[0]}::-moz-selection {  color: var(--neon-text-color${name[1].replace('#','')}); } .${name[0]}::selection {  color: var(--neon-text-color${name[1].replace('#','')}); } .${name[0]}:focus { outline: none; } @keyframes flicker { 0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff, 0 0 2rem var(--neon-text-color${name[1].replace('#','')}), 0 0 4rem var(--neon-text-color${name[1].replace('#','')}); } 20%, 24%, 55% { text-shadow: none; box-shadow: none; } } </style>
+
+`;
+},
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>
+Что бы указать класс у элемента, нажимаешь на него правой кнопкой мыши и выбираем из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываем тот же класс что и в генераторе;<br><br>
+
+1. Добавляем свой текст в Зеро Блок и указываем класс к нему такой же как и в генераторе;<br><br>
+2. Выбираем цвет свечения;
+3. Включаем эффект мерцания;
+4. Настраиваем бордер;
+5. Копируем сгенерированный HTML код и вставляем его в блок Т123;<br><br>
+</div>`
+});
+
+
+
+nolimBlocks.push({
+name: "",
 cod: "NLM031",
 descr: "",
 descr_ru: "",
@@ -2100,7 +2143,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 */
 
-/*
+
 nolimBlocks.push({
 name: "",
 cod: "NLM034",
@@ -2117,7 +2160,7 @@ modsettings: `[
     "id": "1",
     "title": "Ссылка из конструктора",
     "type": "input",
-    "placeholder": "Консультация",
+    "placeholder": "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6d9c246fca15ae034f5446161634d83f026b748d4debe5db165774acebbb7b46&amp;width=419&amp;height=323&amp;lang=ru_RU&amp;scroll=true",
     "value": ""
 },
 {
@@ -2151,32 +2194,44 @@ modsettings: `[
     "title": "Непрозрачность",
     "type": "select",
     "options": {
-        "100%": "0",
-        "95%": "1",
-        "90%": "2",
-        "80%": "3",
-        "70%": "4",
-        "60%": "5",
-        "50%": "6",
-        "40%": "7",
-        "30%": "8",
-        "20%": "9",
-        "10%": "10"
+        "100%": "100%",
+        "95%": "95%",
+        "90%": "90%",
+        "80%": "80%",
+        "70%": "70%",
+        "60%": "60%",
+        "50%": "50%",
+        "40%": "40%",
+        "30%": "30%",
+        "20%": "20%",
+        "10%": "10%"
     },
     "value": ""
 }
 ]`,
+moddefaultsettings: '["","","","","","50%"]',
+modoptions: [function modcontentfunc(name) {
+    
+    if(name != '' && name.includes('width=') && name.includes('height=')){
+        var newStr = name.split('width=')[1].split('&amp;height=')[0];
+        name = name.replace(newStr,'100%');
+            console.log(name);
+        newStr = name.split('height')[1].split('amp;')[0];
+            console.log(newStr);
+        name = name.replace(newStr,'=100%&');
+        
+        name = name.split('src="')[1].split('"')[0];
+    }
+    return name;
+}],
+modcontent: function modcontentfunc(name, i) {
+    return `
 
-moddefaultsettings: '["","","","","",""]',
-modcontent: function modcontentfunc(name) {
-  return `
-
-<div id="kartazero" class="wsending" style="width: 100%;height: 100%;"></div> <script> function myandexmap() { setTimeout(function(){ $('#kartazero').removeClass('wsending'); },800); var js=document.createElement('script'); let parent = document.querySelector('#kartazero'); js.src = ""; parent.appendChild(js); } $(window).on('load', function() { setTimeout(myandexmap, 3000); }); </script> <style> .wsending { opacity: ${name[5] == "0" ? "100%" : name[5] == "1" ? "95%" : name[5] == "2" ? "90%" : name[5] == "3" ? "80%" : name[5] == "4" ? "70%" : name[5] == "5" ? "60%" : name[5] == "6" ? "50%" : name[5] == "7" ? "40%" : name[5] == "8" ? "30%" : name[5] == "9" ? "20%" : name[5] == "10" ? "10%" : ''}; pointer-events:none; } .wsending:before { content: ''; box-sizing: border-box; position: absolute; top: 50%; left: 50%; width: 150px; height: 150px; margin-top: -${(name[1] / 2).toFixed(0)}px; margin-left: -${(name[1] / 2).toFixed(0)}px; border-radius: 50%; border: ${n2i(name[2],'0')}px solid ${name[3]}; border-top-color: ${name[4]}; animation: t-submit-spinner .6s linear infinite; } </style>
+<div id="kartazero" class="wsending" style="width: 100%; height: 100%;"></div> <script> function myandexmap() { setTimeout(function(){ $('#kartazero').removeClass('wsending'); },800); var js=document.createElement('script'); let parent = document.querySelector('#kartazero'); js.src = "${nolimBlocks[i].modoptions[0](name[0])}"; parent.appendChild(js); } $(window).on('load', function() { setTimeout(myandexmap, 3000); }); </script> <style> .wsending { opacity: ${name[5]}; pointer-events:none; } .wsending:before { content: ''; box-sizing: border-box; position: absolute; top: 50%; left: 50%; width: 150px; height: 150px; margin-top: -${(name[1] / 2).toFixed(0)}px; margin-left: -${(name[1] / 2).toFixed(0)}px; border-radius: 50%; border: ${n2i(name[2],'0')}px solid ${name[3]}; border-top-color: ${name[4]}; animation: t-submit-spinner .6s linear infinite; } </style>
 
 `;
 }
 });
-*/
 
 
 
@@ -3744,6 +3799,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 
 
+
 /*
 nolimBlocks.push({
 name: "",
@@ -3876,6 +3932,81 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 </div>`
 });
 */
+
+
+
+nolimBlocks.push({
+name: "",
+cod: "NLM055",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild6662-3635-4635-b766-333562626235/Frame_55.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Делаем кастомный курсор в Zero Block",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Добавить курсор",
+    "type": "groupCards",
+    "options": [
+        {
+        "title": "Впишите класс",
+        "type": "input",
+        "placeholder": "cursorCls",
+        "value": ""
+        },
+        {
+        "title": "Координата X",
+        "type": "input",
+        "placeholder": "10",
+        "value": ""
+        },
+        {
+        "title": "Координата Y",
+        "type": "input",
+        "placeholder": "10",
+        "value": ""
+        },
+        {
+        "title": "Вставьте иконку на курсор при наведении",
+        "type": "image",
+        "placeholder": "",
+        "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": "1"
+}
+]`,
+moddefaultsettings: '[ [["","","",""]] ]',
+modoptions: [function modcontentfunc(nameCard) {
+    let linkCode = ``;
+
+    for(let i = 0; i < nameCard.length; i++){
+        if(nameCard[i][0] != ''){
+            console.log(nameCard);
+            linkCode += `.${nameCard[i][0]} .tn-atom{cursor:url(${nameCard[i][3]}) ${nameCard[i][1]} ${nameCard[i][2]}, pointer!important;}
+            `;
+        }
+    }
+    return linkCode
+}
+],
+modcontent: function modcontentfunc(name, i) {
+  return `
+
+<style>
+    ${nolimBlocks[i].modoptions[0](name[0])}
+</style>
+`;
+},
+instruction: ``
+});
+
 
 
 nolimBlocks.push({
@@ -4441,6 +4572,259 @@ modcontent: function modcontentfunc(name) {
   return `
 
 <style> .${name[0]} .tn-atom{ transition: all ${name[2]}s; } .${name[0]} .tn-atom:not(:hover){ box-shadow: unset!important; } .${name[0]}unsetShadow .tn-atom{ transition: all ${name[2]}s; } </style>  ${typeof name[1] != "undefined" && name[1] != '' ? `<script> $(document).ready(function(){ let sI = setInterval(function() { if ($('.${name[0]} .tn-atom').length > 0) { clearInterval(sI); $(".t396 .${n2i(name[1],'btnShadowNolim')}").hover(function() { $('.t396 .${name[0]}').removeClass('${name[0]}').addClass('${name[0]}unsetShadow'); }, function() { $('.t396 .${name[0]}unsetShadow').addClass('${name[0]}').removeClass('${name[0]}unsetShadow'); }); } }, 50); }); </script>` : ''}
+
+`;
+},
+
+});
+
+
+
+nolimBlocks.push({
+name: "",
+cod: "NLM067",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3838-3763-4064-b063-616332313866/Frame_61.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Как анимировать бордер у shape в Tilda?",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Class элемента",
+    "type": "input",
+    "placeholder": "animNolimBorder",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Ширина бордера",
+    "type": "select",
+    "options": {
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px",
+        "5px": "5px",
+        "6px": "6px",
+        "7px": "7px",
+        "8px": "8px",
+        "9px": "9px",
+        "10px": "10px"
+    },
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Цвет бордера",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Тип цвета",
+    "type": "select",
+    "options": {
+        "Градиентом": "1",
+        "2 отдельных цвета": "2"
+    },
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Цвет 1 (элемента анимации)",
+    "type": "color",
+    "placeholder": "#00ff00",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Цвет 2 (элемента анимации)",
+    "type": "color",
+    "placeholder": "#00ff00",
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Направления анимации",
+    "type": "select",
+    "options": {
+        "Против часовой стрелки": "0",
+        "По часовой стрелки": "1"
+    },
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Длительность анимации (в секундах)",
+    "type": "select",
+    "options": {
+        "2 сек": "2s",
+        "3 сек": "3s",
+        "4 сек": "4s",
+        "5 сек": "5s",
+        "6 сек": "6s",
+        "7 сек": "7s",
+        "8 сек": "8s",
+        "9 сек": "9s",
+        "10 сек": "10s"
+    },
+    "value": ""
+},
+{
+    "id": "9",
+    "title": "При наведении",
+    "type": "text"
+},
+{
+    "id": "10",
+    "title": "Цвет фона",
+    "type": "color",
+    "placeholder": "#2767dd",
+    "value": ""
+},
+{
+    "id": "11",
+    "title": "Цвет бордера",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "12",
+    "title": "Цвет 1 (элемента анимации)",
+    "type": "color",
+    "placeholder": "#00ffff",
+    "value": ""
+},
+{
+    "id": "13",
+    "title": "Цвет 2 (элемента анимации)",
+    "type": "color",
+    "placeholder": "#2b5197",
+    "value": ""
+}
+]`,
+moddefaultsettings: '["","1px","","1","","","0","2s","","","","",""]',
+modcontent: function modcontentfunc(name) {
+  return `
+
+<style>
+    @supports (inset: ${name[1]}) {
+        .${n2i(name[0],'animNolimBorder')} {
+            overflow: hidden;
+        }
+
+        @supports (-moz-appearance:none) and (mask-type:alpha) {
+            .${n2i(name[0],'animNolimBorder')}.t-sbs-anim_started>.tn-atom__sbs-anim-wrapper {
+                display: flex !important;
+            }
+
+            .${n2i(name[0],'animNolimBorder')} {
+                display: flex;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .t396 .${n2i(name[0],'animNolimBorder')}.t-sbs-anim_started {
+                overflow: visible;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .${n2i(name[0],'animNolimBorder')}.t-sbs-anim_started {
+                overflow: hidden;
+            }
+
+            .${n2i(name[0],'animNolimBorder')}.t-sbs-anim_started[data-animate-mobile="y"] {
+                overflow: visible;
+            }
+        }
+
+        .${n2i(name[0],'animNolimBorder')}.t-sbs-anim_started>.tn-atom__sbs-anim-wrapper {
+            overflow: hidden;
+            border-radius: inherit;
+        }
+
+        .${n2i(name[0],'animNolimBorder')} .tn-atom::before {
+            content: '';
+            position: absolute;
+            animation: animate ${name[7]} linear ${name[6] == "0" ? "reverse " : "" }infinite;
+            overflow: hidden;
+        }
+
+        @media screen and (min-width: 1200px) {
+            .${n2i(name[0],'animNolimBorder')} .tn-atom:hover {
+                background: ${n2i(name[9],'#ff00ae')} !important;
+            }
+
+            .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::after {
+                background: ${n2i(name[8],'#2767dd')};
+            }
+        }
+
+        .${n2i(name[0],'animNolimBorder')} .tn-atom::after {
+            content: '';
+            position: absolute;
+            inset: ${name[1]};
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        var tn = setInterval(function() {
+            if ($('.${n2i(name[0],'animNolimBorder')} .tn-atom').length > 0) {
+                clearInterval(tn);
+                if (CSS.supports("inset", "${name[1]}")) {
+                    var bC = $('.${n2i(name[0],'animNolimBorder')} .tn-atom').css('background-color');
+                    var bR = $('.${n2i(name[0],'animNolimBorder')} .tn-atom').css('borderTopLeftRadius');
+                    bR = bR.replace('px', '');
+                    bR = Number(bR);
+                    var typeClr = ${name[3]};
+                    var insetJS = ${name[1].replace('px','')};
+                    var bRafter = bR - insetJS;
+                    $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')}{ border-radius: \${bR}px; } .${n2i(name[0],'animNolimBorder')} .tn-atom{ background-color: ${name[2]} !important; } .${n2i(name[0],'animNolimBorder')} .tn-atom::after{ background: \${bC}; border-radius: \${bRafter}px; } </style> \`);
+                    var sizeH = $('.${n2i(name[0],'animNolimBorder')}').css('height');
+                    var sizeW = $('.${n2i(name[0],'animNolimBorder')}').css('width');
+                    sizeH = sizeH.replace('px', '');
+                    sizeH = Number(sizeH);
+                    sizeW = sizeW.replace('px', '');
+                    sizeW = Number(sizeW);
+                    var leftSizeH = Number(sizeH / 4);
+                    var leftSizeW = Number(sizeW / 4);
+                    sumWH = sizeW - sizeH;
+                    if (sumWH > 0 && typeClr == 1) {
+                        sizeH = Number(sizeH / 2);
+                        $('.${n2i(name[0],'animNolimBorder')}').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ width: 300% !important; height: \${sizeH}px !important; top: \${leftSizeH}px; left: -100%; background: linear-gradient(${name[4]}, ${name[5]}); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(${n2i(name[10],'#ff00ae')}, ${n2i(name[11],'#00ff6e')}); } } </style>\`);
+                    } else if (sumWH > 0 && typeClr == 2) {
+                        sizeH = Number(sizeH / 2);
+                        $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ width: 300% !important; height: \${sizeH}px !important; top: \${leftSizeH}px; left: -100%; background: linear-gradient(90deg, ${name[4]} 50%, ${name[5]} 50%); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(90deg, ${n2i(name[10],'#ff00ae')} 50%, ${n2i(name[11],'#00ff6e')} 50%); } } </style>\`);
+                    } else if (sumWH <= 0 && typeClr == 1) {
+                        sizeW = Number(sizeW / 2);
+                        $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ height: 160% !important; width: \${sizeW}px !important; top: 0; bottom: 0; margin: auto; left: \${leftSizeW}px; background: linear-gradient(90deg, ${name[4]}, ${name[5]}); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(90deg, ${n2i(name[10],'#ff00ae')}, ${n2i(name[11],'#00ff6e')}); } } </style> \`);
+                    } else if (sumWH <= 0 && typeClr == 2) {
+                        sizeW = Number(sizeW / 2);
+                        $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ height: 160% !important; width: \${sizeW}px !important; top: 0; bottom: 0; margin: auto; left: \${leftSizeW}px; background: linear-gradient(${name[4]}, ${name[5]}); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(${n2i(name[10],'#ff00ae')}, ${n2i(name[11],'#00ff6e')}); } } </style> \`);
+                    }
+                } else {};
+            }
+        }, 50);
+    });
+</script>
 
 `;
 },
