@@ -335,6 +335,794 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 
 
+
+
+nolimBlocks.push({
+name: "",
+cod: "NLM003",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3632-3133-4263-a538-323332323535/Frame_3.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Cпектральный фон из 3х цветов",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Тип фона:",
+    "type": "select",
+    "options": {
+        "На отдельный блок": "0",
+        "На всю страницу": "1"
+    },
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "id блока",
+    "type": "block",
+    "placeholder": "#rec0012345",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Направление линии градиента",
+    "type": "select",
+    "options": {
+        "По умолчанию": "0",
+        "Верх": "1",
+        "Низ": "2",
+        "Лево": "3",
+        "Право": "4",
+        "Лево Верх": "5",
+        "Право Верх": "6",
+        "Лево Низ": "7",
+        "Право Низ": "8"
+    },
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Цвет",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Направление линии градиента",
+    "type": "select",
+    "options": {
+        "По умолчанию": "0",
+        "Верх": "1",
+        "Низ": "2",
+        "Лево": "3",
+        "Право": "4",
+        "Лево Верх": "5",
+        "Право Верх": "6",
+        "Лево Низ": "7",
+        "Право Низ": "8"
+    },
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Цвет",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Направление линии градиента",
+    "type": "select",
+    "options": {
+        "По умолчанию": "0",
+        "Верх": "1",
+        "Низ": "2",
+        "Лево": "3",
+        "Право": "4",
+        "Лево Верх": "5",
+        "Право Верх": "6",
+        "Лево Низ": "7",
+        "Право Низ": "8"
+    },
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Цвет",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "9",
+    "title": "Фильтр для цвета",
+    "type": "select",
+    "options": {
+        "Без фильтра": "0",
+        "Screen": "1",
+        "Darken": "2",
+        "Difference": "3",
+        "Multiply": "4",
+        "Color-dodge": "5"
+    },
+    "value": ""
+}
+]`,
+
+moddefaultsettings: '["","","","","","","","",""]',
+modcontent: function modcontentfunc(name) {
+  return `
+
+<style> ${name[0] == "0" ? `${name[1]}` : 'body'}{background:linear-gradient(${name[2] == "0" ? 'to body' : name[2] == "1" ? 'to top' : name[2] == "2" ? 'to bottom' : name[2] == "3" ? 'to left' : name[2] == "4" ? 'to right' : name[2] == "5" ? 'to top left' : name[2] == "6" ? 'to top right' : name[2] == "7" ? 'to bottom left' : name[2] == "8" ? 'to bottom right' : 'body'},${name[3]},transparent),linear-gradient(${name[4] == "0" ? 'to body' : name[4] == "1" ? 'to top' : name[4] == "2" ? 'to bottom' : name[4] == "3" ? 'to left' : name[4] == "4" ? 'to right' : name[6] == "5" ? 'to top left' : name[4] == "6" ? 'to top right' : name[4] == "7" ? 'to bottom left' : name[4] == "8" ? 'to bottom right' : 'body'},${name[5]},transparent),linear-gradient(${name[6] == "0" ? 'to body' : name[6] == "1" ? 'to top' : name[6] == "2" ? 'to bottom' : name[6] == "3" ? 'to left' : name[6] == "4" ? 'to right' : name[6] == "5" ? 'to top left' : name[6] == "6" ? 'to top right' : name[6] == "7" ? 'to bottom left' : name[6] == "8" ? 'to bottom right' : 'body'},${name[7]},transparent); ${name[8] == "0" ? '' : name[8] == "1" ? 'background-blend-mode: screen;' : name[8] == "2" ? 'background-blend-mode: darken;' : name[8] == "3" ? 'background-blend-mode: difference;' : name[8] == "4" ? 'background-blend-mode: multiply;' : 'background-blend-mode: color-dodge;'}} </style>
+
+`;
+},
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+Как это работает:<br><br>
+1. Выбираем будет ли действовать градиент на всю страницу, либо на один блок;<br>
+2. Если выбрали отдельный блок, выбираем блок;<br>
+3. Выбираем направлении для каждой линии градиента и цвет;<br>
+4. Нажимаем кнопку "Сохранить и закрыть";<br>
+</div>`
+});
+
+
+
+nolimBlocks.push({
+name: "",
+cod: "NLM004",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3036-3635-4033-a466-303931323863/Frame_4.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Градиент для текста в Zero Block",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Класс элемента",
+    "type": "input",
+    "placeholder": "textgradient",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Угол наклона градиента",
+    "type": "number",
+    "placeholder": "0",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Цвет 1",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Цвет 2",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Цвет 3",
+    "type": "color",
+    "value": ""
+}
+]`,
+
+moddefaultsettings: '["","","","",""]',
+modcontent: function modcontentfunc(name) {
+  return `
+
+<style> .${name[0]} { background: -webkit-linear-gradient(${name[1]}deg, ${name[2]} 0%, ${name[3]} 50%, ${name[4]} 100%); -webkit-background-clip: text; -moz-background-clip: text; -webkit-text-fill-color: rgba(255, 255, 255, 0); -moz-text-fill-color: rgba(255, 255, 255, 0); } .textgradient .tn-atom { display: inline; } @supports (-ms-ime-align:auto) { .textgradient { -webkit-text-fill-color: unset!important; }  }   </style>
+
+`;
+
+},
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+Как это работает:<br><br>
+1. Вписываем в первое поле класс и этот же класс ставим текстовому элементу в зеро блоке;<br>
+2. Вписываем угол наклона градиента;<br>
+3. Выбираем направлении для каждой линии градиента и цвет;<br>
+4. Нажимаем кнопку "Сохранить и закрыть";<br>
+</div>`
+});
+
+
+
+nolimBlocks.push({
+name: "",
+cod: "NLM005",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3566-6466-4239-a435-383962663236/Frame_5.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Делаем своё поле загрузки файлов в любой форме",
+grid: "yes",
+modsettings: `[
+{
+    "id": "1",
+    "title": "id блока с формой",
+    "type": "block",
+    "placeholder": "#rec000000",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Цвет текста",
+    "type": "color",
+    "placeholder": "#bc8680",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Цвет фона",
+    "type": "color",
+    "placeholder": "#ffffff",
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Цвет бордера",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Толщина бордера (px)",
+    "type": "number",
+    "placeholder": "2",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Тип border",
+    "type": "select",
+    "options": {
+        "solid": "solid",
+        "dotted": "dotted",
+        "dashed": "dashed",
+        "none": "none"
+    },
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "border-radius (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Размер шрифта (px)",
+    "type": "number",
+    "placeholder": "16",
+    "value": ""
+},
+{
+    "id": "9",
+    "title": "Насыщенность",
+    "type": "select",
+    "options": {
+        "thin": "thin",
+        "light": "light",
+        "normal": "normal",
+        "medium": "medium",
+        "semi-bold": "semi-bold",
+        "bold": "bold"
+    },
+    "value": ""
+},
+{
+    "id": "10",
+    "title": "Дополнительный текст",
+    "type": "groupInputs",
+    "options": [
+        {
+            "title": "Текст",
+            "type": "input",
+            "placeholder": "Файлы .doc, .docx, .txt, .rtf, .odt, .pdf до 2Мб.",
+            "value": ""
+        },
+        {
+            "title": "Цвет текста",
+            "type": "color",
+            "placeholder": "#b6babd",
+            "value": ""
+        },
+        {
+            "title": "Размер шрифта (px)",
+            "type": "number",
+            "placeholder": "14",
+            "value": ""
+        },
+        {
+            "title": "Насыщенность",
+            "type": "select",
+            "options": {
+                "thin": "thin",
+                "light": "light",
+                "normal": "normal",
+                "medium": "medium",
+                "semi-bold": "semi-bold",
+                "bold": "bold"
+            }
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+},
+{
+    "id": "11",
+    "title": "Добавить иконку",
+    "type": "groupInputs",
+    "options": [
+        {
+            "title": "Ссылка на иконку",
+            "type": "image",
+            "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+},
+{
+    "id": "12",
+    "title": "Стили при наведении",
+    "type": "groupInputs",
+    "options": [
+        {
+            "title": "Цвет текста",
+            "type": "color",
+            "placeholder": "#000",
+            "value": ""
+        },
+        {
+            "title": "Цвет фона",
+            "type": "color",
+            "placeholder": "#000",
+            "value": ""
+        },
+        {
+            "title": "Цвет border",
+            "type": "color",
+            "placeholder": "#000",
+            "value": ""
+        },
+        {
+            "title": "Тип border",
+            "type": "select",
+            "options": {
+                "solid": "solid",
+                "dotted": "dotted",
+                "dashed": "dashed",
+                "none": "none"
+            }
+        },
+        {
+            "title": "Цвет доп. текста",
+            "type": "color",
+            "placeholder": "#000",
+            "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+},
+{
+    "title": "При статусе 'Файл загружен'",
+    "type": "text"
+},
+{
+    "id": "13",
+    "title": "Цвет текста",
+    "type": "color",
+    "placeholder": "#bc8680",
+    "value": ""
+},
+{
+    "id": "14",
+    "title": "Цвет фона",
+    "type": "color",
+    "placeholder": "#ffffff",
+    "value": ""
+},
+{
+    "id": "15",
+    "title": "Цвет бордера",
+    "type": "color",
+    "placeholder": "#000",
+    "value": ""
+},
+{
+    "id": "16",
+    "title": "Размер бордера (px)",
+    "type": "number",
+    "placeholder": "16",
+    "value": ""
+},
+{
+    "id": "17",
+    "title": "Тип border",
+    "type": "select",
+    "options": {
+        "solid": "solid",
+        "dotted": "dotted",
+        "dashed": "dashed",
+        "none": "none"
+    },
+    "value": ""
+},
+{
+    "id": "18",
+    "title": "Цвет доп. элементов",
+    "type": "color",
+    "placeholder": "#сecece",
+    "value": ""
+},
+{
+    "id": "19",
+    "title": "Ссылка на иконку справа",
+    "type": "image",
+    "placeholder": "#сecece",
+    "value": ""
+}
+]`,
+moddefaultsettings: '["","","","","","solid","","","thin", ["","","","thin"], [""], ["","","","dotted",""],"","","","","","dashed","",""]',
+modInputChange: function modcontentfunc() {
+
+    if($('[id="group_groupInputs10"] .nolimgroupinput').eq(0).val() != ''){
+        $('[id="group_groupInputs12"] .pe-form-group').eq(5).css('display', 'block');
+    } else if($('[id="group_groupInputs10"] .nolimgroupinput').eq(0).val() == ''){
+        $('[id="group_groupInputs12"] .pe-form-group').eq(5).css('display', 'none');
+    }
+
+},
+modcontent: function modcontentfunc(name) {
+  return `
+
+<style>
+    ${name[0]} .t-upwidget-container__button:not(.t-upwidget-container__button_fileholder) {
+        color: ${n2i(name[1], '#000')} !important;
+        background-color: ${name[2]} !important;
+        max-width: 100% !important;
+        display: block !important;
+        font-size: ${name[7]}px !important;
+        font-weight: ${name[8]} !important;
+        border-radius: ${name[6]}px !important;
+        border: ${name[4]}px ${name[5]} ${name[3]} !important;
+    }
+
+    ${name[11][0] == '' ? '' : `
+    ${name[0]} .t-upwidget-container__button:not(.t-upwidget-container__button_fileholder):hover {
+        color: ${name[11][0]} !important;
+        background-color: ${name[11][1]} !important;
+        border: ${name[4]}px ${name[11][3]} ${name[11][2]} !important;
+    }`}
+
+    ${name[0]} .t-upwidget-container__button {
+        color: ${name[13]} !important;
+        background-color: ${name[14]} !important;
+        max-width: 100% !important;
+        display: block !important;
+        font-size: ${name[7]}px !important;
+        font-weight: ${name[8]} !important;
+        border-radius: ${name[6]}px !important;
+        border: ${name[16]}px ${name[17]} ${name[15]} !important;
+        border-radius: 10px !important;
+    }
+
+    ${name[0]} .t-upwidget-container__button_fileholder:first-child:after {
+        content: "";
+        padding-left: 10px;
+        left: 7px;
+        top: 6px;
+        width: 24px;
+        display: inline-block;
+        height: 24px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(${name[19]});
+        position: relative;
+    }
+
+    ${name[0]} .t-upwidget-container__button.t-upwidget-container__button_fileholder {
+        text-align: center !important;
+    }
+
+    ${name[10][0] == '' ? '' : `
+    ${name[0]} .t-upwidget-container__button:first-child:before {
+        content: '';
+        padding-right: 10px;
+        right: 7px;
+        top: 6px;
+        width: 24px;
+        display: inline-block;
+        height: 24px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(${name[10][0]});
+        position: relative;
+    }`}
+
+    ${name[9][0] == '' ? '' : `
+    ${name[0]} .t-upwidget-container__button.t-text:not(.t-upwidget-container__button_fileholder):after {
+        content: "${name[9][0]}";
+        display: block;
+        white-space: normal;
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 100% !important;
+        color: ${name[9][1]} !important;
+        background-color: inherit !important;
+        max-width: 100% !important;
+        font-size: ${name[9][2]}px !important;
+        font-weight: ${name[9][3]} !important;
+        font-family: inherit;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+
+    ${name[0]} .t-upwidget-container__button.t-text:not(.t-upwidget-container__button_fileholder):hover:after {
+        content: "${name[9][0]}";
+        ${name[11][4] != '' ? `color: ${name[11][4]} !important;` : ''}
+    }`}
+
+    ${name[0]} .t-upwidget-container__button:first-child {
+        padding: 10px 20px !important;
+    }
+
+    ${name[0]} .t-upwidget-container__button:last-child {
+        line-height: 100% !important;
+    }
+
+    ${name[0]} .t-upwidget-container__button_fileholder:first-child:before {
+        content: '' !important;
+        background-image: none !important;
+    }
+
+    ${name[0]} .t-upwidget-container__button_fileholder {
+        font-weight: 700 !important;
+    }
+
+    ${name[0]} .t-upwidget-container__image-done {
+        display: none !important;
+    }
+
+    ${name[0]} .t-upwidget__show-files.t-upwidget-container__data {
+        width: 100% !important;
+    }
+
+    ${name[0]} .t-upwidget-container__data_table_actions_remove g g {
+        fill: ${name[18]};
+    }
+
+    ${name[0]} .t-upwidget-container__button-indiv {
+        background-color: ${name[18]} !important;
+        width: 150px;
+        height: 30px;
+        margin: 0 0 20px 20px !important;
+    }
+
+    ${name[0]} .t-upwidget-container__data_table {
+        margin: 0 15px 15px !important;
+    }
+</style>
+
+`;
+
+},
+instruction: ``
+});
+
+
+
+nolimBlocks.push({
+name: "",
+cod: "NLM006",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3236-3533-4036-b166-343165646330/Frame_6.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Добавляем свои иконки в поле любой формы",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Название поля",
+    "type": "input",
+    "placeholder": "name",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Положение",
+    "type": "select",
+    "options": {
+        "Слева": "left",
+        "Справа": "right"
+    },
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "При вводе",
+    "type": "select",
+    "options": {
+        "Пропадает (placeholder)": "0",
+        "Остается": "1"
+    },
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Отступы от иконки",
+    "type": "select",
+    "options": {
+        "20px": "20px",
+        "18px": "18px",
+        "15px": "15px",
+        "12px": "12px",
+        "10px": "10px"
+    },
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Добавить border",
+    "type": "groupInputs",
+    "options": [
+        {
+            "title": "Размер",
+            "type": "select",
+            "options": {
+                "1px": "1px",
+                "2px": "2px",
+                "3px": "3px",
+                "4px": "4px",
+                "5px": "5px"
+            }
+        },
+        {
+            "title": "Цвет бордера",
+            "type": "color",
+            "placeholder": "#000000",
+            "value": ""
+        },
+        {
+            "title": "Заливать фон?",
+            "type": "select",
+            "options": {
+                "Нет": "0",
+                "Да": "1"
+            }
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Цвет фона",
+    "type": "color",
+    "placeholder": "#ffffff",
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Opacity фона",
+    "type": "select",
+    "options": {
+        "100%": "100",
+        "90%": "90",
+        "80%": "80",
+        "70%": "70",
+        "60%": "60",
+        "50%": "50",
+        "40%": "40",
+        "30%": "30",
+        "20%": "20",
+        "10%": "10"
+    },
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Иконка",
+    "type": "image",
+    "value": ""
+}
+]`,
+
+moddefaultsettings: '["","left","0","20px", ["1px","","0"], "","100",""]',
+modInputChange: function modcontentfunc() {
+
+    $('.noliminput[id="4"]').parents('.pe-form-group').hide();
+    $('[nolim-group-id="groupInputs5"]').hide();
+    $('.noliminput[id="6"]').parents('.pe-form-group').hide();
+    $('.noliminput[id="7"]').parents('.pe-form-group').hide();
+
+    if($('.noliminput[id="3"]').val() == '0'){
+        $('.noliminput[id="4"]').parents('.pe-form-group').hide();
+        // $('[id="grouptitle_groupInputs5"]').hide();
+        // $('[id="group_groupInputs5"]').hide();
+        // $('[id="group_groupInputs5"] .nolimgroupinput').parents('.pe-form-group').hide();
+        $('[nolim-group-id="groupInputs5"]').hide();
+    } else {
+        $('.noliminput[id="4"]').parents('.pe-form-group').show();
+        $('[nolim-group-id="groupInputs5"]').show();
+    }
+
+    if($('[id="group_groupInputs5"] .nolimgroupinput').eq(2).val() == '0' && $('.noliminput[id="3"]').val() == '0'){
+        $('.noliminput[id="6"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="7"]').parents('.pe-form-group').hide();
+    } else if($('[id="group_groupInputs5"] .nolimgroupinput').eq(2).val() == '1' && $('.noliminput[id="3"]').val() == '1') {
+        $('.noliminput[id="6"]').parents('.pe-form-group').show();
+        $('.noliminput[id="7"]').parents('.pe-form-group').show();
+    }
+},
+modcontent: function modcontentfunc(name) {
+  return `
+
+${name[2] == '0' ?  `
+    <style> [name="${name[0]}"]::placeholder { background-image: url(${name[7]}); background-repeat: no-repeat; background-size: 24px; line-height:24;  padding: ${name[1] == 'left' ? '0 20px 0 42px' : '0px'} !important; background-position: ${name[1]} 0px center;  background-origin: padding-box; }  </style> 
+` : name[2] == '1' && name[4][1] != '' ? `
+    <style> 
+        [name="${name[0]}"] {  
+            ${name[4][2] == '0' ? `
+                background: url(${name[7]}), linear-gradient(left, ${name[4][1]}, ${name[4][1]}); 
+                background: url(${name[7]}), -webkit-linear-gradient(left, ${name[4][1]}, ${name[4][1]}); 
+                background: url(${name[7]}), -moz-linear-gradient(left, ${name[4][1]}, ${name[4][1]}); 
+                background: url(${name[7]}), -ms-linear-gradient(left, ${name[4][1]}, ${name[4][1]}); 
+                background: url(${name[7]}), -o-linear-gradient(left, ${name[4][1]}, ${name[4][1]});  
+            ` : `
+                background: url(${name[7]}), linear-gradient(right, ${name[4][1]}, ${name[4][1]}), linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}); 
+                background: url(${name[7]}), -webkit-linear-gradient(right, ${name[4][1]}, ${name[4][1]}), -webkit-linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}); 
+                background: url(${name[7]}), -o-linear-gradient(right, ${name[4][1]}, ${name[4][1]}), -o-linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}); 
+                background: url(${name[7]}), -moz-linear-gradient(right, ${name[4][1]}, ${name[4][1]}), -moz-linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}); 
+                background: url(${name[7]}), -ms-linear-gradient(right, ${name[4][1]}, ${name[4][1]}), -ms-linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''});
+            `}
+            background-size: 24px, ${name[4][0]} 100%, ${name[3] == '20px' ? '65px' : name[3] == '18px' ? '61px' : name[3] == '15px' ? '55px' : name[3] == '12px' ? '48px' : '45px'} 100%; background-repeat: no-repeat; 
+            padding: ${name[1] == 'left' ? (name[3] == '20px' ? '0 20px 0 85px' : name[3] == '18px' ? '0 20px 0 76px' : name[3] == '15px' ? '0 20px 0 71px' : name[3] == '12px' ? '0 20px 0 65px' : '0 20px 0 60px') : (name[3] == '20px' ? '0 85px 0 20px' : name[3] == '18px' ? '0 76px 0 20px' : name[3] == '15px' ? '0 71px 0 20px' : name[3] == '12px' ? '0 65px 0 20px' : '0 60px 0 20px')} !important; 
+            background-position: ${name[1]} ${name[3]} center,${name[1]} ${name[3] == '20px' ? '64px' : name[3] == '18px' ? '60px' : name[3] == '15px' ? '54px' : name[3] == '12px' ? '47px' : '44px'} center, ${name[1] == 'left' ? 'left' : 'right, 0px center'};  
+            background-origin: padding-box; 
+        }  
+    </style> 
+` : name[2] == '1' && name[4][1] == '' ? `
+    <style>  [name="${name[0]}"] { background-image: url(${name[7]}); background-repeat: no-repeat; background-size: 24px; padding: 0 ${name[1] == 'left' ? (name[3] == '20px' ? '20px 0 65px' : name[3] == '18px' ? '20px 0 61px' : name[3] == '15px' ? '20px 0 55px' : name[3] == '12px' ? '20px 0 48px' : '20px 0 45px') : (name[3] == '20px' ? '65px 0 20px' : name[3] == '18px' ? '61px 0 20px' : name[3] == '15px' ? '55px 0 20px' : name[3] == '12px' ? '48px 0 20px' : '45px 0 20px')} !important; background-position:${name[1]} ${name[3]} center;  background-origin: padding-box; background-position-y: center; }  </style>
+` : ''}
+
+    <script> $(document).ready(function() { setTimeout(function(){ var nameinput = '[name="${name[0]}"]'; for (let ig = 0; ig < $(nameinput).length; ig++) { let eg = '#' + $(nameinput).eq(ig).closest('.t-rec').attr('id'); $(eg).on('input focusin focusout', function(e) { e.preventDefault(); for (let i = 0; i < $(eg+' :-webkit-autofill').length; i++) { $(eg+' :-webkit-autofill').eq(i).val($(eg+' :-webkit-autofill').eq(i).val()); } }); } }, 700); }); </script> 
+
+`;
+
+},
+instruction: ``
+});
+
+
+
 nolimBlocks.push({
 video: "ea3oi15KnTQ",
 name: "",
@@ -607,6 +1395,7 @@ modcontent: function modcontentfunc(name) {
                 var newMenu = $(id).addClass("fixed${name[0].replace('#rec','')} ${name[4] == '1' ? `unpinned${name[0].replace('#rec','')}` : ''}"); 
                 ${Number(name[2]) <= 0 && name[4] == '0' ? `$("${name[0]}").addClass("op${name[0].replace('#rec','')}");` : ``}
                 var needMobile = ${name[1]};
+                $('[nolim-search-state]').attr('nolim-search-state', '0');
                 if (!isMobile || (isMobile && needMobile)) { 
                     ${Number(name[2]) <= 0 && name[4] == '1' ? `newMenu.removeClass("unpinned${name[0].replace('#rec','')}"); newMenu.addClass("pinned${name[0].replace('#rec','')}");` : ``}
                     $(window).scroll(function() { 
@@ -639,8 +1428,8 @@ modcontent: function modcontentfunc(name) {
     .unpinned${name[0].replace('#rec','')} { transform: translateY(${name[3] == '0' ? '-100%' : '100%'}); } 
     ` : `
     ${name[0]} {transition: opacity 1s ease-in-out; opacity:0;}
-    .fixed${name[0].replace('#rec','')} { position: fixed; ${name[3] == "0" ? 'top' : 'bottom'}: 0; width: 100%; z-index: 998; } 
-    .op${name[0].replace('#rec','')} { opacity:1 !important; } 
+    .fixed${name[0].replace('#rec','')} { position: fixed; ${name[3] == "0" ? 'top' : 'bottom'}: 0; width: 100%; z-index: 998; pointer-events: none;} 
+    .op${name[0].replace('#rec','')} { opacity:1 !important; pointer-events: auto!important; } 
     `}
 
 </style>
@@ -1135,7 +1924,6 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 
-/*
 nolimBlocks.push({
 name: "",
 cod: "NLM015",
@@ -1163,7 +1951,7 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "3333333",
+    "id": "3",
     "title": "Активный пункт меню:",
     "type": "text",
     "value": ""
@@ -1179,15 +1967,15 @@ modsettings: `[
     "title": "Насыщенность (font-weight)",
     "type": "select",
     "options": {
-        "100": "0",
-        "200": "1",
-        "300": "2",
-        "400": "3",
-        "500": "4",
-        "600": "5",
-        "700": "6",
-        "800": "7",
-        "900": "8"
+        "100": "100",
+        "200": "200",
+        "300": "300",
+        "400": "400",
+        "500": "500",
+        "600": "600",
+        "700": "700",
+        "800": "800",
+        "900": "900"
     },
     "value": ""
 },
@@ -1196,18 +1984,18 @@ modsettings: `[
     "title": "Непрозрачность",
     "type": "select",
     "options": {
-        "100%": "0",
-        "95%": "1",
-        "90%": "2",
-        "80%": "3",
-        "70%": "4",
-        "60%": "5",
-        "50%": "6",
-        "40%": "7",
-        "30%": "8",
-        "20%": "9",
-        "10%": "10",
-        "0%": "11"
+        "100%": "100%",
+        "95%": "95%",
+        "90%": "90%",
+        "80%": "80%",
+        "70%": "70%",
+        "60%": "60%",
+        "50%": "50%",
+        "40%": "40%",
+        "30%": "30%",
+        "20%": "20%",
+        "10%": "10%",
+        "0%": "0%"
     },
     "value": ""
 },
@@ -1238,33 +2026,33 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "9",
+    "id": "8",
     "title": "Цвет текста",
     "type": "color",
     "value": ""
 },
 {
-    "id": "10",
+    "id": "9",
     "title": "Непрозрачность",
     "type": "select",
     "options": {
-        "100%": "0",
-        "95%": "1",
-        "90%": "2",
-        "80%": "3",
-        "70%": "4",
-        "60%": "5",
-        "50%": "6",
-        "40%": "7",
-        "30%": "8",
-        "20%": "9",
-        "10%": "10",
-        "0%": "11"
+        "100%": "100%",
+        "95%": "95%",
+        "90%": "90%",
+        "80%": "80%",
+        "70%": "70%",
+        "60%": "60%",
+        "50%": "50%",
+        "40%": "40%",
+        "30%": "30%",
+        "20%": "20%",
+        "10%": "10%",
+        "0%": "0%"
     },
     "value": ""
 },
 {
-    "id": "11",
+    "id": "10",
     "title": "Подчеркнуть пункт меню",
     "type": "select",
     "options": {
@@ -1278,24 +2066,34 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "12",
+    "id": "11",
     "title": "Цвет подчеркивания",
     "type": "color",
     "value": ""
 }
 ]`,
 
-moddefaultsettings: '["","","","","","","","","","","","",""]',
+moddefaultsettings: '["","","","100","100%","0","","","","100%","0",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
 <script src="https://static.tildacdn.com/js/tilda-menusub-1.0.min.js" charset="utf-8" async=""></script> <script> function t_menusub_highlight2() { var url = window.location.href , pathname = window.location.pathname; "/" == url.substr(url.length - 1) && (url = url.slice(0, -1)), "/" == pathname.substr(pathname.length - 1) && (pathname = pathname.slice(0, -1)), "/" == pathname.charAt(0) && (pathname = pathname.slice(1)), "" == pathname && (pathname = "/"),  cutommenu = ".${name[1]}", $(cutommenu+' a[href="' + url + '"]').addClass("t-active"), $(cutommenu+' a[href="' + url + '/"]').addClass("t-active"), $(cutommenu+' a[href="' + pathname + '"]').addClass("t-active"), $(cutommenu+' a[href="/' + pathname + '"]').addClass("t-active"), $(cutommenu+' a[href="' + pathname + '/"]').addClass("t-active"), $(cutommenu+' a[href="/' + pathname + '/"]').addClass("t-active") } function t_menusub_checkAnchorLinks2(recid) { if ($(window).width() >= 960) { var navLinks = $("#rec" + recid).find('.${name[1]} a:not(.tooltipstered)[href*="#"]'); navLinks.length > 0 && t_menusub_catchScroll(navLinks) } } $(document).ready(function(){ t_menusub_highlight2(); setTimeout(function(){ t_menusub_highlight2(); t_menusub_checkAnchorLinks2("${name[0].replace('#rec','')}"); },600); }); </script> 
 
-<style> .${name[1]} .tn-atom { -webkit-transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out; transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out; } 
+<style> 
 
-.${name[1]} .tn-atom:after { content: ''; position: absolute; left: 0; bottom: 20%; opacity: 0; width: 100%; height: 100%; border-bottom: ${name[11] == "2" ? "1" : name[11] == "3" ? "2" : name[11] == "4" ? "3" : name[11] == "5" ? "4" : "0"}px solid ${name[12]}; -webkit-box-shadow: inset 0px -${name[11] == "2" ? "1" : name[11] == "3" ? "2" : name[11] == "4" ? "3" : name[11] == "5" ? "4" : "0"}px 0px 0px ${name[12]}; -moz-box-shadow: inset 0px -${name[11] == "2" ? "1" : name[11] == "3" ? "2" : name[11] == "4" ? "3" : name[11] == "5" ? "4" : "0"}px 0px 0px ${name[12]}; box-shadow: inset 0px -${name[11] == "2" ? "1" : name[11] == "3" ? "2" : name[11] == "4" ? "3" : name[11] == "5" ? "4" : "0"}px 0px 0px ${name[12]}; -webkit-transition: all 0.3s ease; transition: all 0.3s ease; } 
+    .${name[1]} .tn-atom { -webkit-transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out; transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out; } 
+    .${name[1]} .tn-atom:after { content: ''; position: absolute; left: 0; bottom: 20%; opacity: 0; width: 100%; height: 100%; border-bottom: ${name[9] == "2" ? "1" : name[9] == "3" ? "2" : name[9] == "4" ? "3" : name[9] == "5" ? "4" : "0"}px solid ${name[10]}; 
+    -webkit-box-shadow: inset 0px -1px 0px 0px ${name[10]}; 
+    -moz-box-shadow: inset 0px -1px 0px 0px ${name[10]}; box-shadow: inset 0px -1px 0px 0px ${name[10]}; 
+    -webkit-transition: all 0.3s ease; transition: all 0.3s ease; } 
+    .${name[1]} .tn-atom.t-active{ color: ${name[2]} !important; font-weight: ${name[3]} !important; opacity: ${name[4]} !important; } 
+    .${name[1]} .tn-atom.t-active:after { opacity: 1; bottom: -1px; border-bottom: ${name[5] == "2" ? "1" : name[5] == "3" ? "2" : name[5] == "4" ? "3" : name[5] == "5" ? "4" : "0"}px solid ${name[6]}; 
+    -webkit-box-shadow: inset 0px -1px 0px 0px ${name[6]}; 
+    -moz-box-shadow: inset 0px -1px 0px 0px ${name[6]}; box-shadow: inset 0px -1px 0px 0px ${name[6]}; } 
+    .${name[1]} .tn-atom:not(.t-active):not(.tooltipstered):hover { color: ${name[7]} !important; opacity: ${name[8]}; } 
+    .${name[1]} .tn-atom:not(.t-active):not(.tooltipstered):hover::after { opacity: 1; bottom: -1px; } 
 
-.${name[1]} .tn-atom.t-active{ color: ${name[3]} !important; font-weight: ${name[4] == "0" ? "100" : name[4] == "1" ? "200" : name[4] == "2" ? "300" : name[4] == "3" ? "400" : name[4] == "4" ? "500" : name[4] == "5" ? "600" : name[4] == "6" ? "700" : name[4] == "7" ? "800" : name[4] == "8" ? "900" : ""} !important; opacity: ${name[5] == "0" ? "100%" : name[5] == "1" ? "95%" : name[5] == "2" ? "90%" : name[5] == "3" ? "80%" : name[5] == "4" ? "70%" : name[5] == "5" ? "60%" : name[5] == "6" ? "50%" : name[5] == "7" ? "40%" : name[5] == "8" ? "30%" : name[5] == "9" ? "20%" : name[5] == "10" ? "10%" : name[5] == "11" ? "0%" : ""} !important; } .${name[1]} .tn-atom.t-active:after { opacity: 1; bottom: -1px; border-bottom: ${name[6] == "2" ? "1" : name[6] == "3" ? "2" : name[6] == "4" ? "3" : name[6] == "5" ? "4" : "0"}px solid ${name[7]}; -webkit-box-shadow: inset 0px -${name[6] == "2" ? "1" : name[6] == "3" ? "2" : name[6] == "4" ? "3" : name[6] == "5" ? "4" : "0"}px 0px 0px ${name[7]}; -moz-box-shadow: inset 0px -${name[6] == "2" ? "1" : name[6] == "3" ? "2" : name[6] == "4" ? "3" : name[6] == "5" ? "4" : "0"}px 0px 0px ${name[7]}; box-shadow: inset 0px -${name[6] == "2" ? "1" : name[6] == "3" ? "2" : name[6] == "4" ? "3" : name[6] == "5" ? "4" : "0"}px 0px 0px ${name[7]}; } .${name[1]} .tn-atom:not(.t-active):not(.tooltipstered):hover { color: ${name[9]} !important; opacity: ${name[10] == "0" ? "100%" : name[10] == "1" ? "95%" : name[10] == "2" ? "90%" : name[10] == "3" ? "80%" : name[10] == "4" ? "70%" : name[10] == "5" ? "60%" : name[10] == "6" ? "50%" : name[10] == "7" ? "40%" : name[10] == "8" ? "30%" : name[10] == "9" ? "20%" : name[10] == "10" ? "10%" : name[10] == "11" ? "0%" : ""}; } .${name[1]} .tn-atom:not(.t-active):not(.tooltipstered):hover::after { opacity: 1; bottom: -1px; } </style>
+</style>
 
 `;
 },
@@ -1313,7 +2111,6 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 </div>`
 });
 
-*/
 
 
 nolimBlocks.push({
@@ -1488,42 +2285,80 @@ modsettings: `[
     "type": "input",
     "placeholder": "close",
     "value": ""
+},
+{
+    "id": "4",
+    "title": "Затемнение фона",
+    "type": "select",
+    "options": {
+        "Да": "0",
+        "Нет": "1"
+    },
+    "value": ""
 }
 ]`,
 
-moddefaultsettings: '["","",""]',
+moddefaultsettings: '["","","","0"]',
 modcontent: function modcontentfunc(name) {
     return `
 
-<a href="${name[1]}" class="nolimpopupshow" style="display:none;"></a> 
+    <a href="${name[1]}" class="nolimpopupshow" style="display:none;"></a>
+    <script>
+        $(document).ready(function() {
+            var o = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+                e = "${name[0]} .t396",
+                c = '[href="${name[1]}"]';
+            $("${name[0]} .t396" + " .t396__filter").click(function() {
+                $("${name[0]} .t396").fadeOut(), $(".t-body").removeClass("nolimPopUp");
+            }), $(c).click(function() {
+                $("${name[0]} .t396").fadeIn(), $(".t-body").addClass("nolimPopUp");
+                "y" === window.lazy && t_lazyload_update(), typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider("${name[0].replace('#rec','')}"),
+                t396_doResize('${name[0].replace('#rec','')}');
+            });
+            $('.${n2i(name[2],'popupclose')}').addClass("nolim_popup_close").click(function() {
+                $("${name[0]} .t396").fadeOut(), $(".t-body").removeClass("nolimPopUp");
+            })
+        });
+    </script>
 
-<script> 
+    <style>
+        ${name[0]} .t396 .t396__filter,
+        .${n2i(name[2],'popupclose')} {
+            cursor: pointer
+        }
 
-$(document).ready(function() { 
+        ${name[0]} .t396 {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            overflow-y: auto;
+        }
 
-    var e = "${name[0]} .t396", c = '[href="${name[1]}"]'; 
+    ${name[3] == '0' ? `
+        ${name[0]} .t396:before {
+            content:'';
+            background-color: #00000060;
+            position: fixed;
+            width: 110%;
+            height: 110%;
+        }
+    ` : ''}
 
-    $("${name[0]} .t396" + " .t396__filter").click(function() { 
-            $("${name[0]} .t396").fadeOut(), $("html").css("overflow", "visible"), $('.t-body').removeClass('nolimPopUp'); 
-    }), $(c).click(function() { 
-            $("${name[0]} .t396").fadeIn(),  
-            $('.t-body').addClass('nolimPopUp'); 
-            $("html").css("overflow", "hidden"), 
-            "y" === window.lazy && t_lazyload_update(), typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}') 
-    }), $('.${name[2]}').addClass('nolim_popup_close').click(function() { 
-            $("${name[0]} .t396").fadeOut(), $('.t-body').removeClass('nolimPopUp'); $("html").css("overflow", "visible");
-    }) 
-
-}); 
-
-</script> 
-
-<style> ${name[0]} .t396 .t396__filter, .${name[2]}.nolim_popup_close{cursor:pointer} ${name[0]} .t396{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:9999} .nolimPopUp{height:100vh; min-height:100vh; overflow:visible;}</style>
-
+        .nolimPopUp {
+            height: 100vh;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+    </style>
 `;
 },
 
 });
+
 
 
 nolimBlocks.push({
@@ -2143,7 +2978,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 */
 
-
+/*
 nolimBlocks.push({
 name: "",
 cod: "NLM034",
@@ -2216,11 +3051,14 @@ modoptions: [function modcontentfunc(name) {
         var newStr = name.split('width=')[1].split('&amp;height=')[0];
         name = name.replace(newStr,'100%');
             console.log(name);
-        newStr = name.split('height')[1].split('amp;')[0];
+        newStr = name.split('height=')[1].split('amp;')[0];
             console.log(newStr);
-        name = name.replace(newStr,'=100%&');
+        name = name.replace(newStr,'100%&');
         
         name = name.split('src="')[1].split('"')[0];
+        // name = name.join();
+        // name = name.replace('<script type="text/javascript" charset="utf-8" async src="', '');
+        // name = name.replace('"></script>', '');
     }
     return name;
 }],
@@ -2232,7 +3070,7 @@ modcontent: function modcontentfunc(name, i) {
 `;
 }
 });
-
+*/
 
 
 nolimBlocks.push({
@@ -4051,10 +4889,10 @@ modcontent: function modcontentfunc(name) {
 <script> $(document).ready(function() { var o = "${name[0]}"; $('[href="${name[2]}"]').click(function() { 
     $('.t-body').removeClass('t-body_success-popup-showed'); 
     $('.t-body').removeClass('t-body_scroll-locked');
-    $('.t-body').removeClass('t-body_popupshowed');
-    $("${name[0]}").fadeOut(), $("html").css("overflow", "visible"), $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() }), $("${name[0]}" + " .t396__filter").click(function() { $('.t-body').removeClass('t-body_success-popup-showed'); $('.t-body').removeClass('t-body_scroll-locked'); $("${name[0]}").fadeOut(), $('.t-body').removeClass('t-body_popupshowed'); $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() });
+    $('.t-body').removeClass('nolimPopUp');
+    $("${name[0]}").fadeOut(), $("html").css("overflow", "visible"), $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() }), $("${name[0]}" + " .t396__filter").click(function() { $('.t-body').removeClass('t-body_success-popup-showed'); $('.t-body').removeClass('t-body_scroll-locked'); $("${name[0]}").fadeOut(), $('.t-body').removeClass('nolimPopUp'); $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() });
 
-var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $('.t-body').addClass('t-body_popupshowed'); $("${name[0]}").css("overflow", "auto"), "y" === window.lazy && t_lazyload_update(), $("${name[1]} .t706").hide(), $('.t-form-success-popup').hide(); setTimeout(function() { $('${name[1]} .t-popup__close').trigger('click'); $('.nolim_popup_close').click(); }, 100); $('${name[1]} .js-successbox').hide(); $('${name[1]} .t653 .js-successbox').show(); typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}'); };
+var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $('.t-body').addClass('nolimPopUp'); $("${name[0]}").css("overflow", "auto"), "y" === window.lazy && t_lazyload_update(), $("${name[1]} .t706").hide(), $('.t-form-success-popup').hide(); setTimeout(function() { $('${name[1]} .t-popup__close').trigger('click'); $('.nolim_popup_close').click(); }, 100); $('${name[1]} .js-successbox').hide(); $('${name[1]} .t653 .js-successbox').show(); typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}'); };
 
     if(typeof window.NolimSuccessFunction${name[1].replace('#rec','')} == "undefined") {
         window.NolimSuccessFunction${name[1].replace('#rec','')} = [];
@@ -4071,7 +4909,7 @@ var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $('.t-body').a
 
 setInterval(function(){ $("${name[1]} .js-form-proccess").each(function() { $(this).data("success-callback", 'window.mySuccessFunction${name[1].replace('#rec','')}') }) },1000); }); 
 
-</script> <style> ${name[0]} .t396__filter{cursor:pointer}${name[0]}{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:100005;} ${name[1]} .t281__input-wrapper, ${name[1]} .t274__wrapper{ opacity: 1 !important; max-height: unset !important; .t-body_popupshowed{ height: 100vh; min-height: 100vh; overflow: hidden; } </style>
+</script> <style> ${name[0]} .t396__filter{cursor:pointer}${name[0]}{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:100005;} ${name[1]} .t281__input-wrapper, ${name[1]} .t274__wrapper{ opacity: 1 !important; max-height: unset !important; .nolimPopUp{ height: 100vh; min-height: 100vh; overflow: hidden; } </style>
 
 `;
 },
@@ -4189,7 +5027,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 
 
-/*
+
 nolimBlocks.push({
 name: "",
 cod: "NLM058",
@@ -4210,7 +5048,6 @@ modsettings: `[
     "value": ""
 }
 ]`,
-
 moddefaultsettings: '[""]',
 modcontent: function modcontentfunc(name) {
   return `
@@ -4237,7 +5074,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 </div>`
 });
-*/
+
 
 
 nolimBlocks.push({
