@@ -4,6 +4,7 @@ nolimBlocks.push({
 video: "egTeJzQhM3M",
 name: "",
 cod: "NLM001",
+filter: "Популярные, Формы",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
@@ -89,6 +90,7 @@ icon: "https://static.tildacdn.com/tild6264-6262-4033-a438-333931616334/Frame_2.
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты",
 title: "Добавляем свой фон в любой блок",
 modsettings: `[
 {
@@ -112,12 +114,10 @@ modsettings: `[
     "id": "3",
     "title": "Ссылка на изображение",
     "type": "image",
-    "value": "",
-    "placeholder": "",
-    "value": "https://static.tildacdn.com/tild3736-3037-4334-b863-353562353039/d946dbce69a24e0288d5.jpg"
+    "value": ""
 }
 ]`,
-moddefaultsettings: '["","",""]',
+moddefaultsettings: '["","0",""]',
 modcontent: function modcontentfunc(name) {
 
   return `
@@ -148,6 +148,7 @@ icon: "https://static.tildacdn.com/tild3632-3133-4263-a538-323332323535/Frame_3.
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты",
 title: "Cпектральный фон из 3х цветов",
 modsettings: `[
 {
@@ -252,7 +253,7 @@ modsettings: `[
 }
 ]`,
 
-moddefaultsettings: '["","","","","","","","",""]',
+moddefaultsettings: '["","","0","","0","","0","","0"]',
 modcontent: function modcontentfunc(name) {
   return `
 
@@ -280,6 +281,7 @@ icon: "https://static.tildacdn.com/tild3036-3635-4033-a466-303931323863/Frame_4.
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Текст",
 title: "Градиент для текста в Zero Block",
 modsettings: `[
 {
@@ -337,451 +339,256 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 
-nolimBlocks.push({
-name: "",
-cod: "NLM003",
-descr: "",
-descr_ru: "",
-disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3632-3133-4263-a538-323332323535/Frame_3.jpg",
-icon2: "/files/tplsthumbs/other-block-02.png",
-id: "131",
-inlib: "y",
-title: "Cпектральный фон из 3х цветов",
-modsettings: `[
-{
-    "id": "1",
-    "title": "Тип фона:",
-    "type": "select",
-    "options": {
-        "На отдельный блок": "0",
-        "На всю страницу": "1"
-    },
-    "value": ""
-},
-{
-    "id": "2",
-    "title": "id блока",
-    "type": "block",
-    "placeholder": "#rec0012345",
-    "value": ""
-},
-{
-    "id": "3",
-    "title": "Направление линии градиента",
-    "type": "select",
-    "options": {
-        "По умолчанию": "0",
-        "Верх": "1",
-        "Низ": "2",
-        "Лево": "3",
-        "Право": "4",
-        "Лево Верх": "5",
-        "Право Верх": "6",
-        "Лево Низ": "7",
-        "Право Низ": "8"
-    },
-    "value": ""
-},
-{
-    "id": "4",
-    "title": "Цвет",
-    "type": "color",
-    "value": ""
-},
-{
-    "id": "5",
-    "title": "Направление линии градиента",
-    "type": "select",
-    "options": {
-        "По умолчанию": "0",
-        "Верх": "1",
-        "Низ": "2",
-        "Лево": "3",
-        "Право": "4",
-        "Лево Верх": "5",
-        "Право Верх": "6",
-        "Лево Низ": "7",
-        "Право Низ": "8"
-    },
-    "value": ""
-},
-{
-    "id": "6",
-    "title": "Цвет",
-    "type": "color",
-    "value": ""
-},
-{
-    "id": "7",
-    "title": "Направление линии градиента",
-    "type": "select",
-    "options": {
-        "По умолчанию": "0",
-        "Верх": "1",
-        "Низ": "2",
-        "Лево": "3",
-        "Право": "4",
-        "Лево Верх": "5",
-        "Право Верх": "6",
-        "Лево Низ": "7",
-        "Право Низ": "8"
-    },
-    "value": ""
-},
-{
-    "id": "8",
-    "title": "Цвет",
-    "type": "color",
-    "value": ""
-},
-{
-    "id": "9",
-    "title": "Фильтр для цвета",
-    "type": "select",
-    "options": {
-        "Без фильтра": "0",
-        "Screen": "1",
-        "Darken": "2",
-        "Difference": "3",
-        "Multiply": "4",
-        "Color-dodge": "5"
-    },
-    "value": ""
-}
-]`,
-
-moddefaultsettings: '["","","","","","","","",""]',
-modcontent: function modcontentfunc(name) {
-  return `
-
-<style> ${name[0] == "0" ? `${name[1]}` : 'body'}{background:linear-gradient(${name[2] == "0" ? 'to body' : name[2] == "1" ? 'to top' : name[2] == "2" ? 'to bottom' : name[2] == "3" ? 'to left' : name[2] == "4" ? 'to right' : name[2] == "5" ? 'to top left' : name[2] == "6" ? 'to top right' : name[2] == "7" ? 'to bottom left' : name[2] == "8" ? 'to bottom right' : 'body'},${name[3]},transparent),linear-gradient(${name[4] == "0" ? 'to body' : name[4] == "1" ? 'to top' : name[4] == "2" ? 'to bottom' : name[4] == "3" ? 'to left' : name[4] == "4" ? 'to right' : name[6] == "5" ? 'to top left' : name[4] == "6" ? 'to top right' : name[4] == "7" ? 'to bottom left' : name[4] == "8" ? 'to bottom right' : 'body'},${name[5]},transparent),linear-gradient(${name[6] == "0" ? 'to body' : name[6] == "1" ? 'to top' : name[6] == "2" ? 'to bottom' : name[6] == "3" ? 'to left' : name[6] == "4" ? 'to right' : name[6] == "5" ? 'to top left' : name[6] == "6" ? 'to top right' : name[6] == "7" ? 'to bottom left' : name[6] == "8" ? 'to bottom right' : 'body'},${name[7]},transparent); ${name[8] == "0" ? '' : name[8] == "1" ? 'background-blend-mode: screen;' : name[8] == "2" ? 'background-blend-mode: darken;' : name[8] == "3" ? 'background-blend-mode: difference;' : name[8] == "4" ? 'background-blend-mode: multiply;' : 'background-blend-mode: color-dodge;'}} </style>
-
-`;
-},
-instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
-Как это работает:<br><br>
-1. Выбираем будет ли действовать градиент на всю страницу, либо на один блок;<br>
-2. Если выбрали отдельный блок, выбираем блок;<br>
-3. Выбираем направлении для каждой линии градиента и цвет;<br>
-4. Нажимаем кнопку "Сохранить и закрыть";<br>
-</div>`
-});
 
 
 
 nolimBlocks.push({
-name: "",
-cod: "NLM004",
-descr: "",
-descr_ru: "",
-disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3036-3635-4033-a466-303931323863/Frame_4.jpg",
-icon2: "/files/tplsthumbs/other-block-02.png",
-id: "131",
-inlib: "y",
-title: "Градиент для текста в Zero Block",
-modsettings: `[
-{
-    "id": "1",
-    "title": "Класс элемента",
-    "type": "input",
-    "placeholder": "textgradient",
-    "value": ""
-},
-{
-    "id": "2",
-    "title": "Угол наклона градиента",
-    "type": "number",
-    "placeholder": "0",
-    "value": ""
-},
-{
-    "id": "3",
-    "title": "Цвет 1",
-    "type": "color",
-    "value": ""
-},
-{
-    "id": "4",
-    "title": "Цвет 2",
-    "type": "color",
-    "value": ""
-},
-{
-    "id": "5",
-    "title": "Цвет 3",
-    "type": "color",
-    "value": ""
-}
-]`,
-
-moddefaultsettings: '["","","","",""]',
-modcontent: function modcontentfunc(name) {
-  return `
-
-<style> .${name[0]} { background: -webkit-linear-gradient(${name[1]}deg, ${name[2]} 0%, ${name[3]} 50%, ${name[4]} 100%); -webkit-background-clip: text; -moz-background-clip: text; -webkit-text-fill-color: rgba(255, 255, 255, 0); -moz-text-fill-color: rgba(255, 255, 255, 0); } .textgradient .tn-atom { display: inline; } @supports (-ms-ime-align:auto) { .textgradient { -webkit-text-fill-color: unset!important; }  }   </style>
-
-`;
-
-},
-instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
-Как это работает:<br><br>
-1. Вписываем в первое поле класс и этот же класс ставим текстовому элементу в зеро блоке;<br>
-2. Вписываем угол наклона градиента;<br>
-3. Выбираем направлении для каждой линии градиента и цвет;<br>
-4. Нажимаем кнопку "Сохранить и закрыть";<br>
-</div>`
-});
-
-
-
-nolimBlocks.push({
-name: "",
-cod: "NLM005",
-descr: "",
-descr_ru: "",
-disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3566-6466-4239-a435-383962663236/Frame_5.jpg",
-icon2: "/files/tplsthumbs/other-block-02.png",
-id: "131",
-inlib: "y",
-title: "Делаем своё поле загрузки файлов в любой форме",
-grid: "yes",
-modsettings: `[
-{
-    "id": "1",
-    "title": "id блока с формой",
-    "type": "block",
-    "placeholder": "#rec000000",
-    "value": ""
-},
-{
-    "id": "2",
-    "title": "Цвет текста",
-    "type": "color",
-    "placeholder": "#bc8680",
-    "value": ""
-},
-{
-    "id": "3",
-    "title": "Цвет фона",
-    "type": "color",
-    "placeholder": "#ffffff",
-    "value": ""
-},
-{
-    "id": "4",
-    "title": "Цвет бордера",
-    "type": "color",
-    "placeholder": "#000000",
-    "value": ""
-},
-{
-    "id": "5",
-    "title": "Толщина бордера (px)",
-    "type": "number",
-    "placeholder": "2",
-    "value": ""
-},
-{
-    "id": "6",
-    "title": "Тип border",
-    "type": "select",
-    "options": {
-        "solid": "solid",
-        "dotted": "dotted",
-        "dashed": "dashed",
-        "none": "none"
+    name: "",
+    cod: "NLM005",
+    descr: "",
+    descr_ru: "",
+    disableforplan0: "y",
+    icon: "https://static.tildacdn.com/tild3566-6466-4239-a435-383962663236/Frame_5.jpg",
+    icon2: "/files/tplsthumbs/other-block-02.png",
+    id: "131",
+    inlib: "y",
+    filter: "Формы,Популярные",
+    title: "Делаем своё поле загрузки файлов в любой форме",
+    grid: "yes",
+    modsettings: `[
+    {
+        "id": "1",
+        "title": "id блока с формой",
+        "type": "block",
+        "placeholder": "#rec000000",
+        "value": ""
     },
-    "value": ""
-},
-{
-    "id": "7",
-    "title": "border-radius (px)",
-    "type": "number",
-    "placeholder": "20",
-    "value": ""
-},
-{
-    "id": "8",
-    "title": "Размер шрифта (px)",
-    "type": "number",
-    "placeholder": "16",
-    "value": ""
-},
-{
-    "id": "9",
-    "title": "Насыщенность",
-    "type": "select",
-    "options": {
-        "thin": "thin",
-        "light": "light",
-        "normal": "normal",
-        "medium": "medium",
-        "semi-bold": "semi-bold",
-        "bold": "bold"
+    {
+        "id": "2",
+        "title": "Цвет текста",
+        "type": "color",
+        "placeholder": "#bc8680",
+        "value": ""
     },
-    "value": ""
-},
-{
-    "id": "10",
-    "title": "Дополнительный текст",
-    "type": "groupInputs",
-    "options": [
-        {
-            "title": "Текст",
-            "type": "input",
-            "placeholder": "Файлы .doc, .docx, .txt, .rtf, .odt, .pdf до 2Мб.",
-            "value": ""
+    {
+        "id": "3",
+        "title": "Цвет фона",
+        "type": "color",
+        "placeholder": "#ffffff",
+        "value": ""
+    },
+    {
+        "id": "4",
+        "title": "Цвет бордера",
+        "type": "color",
+        "placeholder": "#000000",
+        "value": ""
+    },
+    {
+        "id": "5",
+        "title": "Толщина бордера (px)",
+        "type": "number",
+        "placeholder": "2",
+        "value": ""
+    },
+    {
+        "id": "6",
+        "title": "Тип border",
+        "type": "select",
+        "options": {
+            "solid": "solid",
+            "dotted": "dotted",
+            "dashed": "dashed",
+            "none": "none"
         },
-        {
-            "title": "Цвет текста",
-            "type": "color",
-            "placeholder": "#b6babd",
-            "value": ""
+        "value": ""
+    },
+    {
+        "id": "7",
+        "title": "border-radius (px)",
+        "type": "number",
+        "placeholder": "20",
+        "value": ""
+    },
+    {
+        "id": "8",
+        "title": "Размер шрифта (px)",
+        "type": "number",
+        "placeholder": "16",
+        "value": ""
+    },
+    {
+        "id": "9",
+        "title": "Насыщенность",
+        "type": "select",
+        "options": {
+            "thin": "thin",
+            "light": "light",
+            "normal": "normal",
+            "medium": "medium",
+            "semi-bold": "semi-bold",
+            "bold": "bold"
         },
-        {
-            "title": "Размер шрифта (px)",
-            "type": "number",
-            "placeholder": "14",
-            "value": ""
-        },
-        {
-            "title": "Насыщенность",
-            "type": "select",
-            "options": {
-                "thin": "thin",
-                "light": "light",
-                "normal": "normal",
-                "medium": "medium",
-                "semi-bold": "semi-bold",
-                "bold": "bold"
+        "value": ""
+    },
+    {
+        "id": "10",
+        "title": "Дополнительный текст",
+        "type": "groupInputs",
+        "options": [
+            {
+                "title": "Текст",
+                "type": "input",
+                "placeholder": "Файлы .doc, .docx, .txt, .rtf, .odt, .pdf до 2Мб.",
+                "value": ""
+            },
+            {
+                "title": "Цвет текста",
+                "type": "color",
+                "placeholder": "#b6babd",
+                "value": ""
+            },
+            {
+                "title": "Размер шрифта (px)",
+                "type": "number",
+                "placeholder": "14",
+                "value": ""
+            },
+            {
+                "title": "Насыщенность",
+                "type": "select",
+                "options": {
+                    "thin": "thin",
+                    "light": "light",
+                    "normal": "normal",
+                    "medium": "medium",
+                    "semi-bold": "semi-bold",
+                    "bold": "bold"
+                }
             }
-        }
-    ],
-    "limit": "14",
-    "placeholder": "class",
-    "value": ""
-},
-{
-    "id": "11",
-    "title": "Добавить иконку",
-    "type": "groupInputs",
-    "options": [
-        {
-            "title": "Ссылка на иконку",
-            "type": "image",
-            "value": ""
-        }
-    ],
-    "limit": "14",
-    "placeholder": "class",
-    "value": ""
-},
-{
-    "id": "12",
-    "title": "Стили при наведении",
-    "type": "groupInputs",
-    "options": [
-        {
-            "title": "Цвет текста",
-            "type": "color",
-            "placeholder": "#000",
-            "value": ""
-        },
-        {
-            "title": "Цвет фона",
-            "type": "color",
-            "placeholder": "#000",
-            "value": ""
-        },
-        {
-            "title": "Цвет border",
-            "type": "color",
-            "placeholder": "#000",
-            "value": ""
-        },
-        {
-            "title": "Тип border",
-            "type": "select",
-            "options": {
-                "solid": "solid",
-                "dotted": "dotted",
-                "dashed": "dashed",
-                "none": "none"
-            }
-        },
-        {
-            "title": "Цвет доп. текста",
-            "type": "color",
-            "placeholder": "#000",
-            "value": ""
-        }
-    ],
-    "limit": "14",
-    "placeholder": "class",
-    "value": ""
-},
-{
-    "title": "При статусе 'Файл загружен'",
-    "type": "text"
-},
-{
-    "id": "13",
-    "title": "Цвет текста",
-    "type": "color",
-    "placeholder": "#bc8680",
-    "value": ""
-},
-{
-    "id": "14",
-    "title": "Цвет фона",
-    "type": "color",
-    "placeholder": "#ffffff",
-    "value": ""
-},
-{
-    "id": "15",
-    "title": "Цвет бордера",
-    "type": "color",
-    "placeholder": "#000",
-    "value": ""
-},
-{
-    "id": "16",
-    "title": "Размер бордера (px)",
-    "type": "number",
-    "placeholder": "16",
-    "value": ""
-},
-{
-    "id": "17",
-    "title": "Тип border",
-    "type": "select",
-    "options": {
-        "solid": "solid",
-        "dotted": "dotted",
-        "dashed": "dashed",
-        "none": "none"
+        ],
+        "limit": "14",
+        "placeholder": "class",
+        "value": ""
     },
-    "value": ""
-},
-{
-    "id": "18",
-    "title": "Цвет доп. элементов",
-    "type": "color",
-    "placeholder": "#сecece",
-    "value": ""
-},
-{
-    "id": "19",
-    "title": "Ссылка на иконку справа",
-    "type": "image",
-    "placeholder": "#сecece",
-    "value": ""
-}
-]`,
+    {
+        "id": "11",
+        "title": "Добавить иконку",
+        "type": "groupInputs",
+        "options": [
+            {
+                "title": "Ссылка на иконку",
+                "type": "image",
+                "value": ""
+            }
+        ],
+        "limit": "14",
+        "placeholder": "class",
+        "value": ""
+    },
+    {
+        "id": "12",
+        "title": "Стили при наведении",
+        "type": "groupInputs",
+        "options": [
+            {
+                "title": "Цвет текста",
+                "type": "color",
+                "placeholder": "#000",
+                "value": ""
+            },
+            {
+                "title": "Цвет фона",
+                "type": "color",
+                "placeholder": "#000",
+                "value": ""
+            },
+            {
+                "title": "Цвет border",
+                "type": "color",
+                "placeholder": "#000",
+                "value": ""
+            },
+            {
+                "title": "Тип border",
+                "type": "select",
+                "options": {
+                    "solid": "solid",
+                    "dotted": "dotted",
+                    "dashed": "dashed",
+                    "none": "none"
+                }
+            },
+            {
+                "title": "Цвет доп. текста",
+                "type": "color",
+                "placeholder": "#000",
+                "value": ""
+            }
+        ],
+        "limit": "14",
+        "placeholder": "class",
+        "value": ""
+    },
+    {
+        "title": "При статусе 'Файл загружен'",
+        "type": "text"
+    },
+    {
+        "id": "13",
+        "title": "Цвет текста",
+        "type": "color",
+        "placeholder": "#bc8680",
+        "value": ""
+    },
+    {
+        "id": "14",
+        "title": "Цвет фона",
+        "type": "color",
+        "placeholder": "#ffffff",
+        "value": ""
+    },
+    {
+        "id": "15",
+        "title": "Цвет бордера",
+        "type": "color",
+        "placeholder": "#000",
+        "value": ""
+    },
+    {
+        "id": "16",
+        "title": "Размер бордера (px)",
+        "type": "number",
+        "placeholder": "16",
+        "value": ""
+    },
+    {
+        "id": "17",
+        "title": "Тип border",
+        "type": "select",
+        "options": {
+            "solid": "solid",
+            "dotted": "dotted",
+            "dashed": "dashed",
+            "none": "none"
+        },
+        "value": ""
+    },
+    {
+        "id": "18",
+        "title": "Цвет доп. элементов",
+        "type": "color",
+        "placeholder": "#сecece",
+        "value": ""
+    },
+    {
+        "id": "19",
+        "title": "Ссылка на иконку справа",
+        "type": "image",
+        "placeholder": "#сecece",
+        "value": ""
+    }
+    ]`,
 moddefaultsettings: '["","","","","","solid","","","thin", ["","","","thin"], [""], ["","","","dotted",""],"","","","","","dashed","",""]',
 modInputChange: function modcontentfunc() {
 
@@ -793,7 +600,7 @@ modInputChange: function modcontentfunc() {
 
 },
 modcontent: function modcontentfunc(name) {
-  return `
+    return `
 
 <style>
     ${name[0]} .t-upwidget-container__button:not(.t-upwidget-container__button_fileholder) {
@@ -930,7 +737,17 @@ modcontent: function modcontentfunc(name) {
 `;
 
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>ВАЖНО: Модификация не работает с Uploadcare!</b>
+Как это работает:<br>
+1. Выбираем id блока где находится форма. Если нужно что бы все поля загрузки во всех формах на сайте были одинаковыми, то можно не указывать id блока формы или Zero блока в которой находится форма;<br>
+2. Настраиваем стили кнопки: цвет текста, фона, бордера, толщина и тип обводки, радиус скругления, размер и насыщенность текста внутри кнопки;<br>
+3. Настраиваем дополнительный текст кнопки, сам текст, цвет, размер и насыщенность;<br>
+4. Настраиваем стили кнопки при наведении;<br>
+5. Настраиваем стиль кнопки при статусе "Файл загружен";<br>
+6. Загружаем иконку;<br>
+7. Нажимаем кнопку "Сохранить и закрыть";<br><br>
+</div>`
 });
 
 
@@ -1059,15 +876,12 @@ moddefaultsettings: '["","left","0","20px", ["1px","","0"], "","100",""]',
 modInputChange: function modcontentfunc() {
 
     $('.noliminput[id="4"]').parents('.pe-form-group').hide();
-    $('[nolim-group-id="groupInputs5"]').hide();
+    $('[id="grouptitle_groupInputs5"]').hide();
     $('.noliminput[id="6"]').parents('.pe-form-group').hide();
     $('.noliminput[id="7"]').parents('.pe-form-group').hide();
 
     if($('.noliminput[id="3"]').val() == '0'){
         $('.noliminput[id="4"]').parents('.pe-form-group').hide();
-        // $('[id="grouptitle_groupInputs5"]').hide();
-        // $('[id="group_groupInputs5"]').hide();
-        // $('[id="group_groupInputs5"] .nolimgroupinput').parents('.pe-form-group').hide();
         $('[nolim-group-id="groupInputs5"]').hide();
     } else {
         $('.noliminput[id="4"]').parents('.pe-form-group').show();
@@ -1118,7 +932,37 @@ ${name[2] == '0' ?  `
 `;
 
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>ВАЖНО:</b><br>
+1. Иконки подставляются только в типы полей:<br>
+&bull; Имя (Name);<br>
+&bull; Email (Email);<br>
+&bull; Телефон (Phone);<br>
+&bull; Поле для ввода одну строку (One line input field);<br>
+&bull; Поле для ввода в несколько строк (Multi-line text field);<br>
+&bull; Выпадающий список (Dropdown);<br>
+&bull; Дата (Date);<br>
+&bull; Время (Time);<br>
+&bull; Ссылка (Website);<br>
+2. Если в форме есть тип поля "Телефон (Phone)", то нужно отключить функцию "Автоматическая маска с кодом страны (Auto mask with country code)";<br>
+3. Если в форме есть тип поля "Дата (Date)" то нужно настроить в форме цвет стандартной иконки такой же как и цвет поля, а расположение нашей иконки должно быть только слева иначе стандартная иконка будет перекрывать нашу иконку;<br>
+4. Если работаете со стандартной формой, нужно отключить функцию "Оставлять подсказку видимой при клике на поле" иначе работать код не будет;<br><br>
+
+<b>Вариант #1 «При вводе текста в поле иконка пропадает»</b><br>
+1. Добавляем стандартную форму или форму в Zero Block на страницу и добавляем поле;<br>
+2. В настройках указываем имя поля (VARIABLE NAME) и вставляем его в форму;<br>
+3. Загружаем свою иконку;<br>
+4. Выбираем расположение: слева или справа;<br>
+5. Нажимаем кнопку "Сохранить и закрыть";<br><br>
+
+<b>Вариант #2 «При вводе текста в поле иконка НЕ пропадает»</b><br>
+1. Повторяем шаги из Варианта #1 c 1 по 4;<br>
+2. В выпадающем списке выбираем "При вводе остается";<br>
+3. Настраиваем отступ иконки внутри поля от краёв;<br>
+4. Настраиваем бордер и фон;<br>
+5. Нажимаем кнопку "Сохранить и закрыть";
+
+</div>`
 });
 
 
@@ -1133,6 +977,7 @@ disableforplan0: "y",
 icon: "https://static.tildacdn.com/tild3338-6431-4332-b137-373531663536/NLM007.jpg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
+filter: "Популярные,Корзина и товары, Меню",
 inlib: "y",
 title: "Добавить корзину в стандартное меню",
 modsettings: `[
@@ -1241,16 +1086,16 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 nolimBlocks.push({
-video: "wEQuHwk-Mhs",
 name: "",
 cod: "NLM008",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild6464-3766-4934-a364-646535636431/Frame_9.jpg",
+icon: "https://static.tildacdn.com/tild3438-3936-4161-b234-626563653039/Frame_8.jpg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные,Меню,Эффекты",
 title: "Как добавить иконки мессенджеров в стандартное меню или подвал TILDA?",
 modsettings: `[
 {
@@ -1295,7 +1140,7 @@ modsettings: `[
 "value": "1"
 }
 ]`,
-moddefaultsettings: '["", [["","","",""] ]]',
+moddefaultsettings: '["", ["","1","",""] ]',
 modoptions: [function modcontentfunc(nameCard) {
     let linkCode = ``;
 
@@ -1318,7 +1163,22 @@ modcontent: function modcontentfunc(name, i) {
 
 `;
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>ВАЖНО:</b><br>
+<b>Не Работает</b> с блоками: FT501, FT401, FT204;<br><br>
+
+<b>Работает</b> с блоками:<br>
+<b>Меню</b> ME203A, ME301, ME302, ME303, ME304, ME401, ME403, ME405;<br>
+<b>Подвалы</b> FT201, FT203, FT305;<br<br>
+
+Как это работает:<br>
+1. Вписываем ссылку в генератор на соцсеть, мессенджер или любой другой сервис, который имеет ссылку;<br>
+2. Эту же ссылку вставляем в меню или в подвал на любую соц. сеть;<br>
+3. Загружаем свои иконки "статичная" и "при наведении"(Если не нужно, не загружайте);<br>
+4. Выбираем размер увеличения в %;<br>
+6. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
 });
 
 
@@ -1334,6 +1194,7 @@ icon: "https://static.tildacdn.com/tild6464-3766-4934-a364-646535636431/Frame_9.
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные,Меню",
 title: "Фиксированное меню из Zero block",
 modsettings: `[
 {
@@ -1414,9 +1275,9 @@ modcontent: function modcontentfunc(name) {
                     });
                 } else {
                     newMenu.hide();
-                }
             }
-        });
+        }
+    });
 
 </script> 
 
@@ -1437,19 +1298,27 @@ modcontent: function modcontentfunc(name) {
 `;
 },
 instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
-Как это работает:<br><br>
+<b>
+Вариант #1 «Меню всегда зафиксировано на экране»
+</b><br><br>
+1. Создаём своё меню в Zero block. Если в нем есть элементы, которые должны "вылазить" за края высоты Zero block, изучите функцию <a href="https://blog.tilda.cc/tpost/upla91i0v1-razbiraem-funktsiyu-overflow-v-zero-bloc" target="_blank">Overflow</a>;<br>
+2. В настройках выбираем Zero block или вставляем его id;<br>
+3. Настраиваем показ на мобильных устройствах;<br>
+4. Выбираем фиксацию: сверху или снизу;<br>
+5. Появление при прокруте от начала страницы оставляем 0;<br>
+6. Нажимаем кнопку "Сохранить и закрыть";<br><br>
 
-1. Выбираем нужный зеро блок;<br>
-2. Выбираем показывать ли в мобильной версии;<br>
-3. Если нужно добавить появление через n пикселей, указываем число пикселей. Если нет - оставляем пустым или 0;<br>
-4. Выбираем где будет зафиксированно меню, сверху или снизу;<br>
-5. Загружаем или выбираем иконку для корзины:<br>
-6. Устанавливаем блок корзины (ST100) на страницу и настраиваем ее для расширений до 981px;<br>
-7. Нажимаем кнопку "Сохранить и закрыть";<br><br>
+<b>
+Вариант #1 «Меню всегда зафиксировано на экране»
+</b><br><br>
+1. Повторяем шаги из Варианта #1 c 1 по 4;<br>
+2. Указываем нужное количество пикселей, после которых появится меню;<br>
+3. Нажимаем кнопку "Сохранить и закрыть";<br><br>
+
 <b>
 ВАЖНО: В случае если выбрали фиксацию меню снизу, а у Вас на сайте есть внизу плашка "Made on Tilda", меню будет автоматически скрываться.
-</b><br><br>
-Это сделано для того, что бы не нарушать пользовательское соглашение Тильды, где вкратце говорится о запрете скрытия лейбла любыми способами. Официально ее можно убрать оплатив любой из предложенных тарифов на год.<br><br>
+</b><br>
+Это сделано для того, что бы не нарушать пользовательское соглашение Тильды, где вкратце говорится о запрете скрытия лейбла любыми способами. Официально ее можно убрать оплатив любой из предложенных тарифов на год.
 Подробнее <a href="https://tilda.cc/ru/answers/a/white-label/" target="_blank">тут</a>
 </div>`
 });
@@ -1468,6 +1337,7 @@ icon: "https://static.tildacdn.com/tild6337-6661-4234-b336-356335663731/Frame_10
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные,Корзина и товары, Меню",
 title: "Добавить корзину в меню Zero block",
 modsettings: `[
 {
@@ -1542,7 +1412,7 @@ modoptions: [function modcontentfunc(name) {
 }
 ],
 
-moddefaultsettings: '["","","","","","","",""]',
+moddefaultsettings: '["","","","","","0","0","0"]',
 modcontent: function modcontentfunc(name, i) {
   return `
 
@@ -1575,6 +1445,7 @@ icon: "https://static.tildacdn.com/tild6534-3366-4734-a433-636664343530/nlm_11.j
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные, Эффекты, Прочее",
 title: "SBS анимация «Шторка»",
 modsettings: `[
 {
@@ -1631,117 +1502,132 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 nolimBlocks.push({
-video: "hUk_NWa-_kw",
 name: "",
 cod: "NLM012",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild6534-3366-4734-a433-636664343530/nlm_11.jpg",
+icon: "https://static.tildacdn.com/tild3364-6538-4461-b034-326665333037/Frame_12.jpg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Формы,Эффекты,Прочее",
 title: "Добавляем изображения в выпадающий список",
 modsettings: `[
-    {
-        "id": "1",
-        "title": "Имя поля",
-        "type": "input",
-        "placeholder": "nolimDropdown",
-        "value": ""
+{
+    "id": "1",
+    "title": "Имя поля",
+    "type": "input",
+    "placeholder": "nolimDropdown",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Цвет пункта при наведении",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Цвет активного пункта",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Толщина border",
+    "type": "select",
+    "options": {
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px",
+        "5px": "5px"
     },
-    {
-        "id": "2",
-        "title": "Цвет пункта при наведении",
-        "type": "color",
-        "value": ""
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "border - radius (px)",
+    "type": "number",
+    "placeholder": "10",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Цвет border",
+    "type": "color",
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Шрифт",
+    "type": "select",
+    "options": {
+        "Для заголовков": "0",
+        "Для текста": "1"
     },
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Цвет текста",
+    "type": "color",
+    "value": ""
+},
+{
+"id": "9",
+"title": "+ Добавить изображение",
+"type": "groupCards",
+"options": [
     {
-        "id": "3",
-        "title": "Цвет активного пункта",
-        "type": "color",
+        "title": "Ссылка на изображение",
+        "type": "image",
+        "placeholder": "",
         "value": ""
-    },
-    {
-        "id": "4",
-        "title": "Толщина border",
-        "type": "select",
-        "options": {
-            "1px": "1px",
-            "2px": "2px",
-            "3px": "3px",
-            "4px": "4px",
-            "5px": "5px"
-        },
-        "value": ""
-    },
-    {
-        "id": "5",
-        "title": "border - radius (px)",
-        "type": "number",
-        "placeholder": "10",
-        "value": ""
-    },
-    {
-        "id": "6",
-        "title": "Цвет border",
-        "type": "color",
-        "value": ""
-    },
-    {
-        "id": "7",
-        "title": "Шрифт",
-        "type": "select",
-        "options": {
-            "Для заголовков": "0",
-            "Для текста": "1"
-        },
-        "value": ""
-    },
-    {
-        "id": "8",
-        "title": "Цвет текста",
-        "type": "color",
-        "value": ""
-    },
-    {
-    "id": "9",
-    "title": "+ Добавить изображение",
-    "type": "groupCards",
-    "options": [
-        {
-            "title": "Ссылка на изображение",
-            "type": "image",
-            "placeholder": "",
-            "value": ""
-        }
-        ],
-    "limit": "14",
-    "placeholder": "class",
-    "value": "1"
-    }  
-    ]`,
-    moddefaultsettings: '["nolimDropdown","","","1px","","","0","", [ [""] ] ]',
-    modoptions: [function modcontentfunc(name,nameCard) {
-        let linkCode = ``;
-
-        for(let i = 0; i < nameCard.length; i++){
-            if(nameCard[i][0] != ''){
-                linkCode += `.select2-results .select2-results__option[id*="${name}"]:nth-child(${i+1}) { background-image: url(${nameCard[i]}); }
-                `;
-            }
-        }
-        return linkCode
     }
     ],
-    modcontent: function modcontentfunc(name, i) {
-        return `
+"limit": "14",
+"placeholder": "class",
+"value": "1"
+}  
+]`,
+moddefaultsettings: '["nolimDropdown","","","1px","","","0","", [ [""] ] ]',
+modoptions: [function modcontentfunc(name,nameCard) {
+    let linkCode = ``;
+
+    for(let i = 0; i < nameCard.length; i++){
+        if(nameCard[i][0] != ''){
+            linkCode += `.select2-results .select2-results__option[id*="${name}"]:nth-child(${i+1}) { background-image: url(${nameCard[i]}); }
+            `;
+        }
+    }
+    return linkCode
+}
+],
+modcontent: function modcontentfunc(name, i) {
+    return `
 
     <link href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css' rel='stylesheet' type='text/css' media="all"> <script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js'></script> <script> $(document).ready(function () { $('[name="${n2i(name[0],'nolimDropdown')}"]').select2({ templateResult: formatState, templateSelection: formatStateMain }); $('[name="${n2i(name[0],'nolimDropdown')}"]').parents('[data-elem-type="form"]').each(function (i, form) { $(form).on('render', function() { $('[name="${n2i(name[0],'nolimDropdown')}"]').select2({ templateResult: formatState, templateSelection: formatStateMain }); }); }); }); function formatState(state) { if (!state.id) { return state.text; } var $state = $('<span><div class="${n2i(name[0],'nolimDropdown')}" my-data="' + state.id + '" class="t-${name[6] == "0" ? "title" : "text"}" style="display: inline-block; height: 50px; padding-left: 50px; vertical-align: middle; vertical-align: -webkit-baseline-middle;"></div> ' + state.text + '</span>'); return $state; }; function formatStateMain(state) { if (!state.id) { return state.text; } var $state = $('<span><div my-data="' + state.id + '" class="t-${name[6] == "0" ? "title" : "text"}" style="display: inline-block; height: 50px; vertical-align: middle;"></div> ' + state.text + '</span>'); return $state; }; </script> <style> .select2-search--dropdown { display: none; } .select2-selection.select2-selection--single { border: none; } .select2-selection.select2-selection--single[aria-labelledby *="${n2i(name[0],'nolimDropdown')}"] { border: ${n2i(name[3],'1px')} solid ${n2i(name[5],'#0059ff')}; border-radius: ${n2i(name[4],'5')}px; } .select2-container--default .select2-selection--single .select2-selection__rendered { line-height: 50px; } .select2-container .select2-selection--single { height: 50px; } .select2-selection__arrow { display: none; } .select2-container--default .select2-results__option--highlighted[id*="${n2i(name[0],'nolimDropdown')}"][aria-selected] { background-color: ${n2i(name[1],'#ffe5e5')}; } .select2-container--default .select2-results__option[id *="${n2i(name[0],'nolimDropdown')}"][aria-selected=true] { background-color: ${n2i(name[2],'#cecece')}; color: ${n2i(name[7],'#000000')} !important; } ul.select2-results__options { -ms-overflow-style: none; scrollbar-width: none; overflow: -moz-scrollbars-none; } ul.select2-results__options::-webkit-scrollbar { width: 0 !important; height: 0 !important; } ul { scrollbar-color: #8a8a8a #fff; scrollbar-width: thin; -webkit-overflow-scrolling: auto; } ul::-webkit-scrollbar { width: 4px !important; -webkit-appearance: none !important; -webkit-overflow-scrolling: auto; overflow: auto; } ul::-webkit-scrollbar:vertical { width: 4px !important; } ul::-webkit-scrollbar:horizontal { height: 4px !important; } ul::-webkit-scrollbar-track { background: #fff !important; } ul::-webkit-scrollbar-thumb { background: #8a8a8a !important; -webkit-border-radius: 10px !important; } ul::-webkit-scrollbar-thumb:hover { background: #000 !important; } .select2 results>.select2-results__options { max-height: 240px !important; } @media screen and(max-width: 1200 px) { ul.select2-results__options { -ms-overflow-style: none; scrollbar-width: none; overflow: -moz-scrollbars-none; } ul.select2-results__options::-webkit-scrollbar { width: 0 !important; height: 0 !important; } } span { outline: none; } .select2-results .select2-results__option { background-repeat: no-repeat; background-position: left 6px center; background-size: 40px; height: 40px; } ${nolimBlocks[i].modoptions[0](name[0],name[8])} </style>
     
 `;
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>ВАЖНО:<br>
+&bull; Не забудьте настроить бордер для поля, так как данная модификация не подтягивает настройки полей Вашей формы;<br>
+&bull; Максимальное количество загружаемых картинок - 15 штук;<br>
+&bull; Очередность картинок соответствует очередности их загрузки, т.е. к примеру в списке пять пунктов, вставляя ссылку на первую картинку в генератор, она будет соответствовать первому пункту в выпадающем списке;</b><br><br>
+
+Как это работает:<br>
+1. Добавляем стандартную форму или форму в Zero Block на страницу и добавляем поле Выпадающий список (Dropdown);<br>
+2. В настройках модификации указываем имя поля (VARIABLE NAME) и вставляем его в вашу форму в поле Выпадающий список (Dropdown);<br>
+3. Настраиваем цвет фона активного пункта и при наведении;<br>
+4. Настраиваем бордер, толщину, скругление и цвет;<br>
+5. Настраиваем тип текста и цвет;<br>
+6. Загружаем свои иконки;<br>
+7. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
 });
 
 
@@ -1756,6 +1642,7 @@ icon: "https://static.tildacdn.com/tild3335-3839-4361-b231-323161343139/Frame_13
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Прочее",
 title: "Cвоя иконка «Наверх»",
 modsettings: `[
 {
@@ -1813,6 +1700,7 @@ icon: "https://static.tildacdn.com/tild3137-3636-4730-b630-336561306161/Frame_14
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Прочее",
 title: "Прелоадер с процентами загрузки в Zero Block",
 modsettings: `[
 {
@@ -1898,14 +1786,11 @@ modsettings: `[
 moddefaultsettings: '["","","","","","","","","","","",""]',
 modcontent: function modcontentfunc(name) {
   return `
-
 <script> var wload=0, wfirst=${n2i(name[6],'5')}, wfirstp=${n2i(name[5],'40')}, wsec=${n2i(name[8],'3')}, wsecp=${n2i(name[7],'80')}, recid="${n2i(name[0],'#rec000000')}", i=1, gg=0, pt=0, wloadc="${n2i(name[1],'preloadpercent')}"; ${typeof name[3] != "undefined" && name[3] == "" ? `` : `function pretext() { var o="${name[4]}", t="${name[3]}"; wload<=100&&setTimeout(function() { 0==pt?($("."+t+" .tn-atom").html(o+"."), pt=1):1==pt?($("."+t+" .tn-atom").html(o+".."), pt=2):2==pt&&($("."+t+" .tn-atom").html(o+"..."), pt=0), pretext() } , 400) }`}function myLoop3() { 1==gg&&setTimeout(function() { (wload+=1)>=100&&(wload=100), $("."+wloadc+" .tn-atom").html(wload+"${n2i(name[2],'%')}"), wload<100?myLoop3():($("."+wloadc+" .tn-atom").html("100${n2i(name[2],'%')}""), $(recid).delay(0).fadeOut(), $("body").css("overflow", "auto")) } , 8) } function myLoop2() { 0==gg&&setTimeout(function() { let o=(wsecp-wfirstp)/wsec; o=o<1?Math.ceil(o):Math.round(o), wload+=o, $("."+wloadc+" .tn-atom").html(wload+"%"), wload<=wsecp&&myLoop2() } , 1000) } function myLoop() { 0==gg&&setTimeout(function() { let o=wfirstp/wfirst; o=o<1?Math.ceil(o):Math.round(o), wload+=o, $("."+wloadc+" .tn-atom").html(wload+"%"), wload<=wfirstp?myLoop():myLoop2() } , 1000) } ${typeof name[3] != "undefined" && name[3] == "" ? `` : `pretext(),`} myLoop(), $("."+wloadc+" .tn-atom").html(wload+"%"), $(recid).show(), $(window).on("load", function() { gg=1, myLoop3() } ); </script> <style> ${n2i(name[0],'#rec000000')}{position:fixed;left:0;top:0;right:0;bottom:0;z-index:100005} </style>
-
 `;
 },
 instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
 Как это работает:<br><br>
-
 1. Выбираем зеро блок из которого делаем прелоадер;<br>
 2. Добавляем свой текстовый элемент в Зеро Блок, в котором будет значение от 0 до 100 и указываем класс к нему такой же как и в настройках модификации;<br>
 Что бы указать класс у элемента, нажимаешь на него правой кнопкой мыши и выбираешь из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываешь тот же класс что и в генераторе;<br>
@@ -1913,12 +1798,9 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 4. Если нужно, указываем текстовый элемент с точками и указываем класс к нему, прописываем его в настройках модификации и текст до точек загрузки;<br>
 5. В случае если сайт тяжелый, вы можете указать в первом шаге время загрузки от 0 до указанного значения и во втором шаге время от первого указанного значения до второго;<br>
 3. Нажимаем кнопку "Сохранить и закрыть";<br><br>
-
 <b>ВАЖНО:</b>
-
 Если сайт "легкий" то настройки времени не сработают, можете указать любые, сайт загрузится быстро;<br>
 Код для прелоадера нужно поставить в самом верху страницы, сам Зеро Блок с прелоадером под ним;<br><br>
-
 </div>`
 });
 
@@ -1934,6 +1816,7 @@ icon: "https://static.tildacdn.com/tild3263-3530-4132-b536-633964373430/Frame_15
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Меню, Эффекты, Прочее",
 title: "Активный пункт меню в ZERO BLOCK",
 modsettings: `[
 {
@@ -2099,7 +1982,8 @@ modcontent: function modcontentfunc(name) {
 },
 instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
 <b>ВАЖНО: Работает на экранах шириной больше 960px<br>
-Если указали в пунктах меню и ссылку и id блока или якорную ссылку, то будет выделяться несколько пунктов одновременно. Советуем так не делать)<br>
+&bull; Если указали в пунктах меню и ссылку и id блока или якорную ссылку, то будет выделяться несколько пунктов одновременно. Советуем так не делать)<br>
+&bull; Порядок пунктов меню в слоях зеро блока должен быть поочередным, если вы их используете якорные ссылки. Если что-то не работает с ними, пересоздайте их поочередно от первого к последнему. Это важный нюанс.<br>
 </b><br>
 Как это работает:<br><br>
 
@@ -2119,10 +2003,11 @@ cod: "NLM016",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3335-3839-4361-b231-323161343139/Frame_13.jpg",
+icon: "https://static.tildacdn.com/tild6164-6537-4063-b561-616637666263/Frame_16.jpg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные, Эффекты, Прочее",
 title: "Анимируем числа в Zero Block",
 modsettings: `[
 {
@@ -2187,7 +2072,6 @@ modsettings: `[
     "value": "1"
 }
 ]`,
-
 modoptions: [function modcontentfunc(name) {
 
 let strurl16 = [];
@@ -2240,7 +2124,7 @@ return strurl16.join(",");
     return strurl16
 }
 ],
-moddefaultsettings: '["","","","0",[["","",""]] ]',
+moddefaultsettings: '["","","","0",["","",""] ]',
 modcontent: function modcontentfunc(name,i) {
     return `
 
@@ -2248,7 +2132,879 @@ modcontent: function modcontentfunc(name,i) {
 
 `;
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+Как это работает:<br>
+1. В генераторе настраиваем время анимации, т.е. сколько секунд пройдет от начальной цифры до нужной;<br>
+2. Можно указать текст в начале числа и после него;<br>
+3. Выбираем тип разделения тысячных;<br>
+4. Пишем в генераторе класс текстового элемента и вставляем его в Зеро Блок;<br>
+Что бы указать класс у элемента, нажимаем на него правой кнопкой мыши и выбираем из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываем тот же класс что и в генераторе;<br>
+5. Указываем начальную цифру и конечную цифру;<br>
+Совет: начальная цифра в генераторе должна совпадать с начальной в тексте, тогда визуально не будет видно "подёргиваний" в цифрах;<br>
+6. Можно добавить до 15 элементов (цифр) в одном коде;<br>
+7. В анимации используется настройка "swim" - т.е. кривая скорости анимации стоит по стандарту. медленное начало, к середине ускоряется и к концу опять замедляется;<br>
+8. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
+});
+
+
+
+nolimBlocks.push({
+video: "5tUBFschccU",
+name: "",
+cod: "NLM018",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild6436-3730-4362-b130-313562393266/Frame_18.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+title: "Вставляем свои иконки на фото карточки товара",
+grid: "yes",
+modsettings: `[
+{
+    "title": "На Планшет и Пк (от 640px)",
+    "type": "text"
+},
+{
+    "id": "1",
+    "title": "Отступ от верхнего края (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Отступ от правого края (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Направление отображения",
+    "type": "select",
+    "options": {
+        "Горизонтально": "0",
+        "Вертикально": "1"
+    },
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Ширина иконки (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Высота иконки (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Отступы между иконок (px)",
+    "type": "number",
+    "placeholder": "5",
+    "value": ""
+},
+{
+    "title": "Мобильная версия (до 640px)",
+    "type": "text"
+},
+{
+    "id": "7",
+    "title": "Отступ от верхнего края (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Отступ от правого края (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "9",
+    "title": "Направление отображения",
+    "type": "select",
+    "options": {
+        "Горизонтально": "0",
+        "Вертикально": "1"
+    },
+    "value": ""
+},
+{
+    "id": "10",
+    "title": "Ширина иконки (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "11",
+    "title": "Высота иконки (px)",
+    "type": "number",
+    "placeholder": "20",
+    "value": ""
+},
+{
+    "id": "12",
+    "title": "Отступы между иконок (px)",
+    "type": "number",
+    "placeholder": "5",
+    "value": ""
+},
+{
+    "id": "13",
+    "title": "Метки",
+    "type": "groupCards",
+    "options": [
+        {
+            "title": "Название иконки",
+            "type": "input",
+            "placeholder": "",
+            "value": ""
+        },
+        {
+            "title": "Изображение",
+            "type": "image",
+            "placeholder": "",
+            "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+}
+]`,
+moddefaultsettings: '["","","","0","","","","","","","0","","",[["",""]]]',
+modoptions: [function modcontentfunc(name) {
+    
+    let strurl2 = [];
+    let keurkl2 
+
+    for(let i = 0; i < name[0].length; i++){
+        if(name[0][i][0] != ''){
+            keurkl2 = name[0][i][0]
+            keurkl2 = '"'+keurkl2+'"';
+            strurl2.push(keurkl2);
+        }
+    }; 
+
+    return strurl2.join(",");
+}, function modcontentfunc(name) {s
+    let strurl2 = [];
+    let keurkl2 
+    for(let i = 0; i < name[0].length; i++){
+        if(name[0][i][0] != ''){
+            keurkl2 = name[0][i][1]
+            keurkl2 = '"'+keurkl2+'"';
+            strurl2.push(keurkl2);
+        }
+    }; 
+
+    return strurl2.join(",");
+}
+],
+modcontent: function modcontentfunc(name, i) {
+return `
+<script>
+
+function createmarks(str) {
+    var nlkeys = [${nolimBlocks[i].modoptions[0]([name[14]])}];
+    var nlimgs = [${nolimBlocks[i].modoptions[1]([name[14]])}];
+    str=str.split(',');
+    var s='';
+    s+='<div class="nl_marwrapper">';
+
+    for(let i=0; i < 3; i++) {
+        for(let ins=0; ins < nlkeys.length; ins++) {
+            if(str[i]==nlkeys[ins]) {
+                s+='<div class="nl_markimg" style="background-image:url('+nlimgs[ins]+')"'+">";
+                s+="</div>";
+            }
+        }
+    }
+
+    s+="</div>";
+    return s;
+}
+
+function t_store_get_productCard_mark_html2(t, e) {
+    if ( !t.mark) return "";
+    var r="";
+    r+=e.markColor ? "color:"+e.markColor+";": "", r +=e.markBgColor ? "background-color:"+ e.markBgColor + ";": "";
+    var o=r ? 'style="'+r+'"': "", s="";
+    s=createmarks(t.mark);
+    return s
+}
+
+$(window).on("load", function() {
+    setTimeout(function() {
+            for (let i=0; i < $('.t-store__card__mark-wrapper').length; i++) {
+                let valstr=$('.t-store__card__mark-wrapper').eq(i).text().replace(/\\s/g, ''); $('.t-store__card__mark-wrapper').eq(i).before(createmarks(valstr));
+            }
+            t_store_get_productCard_mark_html=t_store_get_productCard_mark_html2;
+    }, 700);
+});
+
+</script>
+
+<style>
+.nl_markimg {
+    background-size: cover;
+    width: ${name[4]}px;
+    height: ${name[5]}px;
+    margin-right: ${name[6]}px;
+    display: ${name[3] == '0' ? 'inline-' : ''}block;
+}
+
+.nl_marwrapper {
+    position: absolute;
+    right: ${name[2]}px;
+    top: ${name[1]}px;
+    z-index: 5;
+    display: table;
+}
+
+@media screen and (max-width: 640px) {
+    .nl_markimg {
+        width: ${name[11]}px;
+        height: ${name[12]}px;
+        margin-right: ${name[13]}px;
+        display: ${name[11] == '0' ? 'inline-' : ''}block;
+    }
+
+    .nl_marwrapper {
+        right: ${name[9]}px;
+        top: ${name[8]}px;
+    }
+}
+
+.t-store__card__mark-wrapper {
+    display: none !important;
+}
+
+</style>
+`;
+},
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>
+ВАЖНО:</b> Если у вас в форме установлен радиус скругления, то при выборе поля "Цвет" в генераторе, укажите такой же радиус скругления<br><br>
+
+Как это работает:<br><br>
+
+1. Добавляем стандартную форму или форму в Zero Block на страницу. В форме создаем поле "Поле для ввода в одну строку" (One line input field);<br>
+2. В настройках модификации выбираем тип поля: Число, Цвет или Как в поиске;<br>
+3. Указываем имя поля (VARIABLE NAME) и вставляем его в вашу форму в поле "Поле для ввода в одну строку" (One line input field);<br>
+4. Нажимаем кнопку "Сохранить и закрыть";<br><br>
+</div>`
+});
+
+
+
+nolimBlocks.push({
+name: "",
+cod: "NLM019",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild6666-3764-4761-a330-623237383435/Frame_19.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+filter: "Популярные, Эффекты, Прочее",
+title: "Делаем свой видеовиджет",
+grid: "yes",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Ссылка на видео",
+    "type": "input",
+    "placeholder": "https://dl.dropboxusercontent.com/s/5a2edkmo1z859en/Juice%20WRLD%20-%20Lucid%20Dreams%20%28Directed%20by%20Cole%20Bennett%29.webm?dl=0",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Ссылка для кнопки",
+    "type": "input",
+    "placeholder": "#action",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Открыть ссылку в новой вкладке?",
+    "type": "select",
+    "options": {
+        "Да": "0",
+        "Нет": "1"
+    },
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Положение",
+    "type": "select",
+    "options": {
+        "Лево Верх": "0",
+        "Право Верх": "1",
+        "Лево Низ": "2",
+        "Право Низ": "3"
+    },
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Цвет крестика",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Кол-во до повторного появления",
+    "type": "number",
+    "placeholder": "-1",
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Отступ слева/справа (px)",
+    "type": "number",
+    "placeholder": "25",
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Отступ сверху/снизу (px)",
+    "type": "number",
+    "placeholder": "25",
+    "value": ""
+},
+{
+    "id": "9",
+    "title": "Увеличение при наведении",
+    "type": "select",
+    "options": {
+        "0%": "0",
+        "5%": "1",
+        "10%": "2"
+    },
+    "value": ""
+},
+{
+    "title": "Border видеовиджета",
+    "type": "text"
+},
+{
+    "id": "10",
+    "title": "border-radius (px)",
+    "type": "number",
+    "placeholder": "10",
+    "value": ""
+},
+{
+    "id": "11",
+    "title": "Ширина border (px)",
+    "type": "number",
+    "placeholder": "1",
+    "value": ""
+},
+{
+    "id": "12",
+    "title": "Цвет border",
+    "type": "color",
+    "placeholder": "#000",
+    "value": ""
+},
+{
+    "id": "13",
+    "title": "Цвет border при наведении",
+    "type": "color",
+    "placeholder": "#828282",
+    "value": ""
+},
+{
+    "title": "Видеовиджет в развернутом виде",
+    "type": "text"
+},
+{
+    "id": "14",
+    "title": "Размер при клике (px)",
+    "type": "select",
+    "options": {
+        "230x380px": "0",
+        "280x500px": "1"
+    },
+    "value": ""
+},
+{
+    "id": "15",
+    "title": "Цвет bordera",
+    "type": "color",
+    "placeholder": "#000",
+    "value": ""
+},
+{
+    "id": "16",
+    "title": "Цвет кнопки",
+    "type": "color",
+    "placeholder": "#cc000a",
+    "value": ""
+},
+{
+    "id": "17",
+    "title": "Текст кнопки",
+    "type": "input",
+    "placeholder": "Заявка",
+    "value": ""
+},
+{
+    "id": "18",
+    "title": "Цвет текста",
+    "type": "color",
+    "placeholder": "#b0b0b0",
+    "value": ""
+},
+{
+    "id": "19",
+    "title": "border-radius кнопки (px)",
+    "type": "number",
+    "placeholder": "15",
+    "value": ""
+},
+
+{
+    "id": "20",
+    "title": "Шрифт",
+    "type": "select",
+    "options": {
+        "Для заголовков": "0",
+        "Для текста": "1"
+    },
+    "value": ""
+},
+{
+    "id": "21",
+    "title": "Жирность шрифта",
+    "type": "select",
+    "options": {
+        "100": "100",
+        "200": "200",
+        "300": "300",
+        "400": "400",
+        "500": "500",
+        "600": "600",
+        "700": "700",
+        "800": "800",
+        "900": "900"
+    },
+    "value": ""
+},
+{
+    "id": "22",
+    "title": "Размер шрифта",
+    "type": "select",
+    "options": {
+        "10px": "10px",
+        "12px": "12px",
+        "14px": "14px",
+        "16px": "16px",
+        "18px": "18px",
+        "20px": "20px"
+    },
+    "value": ""
+},
+{
+    "id": "23",
+    "title": "Размер шрифта в моб. версии (px)",
+    "type": "select",
+    "options": {
+        "8px": "8px",
+        "10px": "10px",
+        "12px": "12px",
+        "14px": "14px",
+        "16px": "16px",
+        "18px": "18px"
+    },
+    "value": ""
+},
+{
+    "id": "24",
+    "title": "Добавить цель Яндекс.Метрики при клике на кнопку",
+    "type": "groupInputs",
+    "options": [
+        {
+            "title": "Идентификатор цели",
+            "type": "input",
+            "placeholder": "",
+            "value": ""
+        },
+        {
+            "title": "Номер счетчика",
+            "type": "input",
+            "placeholder": "",
+            "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+},
+{
+    "id": "25",
+    "title": "Добавить цель Google Analytics при клике на кнопку",
+    "type": "groupInputs",
+    "options": [
+        {
+            "title": "Категория",
+            "type": "input",
+            "placeholder": "",
+            "value": ""
+        },
+        {
+            "title": "Действие",
+            "type": "input",
+            "placeholder": "",
+            "value": ""
+        },
+        {
+            "title": "Ярлык",
+            "type": "input",
+            "placeholder": "",
+            "value": ""
+        },
+        {
+            "title": "Ценность",
+            "type": "input",
+            "placeholder": "",
+            "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+}
+]`,
+moddefaultsettings: '["","","0","0","","","","","0","","","","","","","0","","","","","","0","100","10px","8px", ["",""], ["","","",""] ]',
+modcontent: function modcontentfunc(name) {
+    return `
+
+<div class="video-widget" data-state="default">
+    <div class="video-widget__container"> <video id="video-widget__video" loop="" autoplay="" playsinline="" preload="auto" muted="muted" controlslist="nodownload" disablepictureinpicture="" class="video-widget__video" src="https://dl.dropboxusercontent.com${name[0].replace('https://www.dropbox.com', '')}">
+            <source src="https://dl.dropboxusercontent.com${name[0].replace('https://www.dropbox.com', '')}" type="video/mp4">
+        </video>
+        <div class="video-widget__close"></div> <a class="video-widget__button ${name[21] == '0' ? 't-title' : 't-text'}" ${name[2] == '0' ? 'target="_blank" ' : ''}href="${name[1]}">${name[18]}</a>
+    </div>
+</div>
+<script>
+    jQuery.cookie = function(name, value, options) {
+        if (typeof value != 'undefined') {
+            options = options || {};
+            if (value === null) {
+                value = '';
+                options.expires = -1;
+            };
+            var expires = '';
+            if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+                var date;
+                if (typeof options.expires == 'number') {
+                    date = new Date();
+                    date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+                } else {
+                    date = options.expires;
+                }
+                expires = '; expires=' + date.toUTCString();
+            };
+            var path = options.path ? '; path=' + (options.path) : '';
+            var domain = options.domain ? '; domain=' + (options.domain) : '';
+            var secure = options.secure ? '; secure' : '';
+            document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+        } else {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    };
+
+    function nolimvideowidgetcookie() {
+        $.cookie('nlvideowidget', 1, {
+            expires: ${Number(name[5]) <= 0 ? '-1' : `${name[5]}`}
+        });
+    };
+    $(document).ready(function() {
+        var e = $(".video-widget"),
+            a = document.getElementById("video-widget__video");
+        $(".video-widget__close").click(function(t) {
+            return t.preventDefault(), "default" == e.attr("data-state") ? e.hide() : (e.attr("data-state", "default"), a.muted = !0), !1
+        }), $(".video-widget__container").on("click", function(t) {
+            "default" == e.attr("data-state") ? (e.attr("data-state", "opened"), a.currentTime = 0, a.muted = !1) : (e.attr("data-state", "default"), a.muted = !0)
+        }), 1024 < $(document).width() && $(".video-widget__container").on("touchstart", function(t) {
+            "default" == e.attr("data-state") ? (e.attr("data-state", "opened"), a.currentTime = 0, a.muted = !1) : (e.attr("data-state", "default"), a.muted = !0)
+        }), $(document).mouseup(function(t) {
+            e.is(t.target) || 0 !== e.has(t.target).length || "default" == e.attr("data-state") || (e.attr("data-state", "default"), a.muted = !0)
+        });
+        $('.video-widget__close, .video-widget__button').click(function(e) {
+            nolimvideowidgetcookie();
+            ${name[25][0] != '' ? `ym('${name[25][1]}', 'reachGoal', '${name[25][0]}');` : ''}
+            ${name[26][0] != '' ? `gtag('event', '${name[26][1]}', {
+                'event_category': '${n2i(name[26][0], 'Категория')}',
+                ${name[26][2] != '' ? `'event_label': '${name[26][2]}',` : ''}
+                ${name[26][3] != '' ? `'value': '${name[26][3]}'` : ''}
+            });` : ''}
+        });
+        if (Number($.cookie('nlvideowidget')) > 0) {
+            $(".video-widget").hide();
+        } else {
+            $(".video-widget").show();
+        }
+    });
+</script>
+<style>
+    .video-widget {
+        display: none;
+        position: fixed;
+        ${name[3] == '0' ? 'left' : name[3] == '1' ? 'right' : name[3] == '2' ? 'left' : 'right'}: 0;
+        z-index: 999999;
+        ${name[3] == '0' ? 'top' : name[3] == '1' ? 'top' : name[3] == '2' ? 'bottom' : 'bottom'}: 0;
+    }
+
+    .video-widget__container {
+        font-family: Helvetica;
+        z-index: 999999;
+        overflow: hidden;
+        border-style: solid;
+        background: #eee;
+        -webkit-transition: width .3s ease-in-out 0s, height .3s ease-in-out 0s, bottom .3s ease-in-out 0s, border-color .2s ease-in-out 0s, opacity 1s ease-in-out 0s, -webkit-transform .2s ease-in-out 0s;
+        transition: width .3s ease-in-out 0s, height .3s ease-in-out 0s, bottom .3s ease-in-out 0s, border-color .2s ease-in-out 0s, opacity 1s ease-in-out 0s, -webkit-transform .2s ease-in-out 0s;
+        -o-transition: width .3s ease-in-out 0s, height .3s ease-in-out 0s, bottom .3s ease-in-out 0s, border-color .2s ease-in-out 0s, opacity 1s ease-in-out 0s, -o-transform .2s ease-in-out 0s;
+        -moz-transition: transform .2s ease-in-out 0s, width .3s ease-in-out 0s, height .3s ease-in-out 0s, bottom .3s ease-in-out 0s, border-color .2s ease-in-out 0s, opacity 1s ease-in-out 0s, -moz-transform .2s ease-in-out 0s;
+        transition: transform .2s ease-in-out 0s, width .3s ease-in-out 0s, height .3s ease-in-out 0s, bottom .3s ease-in-out 0s, border-color .2s ease-in-out 0s, opacity 1s ease-in-out 0s;
+        transition: transform .2s ease-in-out 0s, width .3s ease-in-out 0s, height .3s ease-in-out 0s, bottom .3s ease-in-out 0s, border-color .2s ease-in-out 0s, opacity 1s ease-in-out 0s, -webkit-transform .2s ease-in-out 0s, -moz-transform .2s ease-in-out 0s, -o-transform .2s ease-in-out 0s;
+        outline: 0;
+        cursor: pointer;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-box-shadow: rgba(0, 0, 0, .2) 0 10px 20px;
+        box-shadow: rgba(0, 0, 0, .2) 0 10px 20px;
+        position: absolute;
+        ${name[3] == '0' ? 'left' : name[3] == '1' ? 'right' : name[3] == '2' ? 'left' : 'right'}: ${name[6]}px;
+        ${name[3] == '0' ? 'top' : name[3] == '1' ? 'top' : name[3] == '2' ? 'bottom' : 'bottom'}: ${name[7]}px;
+        border-radius: ${name[10]}px;
+        border-width: ${name[11]}px;
+        width: 130px;
+        height: 180px;
+        border-color: ${name[12]};
+    }
+
+    .video-widget__container:hover {
+        -webkit-transform: scale(1${name[8] == '0' ? '' : name[8] == '1' ? '.05' : '.1'}) translate(5px, -5px);
+        -moz-transform: scale(1${name[8] == '0' ? '' : name[8] == '1' ? '.05' : '.1'}) translate(5px, -5px);
+        -ms-transform: scale(1${name[8] == '0' ? '' : name[8] == '1' ? '.05' : '.1'}) translate(5px, -5px);
+        -o-transform: scale(1${name[8] == '0' ? '' : name[8] == '1' ? '.05' : '.1'}) translate(5px, -5px);
+        transform: scale(1${name[8] == '0' ? '' : name[8] == '1' ? '.05' : '.1'}) translate(5px, -5px);
+        border-color: ${name[13]};
+    }
+
+    .video-widget__video {
+        -o-object-fit: cover;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 200;
+        -webkit-transition: opacity .4s ease-in-out 0s;
+        -o-transition: opacity .4s ease-in-out 0s;
+        -moz-transition: opacity .4s ease-in-out 0s;
+        transition: opacity .4s ease-in-out 0s;
+        opacity: .9;
+    }
+
+    .video-widget__close {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 20px;
+        height: 20px;
+        z-index: 250;
+        opacity: 0;
+        -webkit-transition: opacity .2s ease-in-out 0s, -webkit-transform .3s ease-in-out 0s;
+        transition: opacity .2s ease-in-out 0s, -webkit-transform .3s ease-in-out 0s;
+        -o-transition: opacity .2s ease-in-out 0s, -o-transform .3s ease-in-out 0s;
+        -moz-transition: transform .3s ease-in-out 0s, opacity .2s ease-in-out 0s, -moz-transform .3s ease-in-out 0s;
+        transition: transform .3s ease-in-out 0s, opacity .2s ease-in-out 0s;
+        transition: transform .3s ease-in-out 0s, opacity .2s ease-in-out 0s, -webkit-transform .3s ease-in-out 0s, -moz-transform .3s ease-in-out 0s, -o-transform .3s ease-in-out 0s;
+    }
+
+    .video-widget__close:after,
+    .video-widget__close:before {
+        position: absolute;
+        left: 9px;
+        top: 1px;
+        content: "";
+        height: 18px;
+        width: 2px;
+        background: ${name[4]};
+        -webkit-box-shadow: rgba(0, 0, 0, .5) 1px 1px 10px;
+        box-shadow: rgba(0, 0, 0, .5) 1px 1px 10px;
+    }
+
+    .video-widget__close:before {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .video-widget__close:after {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .video-widget__container:hover .video-widget__close {
+        opacity: .5;
+    }
+
+    .video-widget.video-widget[data-state=opened] .video-widget__container {
+        width: ${name[15] == '0' ? '230px' : '280px'};
+        height: ${name[15] == '0' ? '380px' : '500px'};
+        border-radius: ${name[9]}px;
+        border-color: ${name[16]};
+    }
+
+    .video-widget.video-widget[data-state=opened] .video-widget__close {
+        opacity: .5;
+    }
+
+    .video-widget.video-widget[data-state=opened] .video-widget__close:before {
+        display: none;
+    }
+
+    .video-widget.video-widget[data-state=opened] .video-widget__close:after {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg)
+    }
+
+    .video-widget.video-widget[data-state=opened] .video-widget__close:hover {
+        opacity: 1;
+    }
+
+    .video-widget__button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        height: 65px;
+        border-radius: ${name[20]}px;
+        z-index: 300;
+        -webkit-box-shadow: rgba(0, 0, 0, .25) 0 4px 15px;
+        box-shadow: rgba(0, 0, 0, .25) 0 4px 15px;
+        text-align: center;
+        -webkit-transition: opacity .3s ease-in-out 0s, background-color .2s ease-in-out 0s, -webkit-transform .2s ease-in-out 0s;
+        transition: opacity .3s ease-in-out 0s, background-color .2s ease-in-out 0s, -webkit-transform .2s ease-in-out 0s;
+        -o-transition: opacity .3s ease-in-out 0s, background-color .2s ease-in-out 0s, -o-transform .2s ease-in-out 0s;
+        -moz-transition: transform .2s ease-in-out 0s, opacity .3s ease-in-out 0s, background-color .2s ease-in-out 0s, -moz-transform .2s ease-in-out 0s;
+        transition: transform .2s ease-in-out 0s, opacity .3s ease-in-out 0s, background-color .2s ease-in-out 0s;
+        transition: transform .2s ease-in-out 0s, opacity .3s ease-in-out 0s, background-color .2s ease-in-out 0s, -webkit-transform .2s ease-in-out 0s, -moz-transform .2s ease-in-out 0s, -o-transform .2s ease-in-out 0s;
+        visibility: hidden;
+        background-color: ${name[17]};
+        font-size: ${name[23]};
+        font-weight: ${name[22]};
+        color: ${name[19]} !important;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 65px;
+        text-transform: uppercase;
+        opacity: 0
+    }
+
+    @media screen and (max-width: 480px) {
+        .video-widget__button {
+            font-size: ${name[24]};
+        }
+    }
+
+    .video-widget__button:hover {
+        background-color: ${name[17]};
+        text-decoration: none;
+    }
+
+    .video-widget.video-widget[data-state=opened] .video-widget__button {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media only screen and (max-width:1023px) {
+        .video-widget__close {
+            opacity: .5;
+        }
+    }
+
+    @media only screen and (max-width:480px) {
+        .video-widget__container {
+            ${name[3] == '0' ? 'left' : name[3] == '1' ? 'right' : name[3] == '2' ? 'left' : 'right'}: 15px;
+            ${name[3] == '0' ? 'top' : name[3] == '1' ? 'top' : name[3] == '2' ? 'bottom' : 'bottom'}: 15px;
+            width: 90px;
+            height: 125px;
+        }
+    }
+</style>
+
+`;
+},
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+Как это работает:<br>
+1. В генераторе настраиваем время анимации, т.е. сколько секунд пройдет от начальной цифры до нужной;<br>
+2. Можно указать текст в начале числа и после него;<br>
+3. Выбираем тип разделения тысячных;<br>
+4. Пишем в генераторе класс текстового элемента и вставляем его в Зеро Блок;<br>
+Что бы указать класс у элемента, нажимаем на него правой кнопкой мыши и выбираем из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываем тот же класс что и в генераторе;<br>
+5. Указываем начальную цифру и конечную цифру;<br>
+Совет: начальная цифра в генераторе должна совпадать с начальной в тексте, тогда визуально не будет видно "подёргиваний" в цифрах;<br>
+6. Можно добавить до 15 элементов (цифр) в одном коде;<br>
+7. В анимации используется настройка "swim" - т.е. кривая скорости анимации стоит по стандарту. медленное начало, к середине ускоряется и к концу опять замедляется;<br>
+8. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
 });
 
 
@@ -2263,7 +3019,8 @@ icon: "https://static.tildacdn.com/tild6161-3933-4561-b736-323863636131/Frame_20
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
-title: "popup из Zero Block со своей кнопкой закрытия",
+filter: "Популярные, Прочее",
+title: "Popup из Zero Block со своей кнопкой закрытия",
 modsettings: `[
 {
     "id": "1",
@@ -2356,6 +3113,247 @@ modcontent: function modcontentfunc(name) {
     </style>
 `;
 },
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>Как это работает:</b><br>
+1. Создаём popup в Zero Block:<br>
+&bull; Цвет фона - прозрачный.<br>
+&bull; Window container height - 100%<br>
+&bull; Ставим Шейп (на фон попапа), ширина и высота - 100%<br>
+&bull; Container - Window container<br>
+&bull; Выравнивание X - 0, Y - 0<br>
+&bull; Opacity (Прозрачность) - 35% или любое другое значение<br>
+&bull; Цвет #000000 <br><br>
+
+2. Выбираем Zero Block или Вставляем в id Zero Block в котором сделали popup;<br>
+3. Указываем ссылку через хештег (Например #open), затем привязываем ее к элементу, который будет "вызывать" (открывать) popup;<br>
+4. Указываем класс для закрытия попапа, который будет привязан ко всем элементам, отвечающим за закрытие;<br>
+Что бы указать класс у элемента в Тильда , нажимаем на него правой кнопкой мыши и выбираем из списка предпоследнюю строку "Add CSS Class Name", далее, справа в настройках указываем тот же класс что и в настройках мода;<br>
+8. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
+
+});
+
+
+
+nolimBlocks.push({
+name: "",
+cod: "NLM021",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3366-3135-4330-b861-303330343036/Frame_21.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+filter: "Популярные, Прочее, Формы",
+title: "Кастомизация радиокнопок (radio button)",
+grid: "yes",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Id блока",
+    "type": "block",
+    "placeholder": "#rec000000",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Тип radio button",
+    "type": "select",
+    "options": {
+        "Стандарт (круг)": "0",
+        "Кнопки": "1"
+    },
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Тип отметки",
+    "type": "select",
+    "options": {
+        "Круг": "0",
+        "Галочка": "1"
+    },
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Толщина border",
+    "type": "select",
+    "options": {
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px",
+        "5px": "5px"
+    },
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Тип border",
+    "type": "select",
+    "options": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+    },
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Тип border (актив)",
+    "type": "select",
+    "options": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+    },
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Цвет border (актив)",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Цвет галочки",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "9",
+    "title": "Отступы от кнопок",
+    "type": "select",
+    "options": {
+        "5px": "5px",
+        "10px": "10px",
+        "15px": "15px",
+        "20px": "20px"
+    },
+    "value": ""
+},
+{
+    "id": "10",
+    "title": "Цвет фона",
+    "type": "color",
+    "placeholder": "#cecece",
+    "value": ""
+},
+{
+    "id": "11",
+    "title": "Цвет фона (актив)",
+    "type": "color",
+    "placeholder": "#cecece",
+    "value": ""
+},
+{
+    "id": "12",
+    "title": "Толщина border",
+    "type": "select",
+    "options": {
+        "0px": "0px",
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px",
+        "5px": "5px"
+    },
+    "value": ""
+},
+{
+    "id": "13",
+    "title": "Толщина border (актив)",
+    "type": "select",
+    "options": {
+        "0px": "0px",
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px",
+        "5px": "5px"
+    },
+    "value": ""
+},
+{
+    "id": "14",
+    "title": "Border радиус (рх)",
+    "type": "number",
+    "placeholder": "10",
+    "value": ""
+},
+{
+    "id": "15",
+    "title": "Border радиус - актив (рх)",
+    "type": "number",
+    "placeholder": "10",
+    "value": ""
+},
+{
+    "id": "16",
+    "title": "Расположение",
+    "type": "select",
+    "options": {
+        "В ряд": "0",
+        "В столбик": "1"
+    },
+    "value": ""
+}
+]`,
+
+moddefaultsettings: '["","0","0","1px","solid","solid","","","5px","","","0px","0px","","","0"]',
+modInputChange: function modcontentfunc() {
+    
+    if($('.noliminput[id="2"]').val() == "0" && $('.noliminput[id="3"]').val() == "0"){
+        $('[id="12"]').parents('.pe-form-group').hide();
+        $('[id="13"]').parents('.pe-form-group').hide();
+        $('[id="14"]').parents('.pe-form-group').hide();
+        $('[id="15"]').parents('.pe-form-group').hide();
+        $('[id="8"]').parents('.pe-form-group').hide();
+        $('[id="10"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('[id="4"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('[id="11"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('[id="3"]').parents('.pe-form-group').css('display', 'inline-block');
+    } else if($('.noliminput[id="2"]').val() == "0" && $('.noliminput[id="3"]').val() == "1"){
+        $('[id="12"]').parents('.pe-form-group').hide();
+        $('[id="13"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="14"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="15"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="4"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="10"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="11"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="8"]').parents('.pe-form-group').css('display', 'inline-block');
+    } else if($('.noliminput[id="2"]').val() == "1"){
+        $('.noliminput[id="12"]').parents('.pe-form-group').css('display', 'inline-block'); 
+        $('.noliminput[id="13"]').parents('.pe-form-group').css('display', 'inline-block'); 
+        $('.noliminput[id="14"]').parents('.pe-form-group').css('display', 'inline-block'); 
+        $('.noliminput[id="15"]').parents('.pe-form-group').css('display', 'inline-block'); 
+        $('.noliminput[id="8"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="4"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="10"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="11"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="3"]').parents('.pe-form-group').hide();
+    }
+
+
+},
+modcontent: function modcontentfunc(name) {
+    return `
+
+    ${name[1] == '0' && name[2] == '0' ? ` <style> ${name[15] == '0' ? `${name[0]} .t-radio__control { display: inline-block; margin-right: ${name[8]} !important; }` : ''} ${name[0]} .t-radio__indicator { border-style: ${name[4]}; border-width: ${name[3]}; background: ${name[9]}; } ${name[0]} .t-radio__control .t-radio:checked~.t-radio__indicator { border: ${name[3]} ${name[5]} ${name[6]} !important; background: ${name[10]}; } </style> ` : ''}
+
+    ${name[1] == '0' && name[2] == '1' ? ` <style> ${name[15] == '0' ? `${name[0]} .t-radio__control { display: inline-block; margin-right: ${name[8]} !important; }` : ''} ${name[0]} .t-radio__indicator { border-style: ${name[4]}; border-width: ${name[3]}; background: ${name[9]}; } ${name[0]} .t-radio__control .t-radio:checked~.t-radio__indicator { border: ${name[3]} ${name[5]} ${name[6]} !important; background: ${name[10]}; } ${name[0]} .t-radio__indicator:after { opacity: 0; content: ''; position: absolute; left: 1px; border-radius: 0%; top: -2px; width: 3px; height: 8px; border: solid ${name[7]}; border-width: 0 2px 2px 0; transform: rotate(45deg); background: transparent; } ${name[0]} .t-radio__control .t-radio:checked~.t-radio__indicator:after { opacity: 1; } </style> ` : ''}
+
+    ${name[1] == '1' ? ` <style>  ${name[0]} .t-radio__control { padding: 4px 20px; ${name[15] == '0' ? 'display: inline-block;' : 'display: block; width: max-content;'}  margin-right: ${name[8]} !important; } ${name[0]} .t-radio__indicator { border-style:${name[4]}; border-width: ${name[11]}; position: absolute; height: 100%; left: 0; top: 0; width: 100%; border-radius: ${name[13]}px; opacity: 1; } ${name[0]} .t-radio__indicator:after { display: none; } ${name[0]} .t-radio__control .t-radio:checked ~ .t-radio__indicator { border: ${name[12]} ${name[5]} ${name[6]} !important; border-radius: ${name[14]}px; opacity: 1; }  </style> ` : ''}
+
+`;
+},
+instruction: ``
 
 });
 
@@ -2372,6 +3370,7 @@ icon: "https://static.tildacdn.com/tild3531-3937-4030-b766-653435656265/Frame_22
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Формы, Прочее",
 title: "Кастомные поля в формах",
 modsettings: `[
 {
@@ -2436,6 +3435,288 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 nolimBlocks.push({
 name: "",
+cod: "NLM023",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3935-3939-4236-b038-313937363630/Frame_23.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+filter: "Популярные, Эффекты, Формы",
+title: "Кастомные чекбоксы в формах",
+grid: "yes",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Id блока",
+    "type": "block",
+    "placeholder": "#rec000000",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Тип checkbox",
+    "type": "select",
+    "options": {
+        "Галочка (по умолчанию)": "0",
+        "Квадратик": "1",
+        "Чекбокс с текстом": "2",
+        "Чекбокс 2 круглый": "3",
+        "Чекбокс 3 круглый (меньший)": "4"
+    },
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Расположение checkbox",
+    "type": "select",
+    "options": {
+        "По умолчанию": "0",
+        "В ряд (кол-во чекбоксов определяет размер формы)": "1"
+    },
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Толщина border",
+    "type": "select",
+    "options": {
+        "0px": "0px",
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px"
+    },
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Border radius",
+    "type": "select",
+    "options": {
+        "0px": "0px",
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px"
+    },
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Цвет переключателя",
+    "type": "color",
+    "placeholder": "#70C767",
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Opacity чекбокса",
+    "type": "select",
+    "options": {
+        "100%": "1",
+        "90%": "0.9",
+        "80%": "0.8",
+        "70%": "0.7",
+        "60%": "0.6",
+        "50%": "0.5",
+        "40%": "0.4",
+        "30%": "0.3",
+        "20%": "0.2",
+        "10%": "0.1"
+    },
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Opacity чекбокса (active)",
+    "type": "select",
+    "options": {
+        "100%": "1",
+        "90%": "0.9",
+        "80%": "0.8",
+        "70%": "0.7",
+        "60%": "0.6",
+        "50%": "0.5",
+        "40%": "0.4",
+        "30%": "0.3",
+        "20%": "0.2",
+        "10%": "0.1"
+    },
+    "value": ""
+},
+{
+    "id": "9",
+    "title": "Цвет фона",
+    "type": "color",
+    "placeholder": "#cecece",
+    "value": ""
+},
+{
+    "id": "10",
+    "title": "Цвет фона (active)",
+    "type": "color",
+    "placeholder": "#ffffff",
+    "value": ""
+},
+{
+    "id": "11",
+    "title": "Текст",
+    "type": "select",
+    "options": {
+        "ON/OFF": "0",
+        "ВКЛ/ВЫКЛ": "1"
+    },
+    "value": ""
+},
+{
+    "id": "12",
+    "title": "Цвет текста",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "13",
+    "title": "Цвет текста (active)",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "14",
+    "title": "Цвет переключателя",
+    "type": "color",
+    "placeholder": "#085cf7",
+    "value": ""
+},
+{
+    "id": "15",
+    "title": "Цвет переключателя (active)",
+    "type": "color",
+    "placeholder": "#05ff37",
+    "value": ""
+},
+{
+    "id": "16",
+    "title": "Цвет border",
+    "type": "color",
+    "placeholder": "#05ff37",
+    "value": ""
+},
+{
+    "id": "17",
+    "title": "Цвет border (active)",
+    "type": "color",
+    "placeholder": "#000",
+    "value": ""
+},
+{
+    "id": "18",
+    "title": "Тип border",
+    "type": "select",
+    "options": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+    },
+    "value": ""
+},
+{
+    "id": "19",
+    "title": "Тип border (active)",
+    "type": "select",
+    "options": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+    },
+    "value": ""
+}
+]`,
+
+moddefaultsettings: '["","0","0","","0px","","1","1","","","0","","","","","","","solid","solid"]',
+modInputChange: function modcontentfunc() {
+
+    if($('.noliminput[id="2"]').val() == "0" && $('.noliminput[id="4"]').val() == "0px" || $('.noliminput[id="2"]').val() == "1" && $('.noliminput[id="4"]').val() == "0px"){
+        $('.noliminput[id="4"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="5"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="6"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="11"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="12"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="13"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="14"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="15"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="16"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="17"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="18"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="19"]').parents('.pe-form-group').hide();
+    } else if($('.noliminput[id="2"]').val() == "0" && $('.noliminput[id="4"]').val() != "0px" || $('.noliminput[id="2"]').val() == "1" && $('.noliminput[id="4"]').val() != "0px"){
+        $('.noliminput[id="4"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="5"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="6"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="11"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="12"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="13"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="14"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="15"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="16"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="17"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="18"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="19"]').parents('.pe-form-group').css('display', 'inline-block');
+    } else if($('.noliminput[id="2"]').val() == "2"){
+        $('.noliminput[id="4"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="5"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="6"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="11"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="12"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="13"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="14"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="15"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="16"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="17"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="18"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="19"]').parents('.pe-form-group').hide();
+    } else if($('.noliminput[id="2"]').val() == "3" || $('.noliminput[id="2"]').val() == "4"){
+        $('.noliminput[id="4"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="5"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="6"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="11"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="12"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="13"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="14"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="15"]').parents('.pe-form-group').css('display', 'inline-block');
+        $('.noliminput[id="16"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="17"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="18"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="19"]').parents('.pe-form-group').hide();
+    }
+
+},
+modcontent: function modcontentfunc(name) {
+    return `
+
+    ${name[1] == '0' ? `<style> ${name[2] == '1' ? `${name[0]} .t-checkboxes__wrapper .t-checkbox__control{ display: inline-block; margin-right: 20px !important; } ` : ''} ${name[0]} .t-checkbox__indicator { border: ${name[3]} ${name[17]} ${name[15]}; border-radius: ${name[4]}; opacity: ${name[6]}; background-color: ${name[8]}; }  ${name[0]} .t-checkbox__indicator:after { border: ${name[17]} ${name[5]}; border-width: 0 2px 2px 0; left: 0px; top: 2px; position: relative; margin: 0px auto; } ${name[0]} .t-checkbox__control .t-checkbox:checked~.t-checkbox__indicator { opacity: ${name[7]}; background-color: ${name[9]}; border: ${name[3]} ${name[18]} ${name[16]}; } </style>` : ''}
+
+    ${name[1] == '1' ? `<style> ${name[2] == '1' ? `${name[0]} .t-checkboxes__wrapper .t-checkbox__control{ display: inline-block; margin-right: 20px !important; } ` : ''} ${name[0]} .t-checkbox__indicator { border: ${name[3]} ${name[17]} ${name[15]}; border-radius: ${name[4]}; opacity: ${name[6]}; background-color: ${name[8]}; } ${name[0]} .t-checkbox__indicator:after { left: 50%; top: 50%; position: absolute; width: 10px; height: 10px; background-color: ${name[5]}; border-radius: ${name[4]}; border: none; transform: translate(-50%, -50%) !important; }  ${name[0]} .t-checkbox__control .t-checkbox:checked~.t-checkbox__indicator { opacity: ${name[7]}; background-color: ${name[9]}; border: ${name[3]} ${name[18]} ${name[16]}; } </style> ` : ''}
+
+    ${name[1] == '2' ? `<style> ${name[2] == '1' ? `${name[0]} .t-checkbox__control{ display: inline-block; margin-right: 20px !important; } ` : ''} ${name[0]} label.t-checkbox__control { height: 28px; line-height: 28px; position: relative; border: 0px; } ${name[0]} .t-checkbox__control .t-checkbox__indicator { display: inline-block; opacity: ${name[6]}; border: 0px; height: 28px; width: 90px; box-sizing: border-box; position: relative; border-radius: 2px; background: ${name[8]}; transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1); } ${name[0]} .t-checkbox__control .t-checkbox__indicator:before { content: '${name[10] == '0' ? 'off' : 'Выкл'}'; display: inline-block; box-sizing: border-box; width: 45px; position: absolute; top: 0; left: 45px; text-transform: uppercase; text-align: center; color: ${name[11]}; font-size: 10px; line-height: 28px; } ${name[0]} .t-checkbox__control .t-checkbox__indicator:after { display: inline-block; box-sizing: border-box; width: 44px; height: 26px; border-radius: 1px; border: 0px; position: absolute; top: 1px; left: 1px; z-index: 5; text-transform: uppercase; text-align: center; background: ${name[13]}; line-height: 26px; font-size: 10px; transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1); transform: rotate(0deg); } ${name[0]} .t-checkbox__control input[type="checkbox"]:checked + .t-checkbox__indicator { background-color: ${name[9]}; opacity: ${name[7]}; } ${name[0]} .t-checkbox__control input[type="checkbox"]:checked + .t-checkbox__indicator:before { content: '${name[10] == '0' ? 'on' : 'Вкл'}'; color: ${name[12]}; left: 0; } ${name[0]} .t-checkbox__control input[type="checkbox"]:checked + .t-checkbox__indicator:after { background: ${name[14]}; transform: translate3d(44px, 0, 0); } ${name[0]} .t-checkbox__control input[type="checkbox"]:not(:disabled) + .t-checkbox__indicator:hover { cursor: pointer; } ${name[0]} .t-checkbox__control input[type="checkbox"]:not(:disabled) + .t-checkbox__indicator:hover:after { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4); } </style>` : ''}
+
+    ${name[1] == '3' ? `<style> ${name[2] == '1' ? `${name[0]} label.t-checkbox__control { display: inline-block; margin-right: 20px !important; }` : ''} ${name[0]} .t-checkbox__control .t-checkbox__indicator { display: inline-block; opacity: ${name[6]}; height: 28px; width: 56px; border: 1px solid #00000020; box-sizing: border-box; position: relative; border-radius: 20px; background: ${name[8]}; transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1); } ${name[0]} .t-checkbox__control .t-checkbox__indicator:before { box-sizing: border-box; width: 40px; position: absolute; top: 0; left: 45px; } ${name[0]} .t-checkbox__control .t-checkbox__indicator:after { display: inline-block; box-sizing: border-box; width: 24px; height: 24px; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); border-radius: 50%; border: solid ${name[13]}; position: absolute; top: 1px; left: 1px; background:${name[13]}; color: #eee; transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1); transform: rotate(0deg); } ${name[0]} .t-checkbox__control input[type="checkbox"]:checked + .t-checkbox__indicator { background-color: ${name[9]}; opacity: ${name[7]}; } ${name[0]} .t-checkbox__control input[type="checkbox"]:checked + .t-checkbox__indicator:after { background: ${name[14]}; transform: translate3d(28px, 0, 0); border: solid ${name[14]}; } ${name[0]} .t-checkbox__control input[type="checkbox"]:not(:disabled) + .t-checkbox__indicator:hover { cursor: pointer; }</style>` : ''}
+
+    ${name[1] == '4' ? `<style> ${name[2] == '1' ? `${name[0]} label.t-checkbox__control { display: inline-block; margin-right: 20px !important; }` : ''} ${name[0]} .t-checkbox__control .t-checkbox__indicator { height: 14px; opacity: ${name[6]}; width: 36px; border: 0px; border-radius: 20px; background: ${name[8]}; transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1); } ${name[0]} .t-checkbox__control .t-checkbox__indicator:before { width: 20px; top: 0; left: 45px; } ${name[0]} .t-checkbox__control .t-checkbox__indicator:after { position: absolute; border: 0px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); display: inline-block; box-sizing: border-box; width: 20px; height: 20px; border-radius: 20px; top: -3px; left: 1px; background: ${name[13]}; color: #777; transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1); } ${name[0]} .t-checkbox__control input[type="checkbox"]:checked + .t-checkbox__indicator { background-color: ${name[9]}; opacity: ${name[7]}; } ${name[0]} .t-checkbox__control input[type="checkbox"]:checked + .t-checkbox__indicator:after { background: ${name[14]}; transform: translate3d(16px, 0, 0); } ${name[0]} .t-checkbox__control input[type="checkbox"]:not(:disabled) + .t-checkbox__indicator:hover { cursor: pointer; } ${name[0]} .t-checkbox__control input[type="checkbox"]:not(:disabled) + .t-checkbox__indicator:hover:after { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4); } ${name[0]} .t-checkbox__control input[type="checkbox"]:disabled + .t-checkbox__indicator { background: #0058ff; }</style>` : ''}
+
+`;
+},
+instruction: ``
+
+});
+
+
+
+nolimBlocks.push({
+name: "",
 cod: "NLM025",
 descr: "",
 descr_ru: "",
@@ -2444,6 +3725,7 @@ icon: "https://static.tildacdn.com/tild6530-6634-4562-b862-353639613733/Frame_25
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Прочее",
 title: "Cвоя кнопка «Назад»",
 modsettings: `[
 {
@@ -2482,15 +3764,16 @@ cod: "NLM026",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild6530-6634-4562-b862-353639613733/Frame_25.jpg",
+icon: "https://static.tildacdn.com/tild6135-6633-4634-a365-623963653463/Frame_26.jpg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты",
 title: "Эффект рентгена для изображений",
 modsettings: `[
 {
     "id": "1",
-    "title": "Class блок с фото",
+    "title": "Class элемента image",
     "type": "input",
     "placeholder": "nolimxray",
     "value": ""
@@ -2532,7 +3815,7 @@ modsettings: `[
 },
 {
     "id": "7",
-    "title": "Ссылка на 2 фото",
+    "title": "Загружаем 2 фото",
     "type": "image",
     "placeholder": "https://images.unsplash.com/photo-1625285049426-5dbed0167ea8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80",
     "value": ""
@@ -2547,7 +3830,16 @@ modcontent: function modcontentfunc(name) {
 
 `;
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>Как это работает:</b><br>
+1. Если вам нужно использовать несколько изображений с этим эффектом на одной странице, пропишите уникальный класс для каждого изображения;<br>
+2. Добавляем своё изображение элементом image (не шейп) в Зеро Блок и указываем класс к нему такой же как и в настройках модификации;<br>
+Что бы указать класс у элемента, нажимаешь на него правой кнопкой мыши и выбираем из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываем тот же класс, что и в модификации;<br>
+3. Загружаем второе изображение в настройках модификации;<br>
+4. Настройте параметры эффекта (размер круга, размер и цвет бордера, отключение отображения на экранах до 1200px);<br>
+6. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
 });
 
 
@@ -2562,6 +3854,7 @@ icon: "https://static.tildacdn.com/tild3937-3963-4762-a561-663230643836/Frame_27
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Кнопки",
 title: "Эффект побуквенной смены цвета текста",
 modsettings: `[
 {
@@ -2622,6 +3915,7 @@ icon: "https://static.tildacdn.com/tild3361-3930-4136-a330-316238323562/Frame_28
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Текст",
 title: "Эффект неона для текста",
 modsettings: `[
 {
@@ -2658,14 +3952,13 @@ modcontent: function modcontentfunc(name) {
 `;
 },
 instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
-<b>
-Что бы указать класс у элемента, нажимаешь на него правой кнопкой мыши и выбираем из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываем тот же класс что и в генераторе;<br><br>
-
-1. Добавляем свой текст в Зеро Блок и указываем класс к нему такой же как и в генераторе;<br><br>
-2. Выбираем цвет свечения;
-3. Включаем эффект мерцания;
-4. Настраиваем бордер;
-5. Копируем сгенерированный HTML код и вставляем его в блок Т123;<br><br>
+<b>Как это работает:</b><br>
+1. Добавляем свой текст в Зеро Блок и указываем класс к нему такой же как и в настройках модификации;<br>
+Что бы указать класс у элемента, нажимаешь на него правой кнопкой мыши и выбираем из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываем тот же класс что и в модификаии;<br>
+2. Выбираем цвет свечения;<br>
+3. Включаем эффект мерцания;<br>
+4. Настраиваем бордер;<br>
+6. Нажимаем кнопку "Сохранить и закрыть";<br>
 </div>`
 });
 
@@ -2681,6 +3974,7 @@ icon: "https://static.tildacdn.com/tild6533-3839-4935-b965-366463653431/Frame_31
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Прочее",
 title: "Центрирование нижнего ряда иконок в блоке FR201",
 modsettings: `[
 {
@@ -2785,6 +4079,7 @@ icon: "https://static.tildacdn.com/tild3235-6165-4138-b038-383461346339/Frame_32
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты",
 title: "Эффект лупы для изображений в Zero Block",
 modsettings: `[
 {
@@ -2891,7 +4186,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 
 
-/*
+
 nolimBlocks.push({
 name: "",
 cod: "NLM033",
@@ -2908,7 +4203,7 @@ modsettings: `[
     "id": "1",
     "title": "Ссылка на иконку",
     "type": "image",
-    "placeholder": "https://static.tildacdn.com/tild3265-3339-4162-b432-646566326363/svg-editor-image.svg",
+    "placeholder": "",
     "value": ""
 },
 {
@@ -2943,6 +4238,10 @@ modsettings: `[
     "value": ""
 },
 {
+    "title": "Текст в мобильной версии:",
+    "type": "text"
+},
+{
     "id": "7",
     "title": "Размер заголовка (px)",
     "type": "number",
@@ -2958,11 +4257,11 @@ modsettings: `[
 }
 ]`,
 
-moddefaultsettings: '["","","","","","","",""]',
+moddefaultsettings: '["","","","","","","","",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<style> .t668__opened .t668__lines { -moz-transform: rotate(-180deg); -ms-transform: rotate(-180deg); -webkit-transform: rotate(-180deg); -o-transform: rotate(-180deg); transform: rotate(-180deg); } .t668__lines svg { display: none; } .t668__lines::after { content: " "; width: 24px; height: 24px; position: absolute; left: 0; background-image:url(${n2i(name[0],'https://static.tildacdn.com/tild3265-3339-4162-b432-646566326363/svg-editor-image.svg')}); background-size: 100%; background-repeat: no-repeat; background-position: center; } .t668__accordion { border-radius: ${n2i(name[1],'0')}px !important; -moz-border-radius:${n2i(name[1],'0')}px !important; -webkit-border-radius:${n2i(name[1],'0')}px !important; -khtml-border-radius:${n2i(name[1],'0')}px !important; } .t668__wrapper { border-radius: ${n2i(name[1],'0')}px !important; -moz-border-radius:${n2i(name[1],'0')}px !important; -webkit-border-radius:${n2i(name[1],'0')}px !important; -khtml-border-radius:${n2i(name[1],'0')}px !important; } .t668__opened { background-color: ${name[4]} !important; border-radius: ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; -moz-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0 !important; -webkit-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; -khtml-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; }.t668__content{ border-radius: 0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -moz-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -webkit-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -khtml-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; } .t668__text { padding-top: 5px; } .t668__header.t668__opened ~ .t668__content { background-color: ${name[4]} !important; } .t668__circle { background-color: ${name[2]} !important; } .t668__opened .t668__circle { background-color: ${name[3]} !important; } .t668__opened .t668__title { color: ${name[5]} !important; } .t668__header.t668__opened ~ .t668__content .t668__text{ color: ${name[5]} !important; } @media screen and (max-width: 640px){ .t668__title { font-size: ${n2i(name[6],'18')}px!important; } .t668__text { font-size: ${n2i(name[7],'14')}px!important; } } </style>
+<style> .t668__opened .t668__lines { -moz-transform: rotate(-180deg); -ms-transform: rotate(-180deg); -webkit-transform: rotate(-180deg); -o-transform: rotate(-180deg); transform: rotate(-180deg); } .t668__lines svg { display: none; } .t668__lines::after { content: " "; width: 24px; height: 24px; position: absolute; left: 0; background-image:url(${n2i(name[0],'https://static.tildacdn.com/tild3265-3339-4162-b432-646566326363/svg-editor-image.svg')}); background-size: 100%; background-repeat: no-repeat; background-position: center; } .t668__accordion { border-radius: ${n2i(name[1],'0')}px !important; -moz-border-radius:${n2i(name[1],'0')}px !important; -webkit-border-radius:${n2i(name[1],'0')}px !important; -khtml-border-radius:${n2i(name[1],'0')}px !important; } .t668__wrapper { border-radius: ${n2i(name[1],'0')}px !important; -moz-border-radius:${n2i(name[1],'0')}px !important; -webkit-border-radius:${n2i(name[1],'0')}px !important; -khtml-border-radius:${n2i(name[1],'0')}px !important; } .t668__opened { background-color: ${name[4]} !important; border-radius: ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; -moz-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0 !important; -webkit-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; -khtml-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; }.t668__content{ border-radius: 0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -moz-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -webkit-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -khtml-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; } .t668__text { padding-top: 5px; } .t668__header.t668__opened ~ .t668__content { background-color: ${name[4]} !important; } .t668__circle { background-color: ${name[2]} !important; } .t668__opened .t668__circle { background-color: ${name[3]} !important; } .t668__opened .t668__title { color: ${name[5]} !important; } .t668__header.t668__opened ~ .t668__content .t668__text{ color: ${name[5]} !important; } @media screen and (max-width: 640px){ .t668__title { font-size: ${n2i(name[7],'18')}px!important; } .t668__text { font-size: ${n2i(name[8],'14')}px!important; } } </style>
 
 `;
 },
@@ -2976,7 +4275,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 4. Нажимаем кнопку "Сохранить и закрыть";<br><br>
 </div>`
 });
-*/
+
 
 /*
 nolimBlocks.push({
@@ -3083,6 +4382,7 @@ icon: "https://static.tildacdn.com/tild3466-3839-4939-b038-323461326131/Frame_35
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Формы, Прочее",
 title: "Добавляем в стандартный блок BF502N кнопку закрытия",
 modsettings: `[
 {
@@ -3206,6 +4506,7 @@ icon: "https://static.tildacdn.com/tild6234-3066-4466-b065-303739663462/Frame_36
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Прочее",
 title: "Кастомизация индикатора прокрутки страницы",
 modsettings: `[
 {
@@ -3333,10 +4634,11 @@ cod: "NLM037",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild6534-3366-4734-a433-636664343530/nlm_11.jpg",
+icon: "https://static.tildacdn.com/tild3633-3264-4334-b965-656333383039/Frame_37.jpg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Меню, Эффекты, Прочее",
 title: "Добавляем свои иконки в кнопки меню ME602 Tilda",
 modsettings: `[
     {
@@ -3423,7 +4725,16 @@ modsettings: `[
     
 `;
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>Как это работает:</b><br><br>
+1. Выбираем как меню будет выглядеть в мобильной версии: табы или классический выпадающий список;<br>
+2. Если выбрали вид табы, можно скрыть текст в кнопках, тогда будут отображаться только иконки;<br>
+3. Выбираем расположение иконок: слева или справа от текста;<br>
+4. Загружаем свои иконки "активная" и "неактивная";<br>
+5. Иконки будут располагаться в порядке их загрузки;<br>
+5. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
 });
 
 
@@ -3437,6 +4748,7 @@ icon: "https://static.tildacdn.com/tild3465-6465-4230-a164-393032393231/Frame_38
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные, Корзина и товары",
 title: "Своя кнопка когда товара нет в наличии",
 modsettings: `[
 {
@@ -3534,7 +4846,7 @@ return `
     let dyeint = setInterval(function () {
         if ($('.t-popup_show').length > 0) {
             clearInterval(dyeint);
-            if ($('.t-popup_show .t-store__prod-popup__btn_disabled').length >= 1) {
+            if ($('.t-popup_show .t-store__prod-popup__btn_disabled').length >= 1 || $('.t-popup_show ${n2i(name[2],'#linkDescr')}').length >= 1) {
                 $('.t-store__prod-popup__btn-wrapper > .t-store__prod-popup__btn_disabled').hide();
                 $('.wbtn').remove();
                 $(btn2).prependTo('.t-store__prod-popup__btn-wrapper');
@@ -3621,6 +4933,7 @@ icon: "https://static.tildacdn.com/tild3162-6565-4438-b561-353962353861/Frame_39
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Меню, Прочее",
 title: "Фиксация меню ME602 слева или справа страницы",
 modsettings: `[
 {
@@ -3716,6 +5029,7 @@ icon: "https://static.tildacdn.com/tild3465-3035-4561-b266-363033396533/Frame_40
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Прочее",
 title: "Скрыть блоки навсегда через таймер",
 modsettings: `[
 {
@@ -3786,10 +5100,11 @@ cod: "NLM043",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3234-3363-4538-b032-306537386266/Frame_45.jpg",
+icon: "https://static.tildacdn.com/tild6636-3636-4264-a330-663563636431/Frame_43.jpg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Прочее",
 title: "Автоматическое проставление даты для вебинара",
 modsettings: `[
 {
@@ -3881,13 +5196,12 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 Как это работает:<br><br>
 
 1. Добавляем свой текстовый элемент в Зеро Блок и указываем класс к нему такой же как и в генераторе;<br>
-Что бы указать класс у элемента, нажимаешь на него правой кнопкой мыши и выбираешь из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываешь тот же класс что и в генераторе;<br><br>
+Что бы указать класс у элемента, нажимаешь на него правой кнопкой мыши и выбираешь из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываешь тот же класс что и в настройках ;<br><br>
 
 2. Выбираем формат даты и разделитель;<br>
 3. Указываем время, после которого будет показываться следующая дата (Завтрашнего дня);<br>
-4. Выбираем часовой пояс;<br>
 5. Прописываем текст после даты если нужно;<br>
-6. Копируем сгенерированный HTML код и вставляем его в блок Т123;
+6. Нажимаем кнопку "Сохранить и закрыть";<br>
 </div>`
 });
 
@@ -3903,6 +5217,7 @@ icon: "https://static.tildacdn.com/tild3532-3931-4430-a664-373661396263/Frame_44
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Прочее",
 title: "Отключение изменение размера поля ввода в несколько строк",
 modsettings: `[
 
@@ -3936,6 +5251,7 @@ icon: "https://static.tildacdn.com/tild3234-3363-4538-b032-306537386266/Frame_45
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Прочее",
 title: "Отключаем отправку формы нажатием на ENTER",
 modsettings: `[
 {
@@ -3993,6 +5309,7 @@ icon: "https://static.tildacdn.com/tild6466-3239-4762-b837-373637663964/Frame_46
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные, Формы, Прочее",
 title: "Перенос крестика закрытия в стандартных попап блоках",
 modsettings: `[
 {
@@ -4044,6 +5361,7 @@ icon: "https://static.tildacdn.com/tild6532-3061-4363-a539-616336633561/Frame_47
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Формы, Прочее",
 title: "Разные страницы успеха в зависимости от выбора значения в форме",
 modsettings: `[
 {
@@ -4173,7 +5491,21 @@ modcontent: function modcontentfunc(name,i) {
 
 `;
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>Не работает с корзиной;<br>
+Работает со стандартными попапами;</b><br><br>
+
+Если нужен зеро попап, используем модификацию https://nolim.cc/zeropopup<br><br>
+
+1. Указываем id блока стандартной формы, попапа или зеро блока;<br>
+2. Указываем имя переменной поля и значение;<br>
+3. Прописываем у каждого значения свою ссылку;<br>
+4. Для попап ссылка должна начинаться с #;<br>
+5. Для прямых ссылок на другие сайты, ссылка должна быть полная, например https://google.com;<br>
+6. Для внутренних страниц через слэш, например /thankyoupage;<br>
+6. Нажимаем кнопку "Сохранить и закрыть";<br><br>
+
+</div>`
 });
 
 
@@ -4194,7 +5526,8 @@ icon: "https://static.tildacdn.com/tild6661-3961-4164-b531-373036383566/Frame_53
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
-title: "Вместо точек в галерее ZeroBlock в виде миниатюр",
+filter: "Эффекты",
+title: "Точки в галерее ZeroBlock в виде миниатюр",
 modsettings: `[
     
 {
@@ -4338,7 +5671,19 @@ modcontent: function modcontentfunc(name) {
 
 `;
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>ВАЖНО:</b><br>
+<b>Если у вас больше одного слайдера, указывайте для каждого уникальный класс и отдельную модификацию</b>;<br><br>
+
+1. Добавляем слайдер в Зеро Блок и указываем класс к нему такой же как и в модификации;
+Что бы указать класс у элемента, нажимаешь на него правой кнопкой мыши и выбираешь из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываешь тот же класс что и в модификации;
+2. Выбираем показ превью, все или три картинки;
+3. Выбираем расположение: слева, центр, справа;
+4. Настраиваем отступ превью от слайдера и их размер, ширину и высоту;
+5. Можно настроить размер превью на разных разрешениях экрана;
+6. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
 });
 
 
@@ -4354,6 +5699,7 @@ icon: "https://static.tildacdn.com/tild3662-3531-4233-a363-643765393362/Frame_50
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты",
 title: "Линия заполнения вместо точек в галерее Zero Block",
 modsettings: `[
 {
@@ -4419,6 +5765,7 @@ icon: "https://static.tildacdn.com/tild3035-3133-4735-a165-346132343034/Frame_51
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные,Меню",
 title: "Выпадающий “Поиск” из меню в Zero Block",
 modsettings: `[
 {
@@ -4455,120 +5802,131 @@ modcontent: function modcontentfunc(name) {
 
 `;
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+1. Делаем меню в зеро блоке;<br>
+2. Добавляем свою иконку поиска в меню и указываем класс к ней такой же как и в модификации;<br>
+Что бы указать класс у элемента, нажимаешь на него правой кнопкой мыши и выбираешь из списка последнюю строку "Add CSS Class Name", далее, справа в настройках указываешь тот же класс что и в модификации;<br>
+3. Ставим на страницу блок T838 и применяем следующие настройки:<br>
+&bull; ШИРИНА БЛОКА: 12 колонок;<br>
+&bull; ОТСТУП СЛЕВА: Без отступа;<br>
+&bull; ОТСТУП СВЕРХУ/СНИЗУ: По желанию;<br>
+&bull; СТИЛЬ ПОЛЯ ДЛЯ ВВОДА И КНОПКА: По желанию;<br>
+4. В генераторе выбираем анимацию появления меню;<br>
+6. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
 });
 
 
 
-nolimBlocks.push({
-name: "",
-cod: "NLM052",
-descr: "",
-descr_ru: "",
-disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3863-3763-4863-b939-643932616365/Frame_52.jpg",
-icon2: "/files/tplsthumbs/other-block-02.png",
-id: "131",
-inlib: "y",
-title: "Автозаполнение полей в формах",
-modsettings: `[
-{
-    "id": "1",
-    "title": "id блока с формой",
-    "type": "block",
-    "placeholder": "#rec000000",
-    "value": ""
-},
-{
-    "id": "2",
-    "title": "+ Добавить поле",
-    "type": "groupCards",
-    "options": [
-        {
-        "title": "Имя переменной",
-        "type": "input",
-        "placeholder": "name",
-        "value": ""
-        }
-    ],
-    "limit": "14",
-    "placeholder": "class",
-    "value": "1"
-}
-]`,
+// nolimBlocks.push({
+// name: "",
+// cod: "NLM052",
+// descr: "",
+// descr_ru: "",
+// disableforplan0: "y",
+// icon: "https://static.tildacdn.com/tild3863-3763-4863-b939-643932616365/Frame_52.jpg",
+// icon2: "/files/tplsthumbs/other-block-02.png",
+// id: "131",
+// inlib: "y",
+// title: "Автозаполнение полей в формах",
+// modsettings: `[
+// {
+//     "id": "1",
+//     "title": "id блока с формой",
+//     "type": "block",
+//     "placeholder": "#rec000000",
+//     "value": ""
+// },
+// {
+//     "id": "2",
+//     "title": "+ Добавить поле",
+//     "type": "groupCards",
+//     "options": [
+//         {
+//         "title": "Имя переменной",
+//         "type": "input",
+//         "placeholder": "name",
+//         "value": ""
+//         }
+//     ],
+//     "limit": "14",
+//     "placeholder": "class",
+//     "value": "1"
+// }
+// ]`,
 
-moddefaultsettings: '["", [[""]] ]',
-modoptions: [function modcontentfunc(name) {
+// moddefaultsettings: '["", [""] ]',
+// modoptions: [function modcontentfunc(name) {
     
-    let strurl2 = [];
-    let keurkl2 
-    for(let i = 0; i < name[0].length; i++){
-        if(name[0][i][0] != ''){
-          keurkl2 = name[0][i][0]
-         
-          keurkl2 = '"'+keurkl2+'"';
-          strurl2.push(keurkl2);
-        }
-    }; 
+//     let strurl2 = [];
+//     let keurkl2 
+//     for(let i = 0; i < name[0].length; i++){
+//         if(name[0][i][0] != ''){
+//         keurkl2 = name[0][i][0]
+        
+//         keurkl2 = '"'+keurkl2+'"';
+//         strurl2.push(keurkl2);
+//         }
+//     }; 
 
-    return strurl2.join(",");
-}
-],
-modcontent: function modcontentfunc(name,i) {
-  return `
+//     return strurl2.join(",");
+// }
+// ],
+// modcontent: function modcontentfunc(name,i) {
+//   return `
 
-<script>
-    function takemask(a, n) {
-        setTimeout(function() {
-            if ($('[name="' + a + '"]').hasClass('js-phonemask-result')) {
-                let take1 = $('[name="' + a + '"]').prev().attr('data-phonemask-code');
-                take1 = n.replace(take1, '');
-                $('[name="' + a + '"]').prev().val(take1);
-                $('[name="' + a + '"]').val(take1);
-                $('.t-input-phonemask').trigger('input');
-            }
-        }, 2500);
-    };
-    $(document).ready(function() {
-        var e = [${nolimBlocks[i].modoptions[0]([name[1]])}];
-        for (let o = 0; o < e.length; o++)
-            if (null != localStorage.getItem(e[o])) {
-                let n = localStorage.getItem(e[o]);
-                $('[name="' + e[o] + '"]').val(n);
-                takemask(e[o], n);
-            } let funcAutozapoln = function(o) {
-            var n = {};
-            $(o.serializeArray()).each(function(e, o) {
-                n[o.name] = o.value
-            });
-            for (let o = 0; o < e.length; o++) null != n[e[o]] && (localStorage.setItem(e[o], n[e[o]]), console.log(localStorage.getItem(e[o])))
-        };
-        if (typeof window.NolimSuccessFunction${name[0].replace('#rec','')} == 'undefined') {
-            window.NolimSuccessFunction${name[0].replace('#rec','')} = [];
-            window.NolimSuccessFunction${name[0].replace('#rec','')}[0] = funcAutozapoln
-        } else {
-            window.NolimSuccessFunction${name[0].replace('#rec','')}.push(funcAutozapoln)
-        };
-        window.mySuccessFunction${name[0].replace('#rec','')} = function($form) {
-            for (var i = 0; i < window.NolimSuccessFunction${name[0].replace('#rec','')}.length; i++) {
-                window.NolimSuccessFunction${name[0].replace('#rec','')}[i]($form)
-            }
-        };
-    });
-    $(window).on("load", function() {
-        setInterval(function() {
-            $("${name[0]} .js-form-proccess").each(function() {
-                $(this).data("formsended-callback", "window.mySuccessFunction${name[0].replace('#rec','')}")
-            })
-        }, 1000);
-    });
-</script>
+// <script>
+//     function takemask(a, n) {
+//         setTimeout(function() {
+//             if ($('[name="' + a + '"]').hasClass('js-phonemask-result')) {
+//                 let take1 = $('[name="' + a + '"]').prev().attr('data-phonemask-code');
+//                 take1 = n.replace(take1, '');
+//                 $('[name="' + a + '"]').prev().val(take1);
+//                 $('[name="' + a + '"]').val(take1);
+//                 $('.t-input-phonemask').trigger('input');
+//             }
+//         }, 2500);
+//     };
+//     $(document).ready(function() {
+//         var e = [${nolimBlocks[i].modoptions[0]([name[1]])}];
+//         for (let o = 0; o < e.length; o++)
+//             if (null != localStorage.getItem(e[o])) {
+//                 let n = localStorage.getItem(e[o]);
+//                 $('[name="' + e[o] + '"]').val(n);
+//                 takemask(e[o], n);
+//             } let funcAutozapoln = function(o) {
+//             var n = {};
+//             $(o.serializeArray()).each(function(e, o) {
+//                 n[o.name] = o.value
+//             });
+//             for (let o = 0; o < e.length; o++) null != n[e[o]] && (localStorage.setItem(e[o], n[e[o]]), console.log(localStorage.getItem(e[o])))
+//         };
+//         if (typeof window.NolimSuccessFunction${name[0].replace('#rec','')} == 'undefined') {
+//             window.NolimSuccessFunction${name[0].replace('#rec','')} = [];
+//             window.NolimSuccessFunction${name[0].replace('#rec','')}[0] = funcAutozapoln
+//         } else {
+//             window.NolimSuccessFunction${name[0].replace('#rec','')}.push(funcAutozapoln)
+//         };
+//         window.mySuccessFunction${name[0].replace('#rec','')} = function($form) {
+//             for (var i = 0; i < window.NolimSuccessFunction${name[0].replace('#rec','')}.length; i++) {
+//                 window.NolimSuccessFunction${name[0].replace('#rec','')}[i]($form)
+//             }
+//         };
+//     });
+//     $(window).on("load", function() {
+//         setInterval(function() {
+//             $("${name[0]} .js-form-proccess").each(function() {
+//                 $(this).data("formsended-callback", "window.mySuccessFunction${name[0].replace('#rec','')}")
+//             })
+//         }, 1000);
+//     });
+// </script>
 
-`;
-},
-instruction: ``
-});
-
+// `;
+// },
+// instruction: ``
+// });
 
 
 nolimBlocks.push({
@@ -4581,6 +5939,7 @@ icon: "https://static.tildacdn.com/tild6661-3961-4164-b531-373036383566/Frame_53
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Прочее",
 title: "Показать popup при скролле вверх из ZERO BLOCK",
 modsettings: `[
 {
@@ -4638,7 +5997,6 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 
-/*
 nolimBlocks.push({
 name: "",
 cod: "NLM054",
@@ -4650,6 +6008,7 @@ icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
 title: "Горизонтальный скролл в мобильной версии для разделов",
+grid: "yes",
 modsettings: `[
 {
     "id": "1",
@@ -4750,11 +6109,11 @@ modsettings: `[
 ]`,
 
 
-moddefaultsettings: '["","","","","","","","","","","","",""]',
+moddefaultsettings: '["","","","","","","","","","","","0",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<style> @media screen and (max-width: ${n2i(name[12],'1200')}px) { .t-store__parts-switch-wrapper { overflow-y: scroll; display: flex; width: 100%; margin-bottom: 20px; padding-bottom: 20px; padding-top: 12px; } .t-store__parts-switch-btn { display: flex; white-space: nowrap; align-items: center; font-size: ${n2i(name[0],'14')}px; color: ${name[1]}; border-radius: ${n2i(name[4],'0')}px; background-color: ${name[2]}; border: ${name[5]}px solid ${name[3]}; padding-top: 8px; padding-right: 16px; padding-bottom: 10px; padding-left: 16px; } .t-store__parts-switch-btn.t-active { color: ${name[7]}; background-color: ${name[8]}; border: ${n2i(name[9],'1')}px solid ${name[10]}!important; opacity: ${name[11] == "0" ? "100%" : name[11] == "1" ? "90%" : name[11] == "2" ? "80%" : name[11] == "3" ? "70%" : name[11] == "4" ? "60%" : name[11] == "5" ? "50%" : name[11] == "6" ? "40%" : name[11] == "7" ? "30%" : name[11] == "8" ? "20%" : name[11] == "9" ? "10%" : ''}!important; } } </style>
+<style> @media screen and (max-width: ${n2i(name[12],'1200')}px) { .t-store__parts-switch-wrapper { overflow: scroll; overflow-y: hidden!important; display: flex; width: 100%; margin-bottom: 20px; padding-bottom: 20px; padding-top: 12px; } .t-store__parts-switch-btn { display: flex; white-space: nowrap; align-items: center; font-size: ${n2i(name[0],'14')}px; color: ${name[1]}; border-radius: ${n2i(name[4],'0')}px; background-color: ${name[2]}; border: ${name[5]}px solid ${name[3]}; padding-top: 8px; padding-right: 16px; padding-bottom: 10px; padding-left: 16px; } .t-store__parts-switch-btn.t-active { color: ${name[7]}; background-color: ${name[8]}; border: ${n2i(name[9],'1')}px solid ${name[10]}!important; opacity: ${name[11] == "0" ? "100%" : name[11] == "1" ? "90%" : name[11] == "2" ? "80%" : name[11] == "3" ? "70%" : name[11] == "4" ? "60%" : name[11] == "5" ? "50%" : name[11] == "6" ? "40%" : name[11] == "7" ? "30%" : name[11] == "8" ? "20%" : name[11] == "9" ? "10%" : ''}!important; } } </style>
 
 `;
 },
@@ -4769,7 +6128,6 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 &bull; Модификация работает только если к блоку подключен каталог!</b><br>
 </div>`
 });
-*/
 
 
 
@@ -4783,6 +6141,7 @@ icon: "https://static.tildacdn.com/tild6662-3635-4635-b766-333562626235/Frame_55
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Прочее",
 title: "Делаем кастомный курсор в Zero Block",
 modsettings: `[
 {
@@ -4842,7 +6201,16 @@ modcontent: function modcontentfunc(name, i) {
 </style>
 `;
 },
-instruction: ``
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+Максимальное количество иконок: 15<br>
+Стороны изображения для курсора не должны превышать 128px.<br><br>
+
+1. Добавляем свой элемент в Зеро Блок и указываем ему класс, такой же, как и в модификации;<br>
+2. Загружаем свою иконку курсора в SVG, что бы не было пикселизации;<br>
+3. Указываем координаты, если в курсоре присутствует "палец" или любой другой элемент, который является "указателем". От верхней точки "Указатели" до краев (верхнего и левого) области мышки меряем расстояние в пикселях и прописываем в координаты. Y - вертикальный отступ (до верхнего края), X - горизонтальный отступ (до левого края);<br>
+6. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
 });
 
 
@@ -4858,6 +6226,7 @@ icon: "https://static.tildacdn.com/tild3562-6238-4138-b936-336634393336/Frame_56
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные, Формы, Корзина и товары",
 title: "Своё окно успешной отправки формы в Zero Block",
 modsettings: `[
 {
@@ -4949,6 +6318,7 @@ icon: "https://static.tildacdn.com/tild3064-3137-4234-a161-313262623565/Frame_57
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные, Корзина и товары, Прочее",
 title: "Выровнять кнопки в карточке товара по всей ширине",
 modsettings: `[
 {
@@ -4992,7 +6362,7 @@ modoptions: [function modcontentfunc(name) {
 }
 ],
 
-moddefaultsettings: '["",""]',
+moddefaultsettings: '["0","0"]',
 modcontent: function modcontentfunc(name, i) {
   return `
 
@@ -5027,7 +6397,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 
 
-
+/*
 nolimBlocks.push({
 name: "",
 cod: "NLM058",
@@ -5074,7 +6444,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 </div>`
 });
-
+*/
 
 
 nolimBlocks.push({
@@ -5088,6 +6458,7 @@ icon: "https://static.tildacdn.com/tild3665-3239-4961-b261-616131306665/Frame_60
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные,Корзина и товары, Меню",
 title: "Избранное в стандартном меню",
 modsettings: `[
 {
@@ -5173,6 +6544,7 @@ icon: "https://static.tildacdn.com/tild3838-3763-4064-b063-616332313866/Frame_61
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Популярные, Кнопки, Эффекты",
 title: "Скрыть/показать блок при нажатии на кнопку",
 modsettings: `[
 {
@@ -5250,6 +6622,7 @@ icon: "https://static.tildacdn.com/tild3832-6131-4661-b964-626539326433/Frame_64
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Кнопки, Эффекты",
 title: "Эффект бегущей строки для кнопки в Zero Block",
 modsettings: `[
 {
@@ -5288,7 +6661,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 
 
-
+/*
 nolimBlocks.push({
 name: "",
 cod: "NLM065",
@@ -5873,10 +7246,44 @@ modcontent: function modcontentfunc(name) {
 },
 
 });
+*/
+
+
+
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    } else {
+       return decodeURI(results[1]) || 0;
+    }
+}
+
+  let preview = $.urlParam('previewmode'); 
+  if(preview == 'yes'){
+    $tpls = [];
+    nolimBlocks.forEach(function(block) {
+        $tpls.push(block)
+    })
+    $('[data-record-type="131"]').hide();
+  } else {
+    nolimBlocks.forEach(function(block) {
+        $tpls.push(block)
+    })
+  }
 
 
 
 
-nolimBlocks.forEach(function(block) {
-    $tpls.push(block)
-})
+
+
+
+
+
+
+
+
+
+
+
+  
