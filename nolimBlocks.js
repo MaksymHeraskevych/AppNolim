@@ -4197,6 +4197,7 @@ icon: "https://static.tildacdn.com/tild3430-6161-4634-b664-333363303435/Frame_33
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
+filter: "Эффекты, Прочее, Текст",
 title: "Кастомизируем блок TX16N2",
 modsettings: `[
 {
@@ -4217,24 +4218,28 @@ modsettings: `[
     "id": "3",
     "title": "Цвет фона иконки",
     "type": "color",
+    "placeholder": "#bdd3ff",
     "value": ""
 },
 {
     "id": "4",
     "title": "Цвет фона активной иконки",
     "type": "color",
+    "placeholder": "#bdd3ff",
     "value": ""
 },
 {
     "id": "5",
     "title": "Цвет фона активной вкладки",
     "type": "color",
+    "placeholder": "#940000",
     "value": ""
 },
 {
     "id": "6",
     "title": "Цвет текста активной вкладки",
     "type": "color",
+    "placeholder": "#9effc2",
     "value": ""
 },
 {
@@ -4261,7 +4266,7 @@ moddefaultsettings: '["","","","","","","","",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<style> .t668__opened .t668__lines { -moz-transform: rotate(-180deg); -ms-transform: rotate(-180deg); -webkit-transform: rotate(-180deg); -o-transform: rotate(-180deg); transform: rotate(-180deg); } .t668__lines svg { display: none; } .t668__lines::after { content: " "; width: 24px; height: 24px; position: absolute; left: 0; background-image:url(${n2i(name[0],'https://static.tildacdn.com/tild3265-3339-4162-b432-646566326363/svg-editor-image.svg')}); background-size: 100%; background-repeat: no-repeat; background-position: center; } .t668__accordion { border-radius: ${n2i(name[1],'0')}px !important; -moz-border-radius:${n2i(name[1],'0')}px !important; -webkit-border-radius:${n2i(name[1],'0')}px !important; -khtml-border-radius:${n2i(name[1],'0')}px !important; } .t668__wrapper { border-radius: ${n2i(name[1],'0')}px !important; -moz-border-radius:${n2i(name[1],'0')}px !important; -webkit-border-radius:${n2i(name[1],'0')}px !important; -khtml-border-radius:${n2i(name[1],'0')}px !important; } .t668__opened { background-color: ${name[4]} !important; border-radius: ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; -moz-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0 !important; -webkit-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; -khtml-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; }.t668__content{ border-radius: 0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -moz-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -webkit-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -khtml-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; } .t668__text { padding-top: 5px; } .t668__header.t668__opened ~ .t668__content { background-color: ${name[4]} !important; } .t668__circle { background-color: ${name[2]} !important; } .t668__opened .t668__circle { background-color: ${name[3]} !important; } .t668__opened .t668__title { color: ${name[5]} !important; } .t668__header.t668__opened ~ .t668__content .t668__text{ color: ${name[5]} !important; } @media screen and (max-width: 640px){ .t668__title { font-size: ${n2i(name[7],'18')}px!important; } .t668__text { font-size: ${n2i(name[8],'14')}px!important; } } </style>
+    <style> .t668__opened .t668__lines { -moz-transform: rotate(-180deg); -ms-transform: rotate(-180deg); -webkit-transform: rotate(-180deg); -o-transform: rotate(-180deg); transform: rotate(-180deg); } .t668__lines svg { display: none; } .t668__lines::after { content: " "; width: 24px; height: 24px; position: absolute; left: 0; background-image:url(${n2i(name[0],'https://static.tildacdn.com/tild3265-3339-4162-b432-646566326363/svg-editor-image.svg')}); background-size: 100%; background-repeat: no-repeat; background-position: center; } .t668__accordion { border-radius: ${n2i(name[1],'0')}px !important; -moz-border-radius:${n2i(name[1],'0')}px !important; -webkit-border-radius:${n2i(name[1],'0')}px !important; -khtml-border-radius:${n2i(name[1],'0')}px !important; } .t668__wrapper { border-radius: ${n2i(name[1],'0')}px !important; -moz-border-radius:${n2i(name[1],'0')}px !important; -webkit-border-radius:${n2i(name[1],'0')}px !important; -khtml-border-radius:${n2i(name[1],'0')}px !important; } .t668__opened { background-color: ${name[4]} !important; border-radius: ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; -moz-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0 !important; -webkit-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; -khtml-border-radius:${n2i(name[1],'0')}px ${n2i(name[1],'0')}px 0 0!important; }.t668__content{ border-radius: 0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -moz-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -webkit-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; -khtml-border-radius:0 0 ${n2i(name[1],'0')}px ${n2i(name[1],'0')}px !important; } .t668__text { padding-top: 5px; } .t668__header.t668__opened ~ .t668__content { background-color: ${name[4]} !important; } .t668__circle { background-color: ${name[2]} !important; } .t668__opened .t668__circle { background-color: ${name[3]} !important; } .t668__opened .t668__title { color: ${name[5]} !important; } .t668__header.t668__opened ~ .t668__content .t668__text{ color: ${name[5]} !important; } @media screen and (max-width: 640px){ .t668__title { font-size: ${n2i(name[7],'18')}px!important; } .t668__text { font-size: ${n2i(name[8],'14')}px!important; } } </style>
 
 `;
 },
@@ -5819,114 +5824,115 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 
-// nolimBlocks.push({
-// name: "",
-// cod: "NLM052",
-// descr: "",
-// descr_ru: "",
-// disableforplan0: "y",
-// icon: "https://static.tildacdn.com/tild3863-3763-4863-b939-643932616365/Frame_52.jpg",
-// icon2: "/files/tplsthumbs/other-block-02.png",
-// id: "131",
-// inlib: "y",
-// title: "Автозаполнение полей в формах",
-// modsettings: `[
-// {
-//     "id": "1",
-//     "title": "id блока с формой",
-//     "type": "block",
-//     "placeholder": "#rec000000",
-//     "value": ""
-// },
-// {
-//     "id": "2",
-//     "title": "+ Добавить поле",
-//     "type": "groupCards",
-//     "options": [
-//         {
-//         "title": "Имя переменной",
-//         "type": "input",
-//         "placeholder": "name",
-//         "value": ""
-//         }
-//     ],
-//     "limit": "14",
-//     "placeholder": "class",
-//     "value": "1"
-// }
-// ]`,
+nolimBlocks.push({
+name: "",
+cod: "NLM052",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3863-3763-4863-b939-643932616365/Frame_52.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+filter: "Формы, Прочее",
+title: "Автозаполнение полей в формах",
+modsettings: `[
+{
+    "id": "1",
+    "title": "id блока с формой",
+    "type": "block",
+    "placeholder": "#rec000000",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "+ Добавить поле",
+    "type": "groupCards",
+    "options": [
+        {
+        "title": "Имя переменной",
+        "type": "input",
+        "placeholder": "name",
+        "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": "1"
+}
+]`,
 
-// moddefaultsettings: '["", [""] ]',
-// modoptions: [function modcontentfunc(name) {
-    
-//     let strurl2 = [];
-//     let keurkl2 
-//     for(let i = 0; i < name[0].length; i++){
-//         if(name[0][i][0] != ''){
-//         keurkl2 = name[0][i][0]
-        
-//         keurkl2 = '"'+keurkl2+'"';
-//         strurl2.push(keurkl2);
-//         }
-//     }; 
+moddefaultsettings: '["", [""] ]',
+modoptions: [function modcontentfunc(name) {
 
-//     return strurl2.join(",");
-// }
-// ],
-// modcontent: function modcontentfunc(name,i) {
-//   return `
+    let strurl2 = [];
+    let keurkl2 
+    for(let i = 0; i < name[0].length; i++){
+        if(name[0][i][0] != ''){
+        keurkl2 = name[0][i][0]
 
-// <script>
-//     function takemask(a, n) {
-//         setTimeout(function() {
-//             if ($('[name="' + a + '"]').hasClass('js-phonemask-result')) {
-//                 let take1 = $('[name="' + a + '"]').prev().attr('data-phonemask-code');
-//                 take1 = n.replace(take1, '');
-//                 $('[name="' + a + '"]').prev().val(take1);
-//                 $('[name="' + a + '"]').val(take1);
-//                 $('.t-input-phonemask').trigger('input');
-//             }
-//         }, 2500);
-//     };
-//     $(document).ready(function() {
-//         var e = [${nolimBlocks[i].modoptions[0]([name[1]])}];
-//         for (let o = 0; o < e.length; o++)
-//             if (null != localStorage.getItem(e[o])) {
-//                 let n = localStorage.getItem(e[o]);
-//                 $('[name="' + e[o] + '"]').val(n);
-//                 takemask(e[o], n);
-//             } let funcAutozapoln = function(o) {
-//             var n = {};
-//             $(o.serializeArray()).each(function(e, o) {
-//                 n[o.name] = o.value
-//             });
-//             for (let o = 0; o < e.length; o++) null != n[e[o]] && (localStorage.setItem(e[o], n[e[o]]), console.log(localStorage.getItem(e[o])))
-//         };
-//         if (typeof window.NolimSuccessFunction${name[0].replace('#rec','')} == 'undefined') {
-//             window.NolimSuccessFunction${name[0].replace('#rec','')} = [];
-//             window.NolimSuccessFunction${name[0].replace('#rec','')}[0] = funcAutozapoln
-//         } else {
-//             window.NolimSuccessFunction${name[0].replace('#rec','')}.push(funcAutozapoln)
-//         };
-//         window.mySuccessFunction${name[0].replace('#rec','')} = function($form) {
-//             for (var i = 0; i < window.NolimSuccessFunction${name[0].replace('#rec','')}.length; i++) {
-//                 window.NolimSuccessFunction${name[0].replace('#rec','')}[i]($form)
-//             }
-//         };
-//     });
-//     $(window).on("load", function() {
-//         setInterval(function() {
-//             $("${name[0]} .js-form-proccess").each(function() {
-//                 $(this).data("formsended-callback", "window.mySuccessFunction${name[0].replace('#rec','')}")
-//             })
-//         }, 1000);
-//     });
-// </script>
+        keurkl2 = '"'+keurkl2+'"';
+        strurl2.push(keurkl2);
+        }
+    }; 
 
-// `;
-// },
-// instruction: ``
-// });
+    return strurl2.join(",");
+}
+],
+modcontent: function modcontentfunc(name,i) {
+  return `
+
+<script>
+    function takemask(a, n) {
+        setTimeout(function() {
+            if ($('[name="' + a + '"]').hasClass('js-phonemask-result')) {
+                let take1 = $('[name="' + a + '"]').prev().attr('data-phonemask-code');
+                take1 = n.replace(take1, '');
+                $('[name="' + a + '"]').prev().val(take1);
+                $('[name="' + a + '"]').val(take1);
+                $('.t-input-phonemask').trigger('input');
+            }
+        }, 2500);
+    };
+    $(document).ready(function() {
+        var e = [${nolimBlocks[i].modoptions[0]([name[1]])}];
+        for (let o = 0; o < e.length; o++)
+            if (null != localStorage.getItem(e[o])) {
+                let n = localStorage.getItem(e[o]);
+                $('[name="' + e[o] + '"]').val(n);
+                takemask(e[o], n);
+            } let funcAutozapoln = function(o) {
+            var n = {};
+            $(o.serializeArray()).each(function(e, o) {
+                n[o.name] = o.value
+            });
+            for (let o = 0; o < e.length; o++) null != n[e[o]] && (localStorage.setItem(e[o], n[e[o]]), console.log(localStorage.getItem(e[o])))
+        };
+        if (typeof window.NolimSuccessFunction${name[0].replace('#rec','')} == 'undefined') {
+            window.NolimSuccessFunction${name[0].replace('#rec','')} = [];
+            window.NolimSuccessFunction${name[0].replace('#rec','')}[0] = funcAutozapoln
+        } else {
+            window.NolimSuccessFunction${name[0].replace('#rec','')}.push(funcAutozapoln)
+        };
+        window.mySuccessFunction${name[0].replace('#rec','')} = function($form) {
+            for (var i = 0; i < window.NolimSuccessFunction${name[0].replace('#rec','')}.length; i++) {
+                window.NolimSuccessFunction${name[0].replace('#rec','')}[i]($form)
+            }
+        };
+    });
+    $(window).on("load", function() {
+        setInterval(function() {
+            $("${name[0]} .js-form-proccess").each(function() {
+                $(this).data("formsended-callback", "window.mySuccessFunction${name[0].replace('#rec','')}")
+            })
+        }, 1000);
+    });
+</script>
+
+`;
+},
+instruction: ``
+});
 
 
 nolimBlocks.push({
