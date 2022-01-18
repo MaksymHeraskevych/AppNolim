@@ -49,12 +49,11 @@ modsettings: `[
     "placeholder": "Form"
 }
 ]`,
-moddefaultsettings: '["","","","0",""]',
+moddefaultsettings: '["","","","",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<script> $(document).ready(function(){ let sI = setInterval(function() { if ($("${name[0]}").length > 0) { clearInterval(sI); var redid1 = "${name[0]}"; var redid2 = "${name[1]}"; var postscript = "${name[4]}"; var postbool = ${name[3]}; var hurl = "${name[2]}"; if(postbool==0){ var postscript = ''; } $(redid2+' .t-form__inputsbox .t-input-group').remove(); $(redid1+' .js-tilda-rule').each(function(index) { var inputname = $(this).attr('name'); if(inputname.includes(postscript)){ var inp = inputname.replace(postscript,""); var gg = '<div class="t-input-group t-input-group_in"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no"></div> <div class="t-input-block"> <input type="text" name="'+inp+'" class="t-input js-tilda-rule " value="" placeholder="'+inp+'" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div>'; if($(redid1+' .js-tilda-rule').eq(index).attr('type') == 'radio' && $(redid2+' [name="'+inp+'"]').length >= 1){} else { $(redid2+' .t-form__inputsbox').prepend(gg); } } }); $(redid1+' [type="hidden"][tabindex="-1"]:not(.js-tilda-rule)').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); var gg = '<div class="t-input-group t-input-group_in"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no"></div> <div class="t-input-block"> <input type="text" name="'+inp+'" class="t-input js-tilda-rule " value="" placeholder="'+inp+'" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div>'; $(redid2+' .t-form__inputsbox').prepend(gg); }); $('${n2i(name[0],'#rec000000')} [href="'+hurl+'"]').click(function(){ var a = redid1.replace("#rec",""); a = $('[name="form'+a+'"]'); window.tildaForm.hideErrors(a); o = window.tildaForm.validate(a); window.tildaForm.showErrors(a, o); if(tildaForm.showErrorInPopup(a, o)){ } else { $(redid1+' .js-tilda-rule').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); if ($(redid1+' .js-tilda-rule').eq(index).attr('type') == 'checkbox'){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-radio')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-checkbox')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-img-select')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else { $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]').val()); } }); $(redid1+' [type="hidden"][tabindex="-1"]:not(.js-tilda-rule)').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]').val()); }); $(redid2 + ' .t-submit').click(); } }); var zeroForma = function ($form) { if(window.NolimSuccessFunction${name[1].replace('#rec','')} == 1){
-var st = $(redid2+' .js-successbox').html(); window.tildaForm.showSuccessPopup(); $('#tildaformsuccesspopuptext').html(st); var successUrl = $form.attr('data-success-url'); if (successUrl !== undefined && successUrl !== '') { window.location.href = successUrl; } } }; if(typeof window.NolimSuccessFunction${name[1].replace('#rec','')} == 'undefined') { window.NolimSuccessFunction${name[1].replace('#rec','')} = []; window.NolimSuccessFunction${name[1].replace('#rec','')}[0] = zeroForma} else { window.NolimSuccessFunction${name[1].replace('#rec','')}.push(zeroForma)}; window.mySuccessFunction${name[1].replace('#rec','')} = function ($form) { for (var i = 0; i < window.NolimSuccessFunction${name[1].replace('#rec','')}.length; i++) { window.NolimSuccessFunction${name[1].replace('#rec','')}[i]($form) }; };setInterval(function() { $(redid2+' .js-form-proccess').each(function () { $(this).data('success-callback', 'window.mySuccessFunction${name[1].replace('#rec','')}'); }); }, 1000); $(redid1).on('keyup keypress', function(e) { var keyCode = e.keyCode || e.which; if (keyCode === 13) { e.preventDefault(); $('[href="'+hurl+'"]').click(); return false; } }); }; }, 50); }); </script> <style> ${n2i(name[0],'#rec000000')} .t-submit, ${n2i(name[1],'#rec000000')} { display:none!important; } </style>
+<script> $(document).ready(function(){ let sI = setInterval(function() { if ($("${name[0]}").length > 0) { clearInterval(sI); var redid1 = "${name[0]}"; var redid2 = "${name[1]}"; var postscript = "${name[4]}"; var postbool = "${name[4] == '' ? '0' : '1'}"; var hurl = "${name[2]}"; if(postbool==0){ var postscript = ''; } $(redid2+' .t-form__inputsbox .t-input-group').remove(); $(redid1+' .js-tilda-rule').each(function(index) { var inputname = $(this).attr('name'); if(inputname.includes(postscript)){ var inp = inputname.replace(postscript,""); var gg = '<div class="t-input-group t-input-group_in"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no"></div> <div class="t-input-block"> <input type="text" name="'+inp+'" class="t-input js-tilda-rule " value="" placeholder="'+inp+'" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div>'; if($(redid1+' .js-tilda-rule').eq(index).attr('type') == 'radio' && $(redid2+' [name="'+inp+'"]').length >= 1){} else { $(redid2+' .t-form__inputsbox').prepend(gg); } } }); $(redid1+' [type="hidden"][tabindex="-1"]:not(.js-tilda-rule)').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); var gg = '<div class="t-input-group t-input-group_in"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no"></div> <div class="t-input-block"> <input type="text" name="'+inp+'" class="t-input js-tilda-rule " value="" placeholder="'+inp+'" style="color:#000000; border:1px solid #000000; "> <div class="t-input-error"></div> </div> </div>'; $(redid2+' .t-form__inputsbox').prepend(gg); }); $('${n2i(name[0],'#rec000000')} [href="'+hurl+'"]').click(function(){ var a = redid1.replace("#rec",""); a = $('[name="form'+a+'"]'); window.tildaForm.hideErrors(a); o = window.tildaForm.validate(a); window.tildaForm.showErrors(a, o); if(tildaForm.showErrorInPopup(a, o)){ } else { $(redid1+' .js-tilda-rule').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); if ($(redid1+' .js-tilda-rule').eq(index).attr('type') == 'checkbox'){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-radio')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-checkbox')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else if ($(redid1+' .js-tilda-rule').eq(index).hasClass('t-img-select')){ $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]:checked').val()); } else { $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]').val()); } }); $(redid1+' [type="hidden"][tabindex="-1"]:not(.js-tilda-rule)').each(function(index) { var inputname = $(this).attr('name'); var inp = inputname.replace(postscript,""); $(redid2+' [name="'+inp+'"]').val($(redid1+' [name="'+inputname+'"]').val()); }); $(redid2 + ' .t-submit').click(); } }); var zeroForma = function ($form) { if(window.NolimSuccessFunction${name[1].replace('#rec','')}.length == 1){ var st = $(redid2+' .js-successbox').html(); window.tildaForm.showSuccessPopup(); $('#tildaformsuccesspopuptext').html(st); var successUrl = $form.attr('data-success-url'); if (successUrl !== undefined && successUrl !== '') { window.location.href = successUrl; } } }; if(typeof window.NolimSuccessFunction${name[1].replace('#rec','')} == 'undefined') { window.NolimSuccessFunction${name[1].replace('#rec','')} = []; window.NolimSuccessFunction${name[1].replace('#rec','')}[0] = zeroForma} else { window.NolimSuccessFunction${name[1].replace('#rec','')}.push(zeroForma)}; window.mySuccessFunction${name[1].replace('#rec','')} = function ($form) { for (var i = 0; i < window.NolimSuccessFunction${name[1].replace('#rec','')}.length; i++) { window.NolimSuccessFunction${name[1].replace('#rec','')}[i]($form) }; };setInterval(function() { $(redid2+' .js-form-proccess').each(function () { $(this).data('success-callback', 'window.mySuccessFunction${name[1].replace('#rec','')}'); }); }, 1000); $(redid1).on('keyup keypress', function(e) { var keyCode = e.keyCode || e.which; if (keyCode === 13) { e.preventDefault(); $('${name[0]} [href="'+hurl+'"]').click(); return false; } }); }; }, 50); }); </script> <style> ${n2i(name[0],'#rec000000')} .t-submit, ${n2i(name[1],'#rec000000')} { display:none!important; } </style>
 
   `;
 },
@@ -337,259 +336,265 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 
 
-
-
-
-
-
 nolimBlocks.push({
-    name: "",
-    cod: "NLM005",
-    descr: "",
-    descr_ru: "",
-    disableforplan0: "y",
-    icon: "https://static.tildacdn.com/tild3566-6466-4239-a435-383962663236/Frame_5.jpg",
-    icon2: "/files/tplsthumbs/other-block-02.png",
-    id: "131",
-    inlib: "y",
-    filter: "Формы,Популярные",
-    title: "Делаем своё поле загрузки файлов в любой форме",
-    grid: "yes",
-    modsettings: `[
-    {
-        "id": "1",
-        "title": "id блока с формой",
-        "type": "block",
-        "placeholder": "#rec000000",
-        "value": ""
+name: "",
+cod: "NLM005",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3566-6466-4239-a435-383962663236/Frame_5.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+filter: "Формы, Популярные",
+title: "Делаем своё поле загрузки файлов в любой форме",
+grid: "yes",
+modsettings: `[
+{
+    "id": "1",
+    "title": "id блока с формой",
+    "type": "block",
+    "placeholder": "#rec000000",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Цвет текста",
+    "type": "color",
+    "placeholder": "#bc8680",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Цвет фона",
+    "type": "color",
+    "placeholder": "#ffffff",
+    "value": ""
+},
+{
+    "id": "4",
+    "title": "Толщина бордера",
+    "type": "select",
+    "options": {
+        "0px": "0px",
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px",
+        "5px": "5px"
     },
-    {
-        "id": "2",
-        "title": "Цвет текста",
-        "type": "color",
-        "placeholder": "#bc8680",
-        "value": ""
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Цвет border",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Тип border",
+    "type": "select",
+    "options": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
     },
-    {
-        "id": "3",
-        "title": "Цвет фона",
-        "type": "color",
-        "placeholder": "#ffffff",
-        "value": ""
+    "value": ""
+},
+{
+    "id": "7",
+    "title": "Радиус border (px)",
+    "type": "number",
+    "placeholder": "10",
+    "value": ""
+},
+{
+    "id": "8",
+    "title": "Размер шрифта (px)",
+    "type": "number",
+    "placeholder": "18",
+    "value": ""
+},
+{
+    "id": "9",
+    "title": "Насыщенность",
+    "type": "select",
+    "options": {
+        "thin": "100",
+        "light": "300",
+        "normal": "400",
+        "medium": "500",
+        "semi-bold": "600",
+        "bold": "700"
     },
-    {
-        "id": "4",
-        "title": "Цвет бордера",
-        "type": "color",
-        "placeholder": "#000000",
-        "value": ""
-    },
-    {
-        "id": "5",
-        "title": "Толщина бордера (px)",
-        "type": "number",
-        "placeholder": "2",
-        "value": ""
-    },
-    {
-        "id": "6",
-        "title": "Тип border",
-        "type": "select",
-        "options": {
-            "solid": "solid",
-            "dotted": "dotted",
-            "dashed": "dashed",
-            "none": "none"
+    "value": ""
+},
+{
+    "id": "10",
+    "title": "+ Добавить дополнительный текст",
+    "type": "groupInputs",
+    "options": [
+        {
+            "title": "Текст",
+            "type": "input",
+            "placeholder": "Файлы .doc, .docx, .txt, .rtf, .odt, .pdf до 2Мб.",
+            "value": ""
         },
-        "value": ""
-    },
-    {
-        "id": "7",
-        "title": "border-radius (px)",
-        "type": "number",
-        "placeholder": "20",
-        "value": ""
-    },
-    {
-        "id": "8",
-        "title": "Размер шрифта (px)",
-        "type": "number",
-        "placeholder": "16",
-        "value": ""
-    },
-    {
-        "id": "9",
-        "title": "Насыщенность",
-        "type": "select",
-        "options": {
-            "thin": "thin",
-            "light": "light",
-            "normal": "normal",
-            "medium": "medium",
-            "semi-bold": "semi-bold",
-            "bold": "bold"
+        {
+            "title": "Цвет текста",
+            "type": "color",
+            "placeholder": "#b6babd",
+            "value": ""
         },
-        "value": ""
-    },
-    {
-        "id": "10",
-        "title": "Дополнительный текст",
-        "type": "groupInputs",
-        "options": [
-            {
-                "title": "Текст",
-                "type": "input",
-                "placeholder": "Файлы .doc, .docx, .txt, .rtf, .odt, .pdf до 2Мб.",
-                "value": ""
-            },
-            {
-                "title": "Цвет текста",
-                "type": "color",
-                "placeholder": "#b6babd",
-                "value": ""
-            },
-            {
-                "title": "Размер шрифта (px)",
-                "type": "number",
-                "placeholder": "14",
-                "value": ""
-            },
-            {
-                "title": "Насыщенность",
-                "type": "select",
-                "options": {
-                    "thin": "thin",
-                    "light": "light",
-                    "normal": "normal",
-                    "medium": "medium",
-                    "semi-bold": "semi-bold",
-                    "bold": "bold"
-                }
-            }
-        ],
-        "limit": "14",
-        "placeholder": "class",
-        "value": ""
-    },
-    {
-        "id": "11",
-        "title": "Добавить иконку",
-        "type": "groupInputs",
-        "options": [
-            {
-                "title": "Ссылка на иконку",
-                "type": "image",
-                "value": ""
-            }
-        ],
-        "limit": "14",
-        "placeholder": "class",
-        "value": ""
-    },
-    {
-        "id": "12",
-        "title": "Стили при наведении",
-        "type": "groupInputs",
-        "options": [
-            {
-                "title": "Цвет текста",
-                "type": "color",
-                "placeholder": "#000",
-                "value": ""
-            },
-            {
-                "title": "Цвет фона",
-                "type": "color",
-                "placeholder": "#000",
-                "value": ""
-            },
-            {
-                "title": "Цвет border",
-                "type": "color",
-                "placeholder": "#000",
-                "value": ""
-            },
-            {
-                "title": "Тип border",
-                "type": "select",
-                "options": {
-                    "solid": "solid",
-                    "dotted": "dotted",
-                    "dashed": "dashed",
-                    "none": "none"
-                }
-            },
-            {
-                "title": "Цвет доп. текста",
-                "type": "color",
-                "placeholder": "#000",
-                "value": ""
-            }
-        ],
-        "limit": "14",
-        "placeholder": "class",
-        "value": ""
-    },
-    {
-        "title": "При статусе 'Файл загружен'",
-        "type": "text"
-    },
-    {
-        "id": "13",
-        "title": "Цвет текста",
-        "type": "color",
-        "placeholder": "#bc8680",
-        "value": ""
-    },
-    {
-        "id": "14",
-        "title": "Цвет фона",
-        "type": "color",
-        "placeholder": "#ffffff",
-        "value": ""
-    },
-    {
-        "id": "15",
-        "title": "Цвет бордера",
-        "type": "color",
-        "placeholder": "#000",
-        "value": ""
-    },
-    {
-        "id": "16",
-        "title": "Размер бордера (px)",
-        "type": "number",
-        "placeholder": "16",
-        "value": ""
-    },
-    {
-        "id": "17",
-        "title": "Тип border",
-        "type": "select",
-        "options": {
-            "solid": "solid",
-            "dotted": "dotted",
-            "dashed": "dashed",
-            "none": "none"
+        {
+            "title": "Размер шрифта (px)",
+            "type": "number",
+            "placeholder": "14",
+            "value": ""
         },
-        "value": ""
+        {
+            "title": "Насыщенность",
+            "type": "select",
+            "options": {
+                "thin": "100",
+                "light": "300",
+                "normal": "400",
+                "medium": "500",
+                "semi-bold": "600",
+                "bold": "700"
+            }
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+},
+{
+    "id": "11",
+    "title": "+ Добавить иконку",
+    "type": "groupInputs",
+    "options": [
+        {
+            "title": "Ссылка на иконку",
+            "type": "image",
+            "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+},
+{
+    "id": "12",
+    "title": "+ Добавить стили при наведении",
+    "type": "groupInputs",
+    "options": [
+        {
+            "title": "Цвет текста",
+            "type": "color",
+            "placeholder": "#000",
+            "value": ""
+        },
+        {
+            "title": "Цвет фона",
+            "type": "color",
+            "placeholder": "#000",
+            "value": ""
+        },
+        {
+            "title": "Цвет border",
+            "type": "color",
+            "placeholder": "#000",
+            "value": ""
+        },
+        {
+            "title": "Тип border",
+            "type": "select",
+            "options": {
+                "solid": "solid",
+                "dashed": "dashed",
+                "dotted": "dotted"
+            }
+        },
+        {
+            "title": "Цвет доп. текста",
+            "type": "color",
+            "placeholder": "#000",
+            "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": ""
+},
+{
+    "title": "При статусе 'Файл загружен'",
+    "type": "text"
+},
+{
+    "id": "13",
+    "title": "Цвет текста",
+    "type": "color",
+    "placeholder": "#bc8680",
+    "value": ""
+},
+{
+    "id": "14",
+    "title": "Цвет фона",
+    "type": "color",
+    "placeholder": "#ffffff",
+    "value": ""
+},
+{
+    "id": "15",
+    "title": "Толщина бордера",
+    "type": "select",
+    "options": {
+        "0px": "0px",
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px",
+        "5px": "5px"
     },
-    {
-        "id": "18",
-        "title": "Цвет доп. элементов",
-        "type": "color",
-        "placeholder": "#сecece",
-        "value": ""
+    "value": ""
+},
+{
+    "id": "16",
+    "title": "Цвет border",
+    "type": "color",
+    "placeholder": "#000",
+    "value": ""
+},
+{
+    "id": "17",
+    "title": "Тип border",
+    "type": "select",
+    "options": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
     },
-    {
-        "id": "19",
-        "title": "Ссылка на иконку справа",
-        "type": "image",
-        "placeholder": "#сecece",
-        "value": ""
-    }
-    ]`,
-moddefaultsettings: '["","","","","","solid","","","thin", ["","","","thin"], [""], ["","","","dotted",""],"","","","","","dashed","",""]',
+    "value": ""
+},
+{
+    "id": "18",
+    "title": "Цвет доп. элементов",
+    "type": "color",
+    "placeholder": "#сecece",
+    "value": ""
+},
+{
+    "id": "19",
+    "title": "Ссылка на иконку справа",
+    "type": "image",
+    "placeholder": "#сecece",
+    "value": ""
+}
+]`,
+moddefaultsettings: '["","","","0px","","solid","","","100", ["","","","100"], [""], ["","","","solid",""],"","","","0px","","solid","",""]',
 modInputChange: function modcontentfunc() {
 
     if($('[id="group_groupInputs10"] .nolimgroupinput').eq(0).val() != ''){
@@ -598,141 +603,31 @@ modInputChange: function modcontentfunc() {
         $('[id="group_groupInputs12"] .pe-form-group').eq(5).css('display', 'none');
     }
 
+    if($('.noliminput[id="4"]').val() == '0px'){
+        $('.noliminput[id="5"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="6"]').parents('.pe-form-group').hide();
+        $('[id="group_groupInputs12"] .pe-form-group').eq(3).css('display', 'none');
+        $('[id="group_groupInputs12"] .pe-form-group').eq(4).css('display', 'none');
+    } else if($('.noliminput[id="4"]').val() != '0px'){
+        $('.noliminput[id="5"]').parents('.pe-form-group').show();
+        $('.noliminput[id="6"]').parents('.pe-form-group').show();
+        $('[id="group_groupInputs12"] .pe-form-group').eq(3).css('display', 'block');
+        $('[id="group_groupInputs12"] .pe-form-group').eq(4).css('display', 'block');
+    }
+
+    if($('.noliminput[id="15"]').val() == '0px'){
+        $('.noliminput[id="16"]').parents('.pe-form-group').hide();
+        $('.noliminput[id="17"]').parents('.pe-form-group').hide();
+    } else if($('.noliminput[id="15"]').val() != '0px'){
+        $('.noliminput[id="16"]').parents('.pe-form-group').show();
+        $('.noliminput[id="17"]').parents('.pe-form-group').show();
+    }
+
 },
 modcontent: function modcontentfunc(name) {
     return `
 
-<style>
-    ${name[0]} .t-upwidget-container__button:not(.t-upwidget-container__button_fileholder) {
-        color: ${n2i(name[1], '#000')} !important;
-        background-color: ${name[2]} !important;
-        max-width: 100% !important;
-        display: block !important;
-        font-size: ${name[7]}px !important;
-        font-weight: ${name[8]} !important;
-        border-radius: ${name[6]}px !important;
-        border: ${name[4]}px ${name[5]} ${name[3]} !important;
-    }
-
-    ${name[11][0] == '' ? '' : `
-    ${name[0]} .t-upwidget-container__button:not(.t-upwidget-container__button_fileholder):hover {
-        color: ${name[11][0]} !important;
-        background-color: ${name[11][1]} !important;
-        border: ${name[4]}px ${name[11][3]} ${name[11][2]} !important;
-    }`}
-
-    ${name[0]} .t-upwidget-container__button {
-        color: ${name[13]} !important;
-        background-color: ${name[14]} !important;
-        max-width: 100% !important;
-        display: block !important;
-        font-size: ${name[7]}px !important;
-        font-weight: ${name[8]} !important;
-        border-radius: ${name[6]}px !important;
-        border: ${name[16]}px ${name[17]} ${name[15]} !important;
-        border-radius: 10px !important;
-    }
-
-    ${name[0]} .t-upwidget-container__button_fileholder:first-child:after {
-        content: "";
-        padding-left: 10px;
-        left: 7px;
-        top: 6px;
-        width: 24px;
-        display: inline-block;
-        height: 24px;
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url(${name[19]});
-        position: relative;
-    }
-
-    ${name[0]} .t-upwidget-container__button.t-upwidget-container__button_fileholder {
-        text-align: center !important;
-    }
-
-    ${name[10][0] == '' ? '' : `
-    ${name[0]} .t-upwidget-container__button:first-child:before {
-        content: '';
-        padding-right: 10px;
-        right: 7px;
-        top: 6px;
-        width: 24px;
-        display: inline-block;
-        height: 24px;
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url(${name[10][0]});
-        position: relative;
-    }`}
-
-    ${name[9][0] == '' ? '' : `
-    ${name[0]} .t-upwidget-container__button.t-text:not(.t-upwidget-container__button_fileholder):after {
-        content: "${name[9][0]}";
-        display: block;
-        white-space: normal;
-        text-align: center;
-        cursor: pointer;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 100% !important;
-        color: ${name[9][1]} !important;
-        background-color: inherit !important;
-        max-width: 100% !important;
-        font-size: ${name[9][2]}px !important;
-        font-weight: ${name[9][3]} !important;
-        font-family: inherit;
-        padding-top: 5px;
-        padding-bottom: 10px;
-    }
-
-    ${name[0]} .t-upwidget-container__button.t-text:not(.t-upwidget-container__button_fileholder):hover:after {
-        content: "${name[9][0]}";
-        ${name[11][4] != '' ? `color: ${name[11][4]} !important;` : ''}
-    }`}
-
-    ${name[0]} .t-upwidget-container__button:first-child {
-        padding: 10px 20px !important;
-    }
-
-    ${name[0]} .t-upwidget-container__button:last-child {
-        line-height: 100% !important;
-    }
-
-    ${name[0]} .t-upwidget-container__button_fileholder:first-child:before {
-        content: '' !important;
-        background-image: none !important;
-    }
-
-    ${name[0]} .t-upwidget-container__button_fileholder {
-        font-weight: 700 !important;
-    }
-
-    ${name[0]} .t-upwidget-container__image-done {
-        display: none !important;
-    }
-
-    ${name[0]} .t-upwidget__show-files.t-upwidget-container__data {
-        width: 100% !important;
-    }
-
-    ${name[0]} .t-upwidget-container__data_table_actions_remove g g {
-        fill: ${name[18]};
-    }
-
-    ${name[0]} .t-upwidget-container__button-indiv {
-        background-color: ${name[18]} !important;
-        width: 150px;
-        height: 30px;
-        margin: 0 0 20px 20px !important;
-    }
-
-    ${name[0]} .t-upwidget-container__data_table {
-        margin: 0 15px 15px !important;
-    }
-</style>
+<style> ${name[0]} .t-upwidget-container__button:not(.t-upwidget-container__button_fileholder) { color: ${n2i(name[1], '#000')} !important; background-color: ${name[2]} !important; max-width: 100% !important; display: block !important; font-size: ${name[7]}px !important; font-weight: ${name[8]} !important; border-radius: ${name[6]}px !important; border: ${name[3]} ${name[5]} ${name[4]} !important; } ${name[11][0] == '' ? '' : ` ${name[0]} .t-upwidget-container__button:not(.t-upwidget-container__button_fileholder):hover { color: ${name[11][0]} !important; background-color: ${name[11][1]} !important; border: ${name[3]} ${name[11][3]} ${name[11][2]} !important; } `} ${name[0]} .t-upwidget-container__button { color: ${name[13]} !important; background-color: ${name[14]} !important; max-width: 100% !important; display: block !important; font-size: ${name[7]}px !important; font-weight: ${name[8]} !important; border-radius: ${name[6]}px !important; border: ${name[15]} ${name[17]} ${name[16]} !important; } ${name[19] == '' ? '' : ` ${name[0]} .t-upwidget-container__button_fileholder:first-child:after { content: ""; padding-left: 10px; left: 7px; top: 6px; width: 24px; display: inline-block; height: 24px; background-position: center; background-size: contain; background-repeat: no-repeat; background-image: url(${name[19]}); position: relative; } `} ${name[0]} .t-upwidget-container__button.t-upwidget-container__button_fileholder { text-align: center !important; } ${name[10][0] == '' ? '' : ` ${name[0]} .t-upwidget-container__button:not(.t-upwidget-container__button_fileholder):first-child:before { content: ''; padding-right: 10px; right: 7px; top: 6px; width: 24px; display: inline-block; height: 24px; background-position: center; background-size: contain; background-repeat: no-repeat; background-image: url(${name[10][0]}); position: relative; } `} ${name[9][0] == '' ? '' : ` ${name[0]} .t-upwidget-container__button.t-text:not(.t-upwidget-container__button_fileholder):after { content: "${name[9][0]}"; display: block; white-space: normal; text-align: center; cursor: pointer; overflow: hidden; text-overflow: ellipsis; line-height: 100% !important; color: ${name[9][1]} !important; background-color: inherit !important; max-width: 100% !important; font-size: ${name[9][2]}px !important; font-weight: ${name[9][3]} !important; font-family: inherit; padding-top: 5px; padding-bottom: 10px; } ${name[0]} .t-upwidget-container__button.t-text:not(.t-upwidget-container__button_fileholder):hover:after { content: "${name[9][0]}"; ${name[11][4] != '' ? `color: ${name[11][4]} !important;` : ''} } `} ${name[0]} .t-upwidget-container__button:first-child { padding: 10px 20px !important; } ${name[0]} .t-upwidget-container__button:last-child { line-height: 100% !important; } ${name[0]} .t-upwidget-container__button_fileholder:first-child:before { content: '' !important; background-image: none !important; } ${name[0]} .t-upwidget-container__button_fileholder { font-weight: 700 !important; } ${name[0]} .t-upwidget-container__image-done { display: none !important; } ${name[0]} .t-upwidget__show-files.t-upwidget-container__data { width: 100% !important; } ${name[0]} .t-upwidget-container__data_table_actions_remove g g { fill: ${name[18]}; } ${name[0]} .t-upwidget-container__button-indiv { background-color: ${name[18]} !important; width: 150px; height: 30px; margin: 0 0 20px 20px !important; } ${name[0]} .t-upwidget-container__data_table { margin: 0 15px 15px !important; } ${name[0]} .t-uploadcare [data-status="ready"], [data-status="started"]{ background-color: ${name[2]}!important; } ${name[0]} [data-status="loaded"] .uploadcare--widget__text { display: flex; padding: 0px!important; margin: 0px; } ${name[0]} .uploadcare--widget { width: 100%; text-align: center; border-radius: ${name[6]}px!important; } ${name[0]} [data-status="started"].uploadcare--widget{ padding: 20px 0; display: flex; color: ${name[1]}; justify-content: center; width: 100%; align-items: center; } ${name[0]} [data-status="ready"] .uploadcare--widget__button.uploadcare--widget__button_type_open{ text-align: center; color: ${name[1]}; background-color: unset!important; display: block!important; font-size: ${name[7]}px!important; font-weight: ${name[8]}!important; border: ${name[3]} ${name[5]} ${name[4]}!important; width: 100%; border-radius: ${name[6]}px!important; line-height: 29px!important; padding: 12px 0 15px 0; cursor: pointer; outline: none; transition: none; } ${name[11][0] == '' ? '' : ` ${name[0]} [data-status="ready"] .uploadcare--widget__button.uploadcare--widget__button_type_open:hover { color: ${name[11][0]}!important; background-color: ${name[11][1]}!important; border: ${name[3]} ${name[11][3]} ${name[11][2]}!important; cursor: pointer; } `} ${name[9][0] == '' ? '' : ` ${name[0]} .t-uploadcare [data-status="ready"] .uploadcare--widget__button_type_open:after{ content: "${name[9][0]}"; display: block; white-space: normal; text-align: center; overflow: hidden; text-overflow: ellipsis; line-height: 100%!important; color: ${name[9][1]}!important; max-width: 100% !important; font-size: ${name[9][2]}px!important; font-weight: ${name[9][3]}!important; font-family:inherit; padding-top: 14px; } ${name[0]} .t-uploadcare [data-status="ready"] .uploadcare--widget__button_type_open:hover:after{ content: "${name[9][0]}"; ${name[11][4] != '' ? `color: ${name[11][4]} !important;` : ''} } `} ${name[10][0] == '' ? '' : ` ${name[0]} [data-status="ready"] .uploadcare--widget__button.uploadcare--widget__button_type_open:before{ content: ''; padding-right: 10px; right: 7px; top: 6px; width: 24px; display: inline-block; z-index: 2; height: 24px; background-position: center; background-size: contain; background-repeat: no-repeat; background-image: url(${name[10][0]}); position: relative; } `} ${name[0]} .t-uploadcare [data-status="loaded"]{ background-color: ${name[14]}!important; border: ${name[15]} ${name[17]} ${name[16]}; } ${name[0]} .uploadcare--link, .uploadcare--link:link, .uploadcare--link:visited { display: flex; color: ${name[13]}; text-decoration: none; font-weight: ${name[8]}; font-size: ${name[7]}px!important; padding: 20px 0; width: 100%; justify-content: center; outline: none; } ${name[19] == '' ? '' : ` ${name[0]} [data-status="loaded"] .uploadcare--link.uploadcare--widget__file-name:after{ content: ""; width: 24px; display: inline-block; height: 24px; background-position: center; background-size: contain; background-repeat: no-repeat; background-image: url(${name[19]}); position: relative; margin-top: -3px; margin-left: 10px; } `} ${name[0]} .uploadcare--widget__dragndrop-area{ color: ${name[1]}; background: ${name[2]}; z-index: 3; border-radius: ${name[6]}px!important; } .uploadcare--dragging .uploadcare--widget__dragndrop-area { display: flex!important; align-items: center; justify-content: center; } ${name[0]} .uploadcare--widget__file-size{ display: none; } </style>
 
 `;
 
@@ -766,13 +661,6 @@ title: "Добавляем свои иконки в поле любой форм
 modsettings: `[
 {
     "id": "1",
-    "title": "Название поля",
-    "type": "input",
-    "placeholder": "name",
-    "value": ""
-},
-{
-    "id": "2",
     "title": "Положение",
     "type": "select",
     "options": {
@@ -782,7 +670,7 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "3",
+    "id": "2",
     "title": "При вводе",
     "type": "select",
     "options": {
@@ -792,7 +680,7 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "4",
+    "id": "3",
     "title": "Отступы от иконки",
     "type": "select",
     "options": {
@@ -805,7 +693,7 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "5",
+    "id": "4",
     "title": "Добавить border",
     "type": "groupInputs",
     "options": [
@@ -840,14 +728,14 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "6",
+    "id": "5",
     "title": "Цвет фона",
     "type": "color",
     "placeholder": "#ffffff",
     "value": ""
 },
 {
-    "id": "7",
+    "id": "6",
     "title": "Opacity фона",
     "type": "select",
     "options": {
@@ -865,70 +753,173 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "8",
-    "title": "Иконка",
-    "type": "image",
-    "value": ""
+    "id": "7",
+    "title": "+ Добавить иконку",
+    "type": "groupCards",
+    "options": [
+        {
+        "title": "Название поля",
+        "type": "input",
+        "placeholder": "name",
+        "value": ""
+        },
+        {
+        "title": "Ссылка на иконку",
+        "type": "image",
+        "placeholder": "",
+        "value": ""
+        }
+    ],
+    "limit": "14",
+    "placeholder": "class",
+    "value": "1"
 }
 ]`,
-
-moddefaultsettings: '["","left","0","20px", ["1px","","0"], "","100",""]',
+moddefaultsettings: '["left", "0", "20px", [["1px", "", "0"]], "", "100", [["", ""]] ]',
 modInputChange: function modcontentfunc() {
 
-    $('.noliminput[id="4"]').parents('.pe-form-group').hide();
-    $('[id="grouptitle_groupInputs5"]').hide();
+    $('.noliminput[id="3"]').parents('.pe-form-group').hide();
+    $('[id="grouptitle_groupInputs4"]').hide();
+    $('.noliminput[id="5"]').parents('.pe-form-group').hide();
     $('.noliminput[id="6"]').parents('.pe-form-group').hide();
-    $('.noliminput[id="7"]').parents('.pe-form-group').hide();
 
-    if($('.noliminput[id="3"]').val() == '0'){
-        $('.noliminput[id="4"]').parents('.pe-form-group').hide();
-        $('[nolim-group-id="groupInputs5"]').hide();
+    if($('.noliminput[id="2"]').val() == '0'){
+        $('.noliminput[id="3"]').parents('.pe-form-group').hide();
+        $('[nolim-group-id="groupInputs4"]').hide();
     } else {
-        $('.noliminput[id="4"]').parents('.pe-form-group').show();
-        $('[nolim-group-id="groupInputs5"]').show();
+        $('.noliminput[id="3"]').parents('.pe-form-group').show();
+        $('[nolim-group-id="groupInputs4"]').show();
     }
 
-    if($('[id="group_groupInputs5"] .nolimgroupinput').eq(2).val() == '0' && $('.noliminput[id="3"]').val() == '0'){
+    if($('[id="group_groupInputs4"] .nolimgroupinput').eq(2).val() == '0' && $('.noliminput[id="2"]').val() == '0'){
+        $('.noliminput[id="5"]').parents('.pe-form-group').hide();
         $('.noliminput[id="6"]').parents('.pe-form-group').hide();
-        $('.noliminput[id="7"]').parents('.pe-form-group').hide();
-    } else if($('[id="group_groupInputs5"] .nolimgroupinput').eq(2).val() == '1' && $('.noliminput[id="3"]').val() == '1') {
+    } else if($('[id="group_groupInputs4"] .nolimgroupinput').eq(2).val() == '1' && $('.noliminput[id="2"]').val() == '1') {
+        $('.noliminput[id="5"]').parents('.pe-form-group').show();
         $('.noliminput[id="6"]').parents('.pe-form-group').show();
-        $('.noliminput[id="7"]').parents('.pe-form-group').show();
     }
 },
-modcontent: function modcontentfunc(name) {
-  return `
+modoptions: [function modcontentfunc(nameCard) {
+    let linkCode = ``;
 
-${name[2] == '0' ?  `
-    <style> [name="${name[0]}"]::placeholder { background-image: url(${name[7]}); background-repeat: no-repeat; background-size: 24px; line-height:24;  padding: ${name[1] == 'left' ? '0 20px 0 42px' : '0px'} !important; background-position: ${name[1]} 0px center;  background-origin: padding-box; }  </style> 
-` : name[2] == '1' && name[4][1] != '' ? `
+    for(let i = 0; i < nameCard.length; i++){
+        if(nameCard[i][0] != ''){
+            linkCode += `
+            [name="${nameCard[i][0]}"]::placeholder { background-image: url(${nameCard[i][1]}); }
+            `;
+        }
+    }
+    return linkCode
+},function modcontentfunc(name) {
+    let arrName = [];
+    let nameVal 
+    for(let i = 0; i < name.length; i++){
+        if(name[i][0] != ''){
+            nameVal = name[i][0]
+        
+            nameVal = '[name="'+nameVal+'"]';
+            arrName.push(nameVal);
+        }
+    }; 
+
+    return arrName.join(",");
+},function modcontentfunc(nameCard, name) {
+    let linkCode = ``;
+
+    for(let i = 0; i < nameCard.length; i++){
+        if(nameCard[i][1] != ''){
+            linkCode += `
+            [name="${nameCard[i][0]}"] { 
+                background: url(${nameCard[i][1]}), linear-gradient(left, ${name}, ${name}); 
+                background: url(${nameCard[i][1]}), -webkit-linear-gradient(left, ${name}, ${name}); 
+                background: url(${nameCard[i][1]}), -moz-linear-gradient(left, ${name}, ${name}); 
+                background: url(${nameCard[i][1]}), -ms-linear-gradient(left, ${name}, ${name}); 
+                background: url(${nameCard[i][1]}), -o-linear-gradient(left, ${name}, ${name});  
+            }    
+            `;
+        }
+    }
+    return linkCode
+},function modcontentfunc(nameCard, name3, name4, name5) {
+    let linkCode = ``;
+
+    for(let i = 0; i < nameCard.length; i++){
+        if(nameCard[i][1] != ''){
+            linkCode += `
+            [name="${nameCard[i][0]}"] { 
+                background: url(${nameCard[i][1]}), linear-gradient(right, ${name3}, ${name3}), linear-gradient(right, ${name4}${name5 != '100' ? `${name5}` : ''}, ${name4}${name5 != '100' ? `${name5}` : ''}); 
+                background: url(${nameCard[i][1]}), -webkit-linear-gradient(right, ${name3}, ${name3}), -webkit-linear-gradient(right, ${name4}${name5 != '100' ? `${name5}` : ''}, ${name4}${name5 != '100' ? `${name5}` : ''}); 
+                background: url(${nameCard[i][1]}), -o-linear-gradient(right, ${name3}, ${name3}), -o-linear-gradient(right, ${name4}${name5 != '100' ? `${name5}` : ''}, ${name4}${name5 != '100' ? `${name5}` : ''}); 
+                background: url(${nameCard[i][1]}), -moz-linear-gradient(right, ${name3}, ${name3}), -moz-linear-gradient(right, ${name4}${name5 != '100' ? `${name5}` : ''}, ${name4}${name5 != '100' ? `${name5}` : ''}); 
+                background: url(${nameCard[i][1]}), -ms-linear-gradient(right, ${name3}, ${name3}), -ms-linear-gradient(right, ${name4}${name5 != '100' ? `${name5}` : ''}, ${name4}${name5 != '100' ? `${name5}` : ''});
+            }  
+            `;
+        }
+    }
+    return linkCode
+},function modcontentfunc(nameCard) {
+    let linkCode = ``;
+
+    for(let i = 0; i < nameCard.length; i++){
+        if(nameCard[i][0] != ''){
+            linkCode += `
+            [name="${nameCard[i][0]}"] { background-image: url(${nameCard[i][1]}); }
+            `;
+        }
+    }
+    return linkCode
+}
+],
+modcontent: function modcontentfunc(name,i) {
+    return `
+
+${name[1] == '0' ?  `
     <style> 
-        [name="${name[0]}"] {  
-            ${name[4][2] == '0' ? `
-                background: url(${name[7]}), linear-gradient(left, ${name[4][1]}, ${name[4][1]}); 
-                background: url(${name[7]}), -webkit-linear-gradient(left, ${name[4][1]}, ${name[4][1]}); 
-                background: url(${name[7]}), -moz-linear-gradient(left, ${name[4][1]}, ${name[4][1]}); 
-                background: url(${name[7]}), -ms-linear-gradient(left, ${name[4][1]}, ${name[4][1]}); 
-                background: url(${name[7]}), -o-linear-gradient(left, ${name[4][1]}, ${name[4][1]});  
-            ` : `
-                background: url(${name[7]}), linear-gradient(right, ${name[4][1]}, ${name[4][1]}), linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}); 
-                background: url(${name[7]}), -webkit-linear-gradient(right, ${name[4][1]}, ${name[4][1]}), -webkit-linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}); 
-                background: url(${name[7]}), -o-linear-gradient(right, ${name[4][1]}, ${name[4][1]}), -o-linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}); 
-                background: url(${name[7]}), -moz-linear-gradient(right, ${name[4][1]}, ${name[4][1]}), -moz-linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}); 
-                background: url(${name[7]}), -ms-linear-gradient(right, ${name[4][1]}, ${name[4][1]}), -ms-linear-gradient(right, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''}, ${name[5]}${name[6] != '100' ? `${name[6]}` : ''});
-            `}
-            background-size: 24px, ${name[4][0]} 100%, ${name[3] == '20px' ? '65px' : name[3] == '18px' ? '61px' : name[3] == '15px' ? '55px' : name[3] == '12px' ? '48px' : '45px'} 100%; background-repeat: no-repeat; 
-            padding: ${name[1] == 'left' ? (name[3] == '20px' ? '0 20px 0 85px' : name[3] == '18px' ? '0 20px 0 76px' : name[3] == '15px' ? '0 20px 0 71px' : name[3] == '12px' ? '0 20px 0 65px' : '0 20px 0 60px') : (name[3] == '20px' ? '0 85px 0 20px' : name[3] == '18px' ? '0 76px 0 20px' : name[3] == '15px' ? '0 71px 0 20px' : name[3] == '12px' ? '0 65px 0 20px' : '0 60px 0 20px')} !important; 
-            background-position: ${name[1]} ${name[3]} center,${name[1]} ${name[3] == '20px' ? '64px' : name[3] == '18px' ? '60px' : name[3] == '15px' ? '54px' : name[3] == '12px' ? '47px' : '44px'} center, ${name[1] == 'left' ? 'left' : 'right, 0px center'};  
+        ${nolimBlocks[i].modoptions[0](name[6])}
+        .styleInput::placeholder{background-repeat: no-repeat; background-size: 24px; line-height:24;  padding: ${name[0] == 'left' ? '0 20px 0 42px' : '0px'} !important; background-position: ${name[0]} 0px center;  background-origin: padding-box; }
+    
+    </style> 
+` : name[1] == '1' && name[3][1] != '' ? `
+    <style> 
+        ${name[3][2] == '0' ? `
+            ${nolimBlocks[i].modoptions[2](name[6],name[3][1])}
+        ` : `
+            ${nolimBlocks[i].modoptions[3](name[6],name[3][1],name[4],name[5])}
+        `}
+        .styleInput{
+            background-size: 24px, ${name[3][0]} 100%, ${name[2] == '20px' ? '65px' : name[2] == '18px' ? '61px' : name[2] == '15px' ? '55px' : name[2] == '12px' ? '48px' : '45px'} 100%; background-repeat: no-repeat; 
+            padding: ${name[0] == 'left' ? (name[2] == '20px' ? '0 20px 0 85px' : name[2] == '18px' ? '0 20px 0 76px' : name[2] == '15px' ? '0 20px 0 71px' : name[2] == '12px' ? '0 20px 0 65px' : '0 20px 0 60px') : (name[2] == '20px' ? '0 85px 0 20px' : name[2] == '18px' ? '0 76px 0 20px' : name[2] == '15px' ? '0 71px 0 20px' : name[2] == '12px' ? '0 65px 0 20px' : '0 60px 0 20px')} !important; 
+            background-position: ${name[0]} ${name[2]} center,${name[0]} ${name[2] == '20px' ? '64px' : name[2] == '18px' ? '60px' : name[2] == '15px' ? '54px' : name[2] == '12px' ? '47px' : '44px'} center, ${name[0] == 'left' ? 'left' : 'right, 0px center'};  
             background-origin: padding-box; 
         }  
     </style> 
-` : name[2] == '1' && name[4][1] == '' ? `
-    <style>  [name="${name[0]}"] { background-image: url(${name[7]}); background-repeat: no-repeat; background-size: 24px; padding: 0 ${name[1] == 'left' ? (name[3] == '20px' ? '20px 0 65px' : name[3] == '18px' ? '20px 0 61px' : name[3] == '15px' ? '20px 0 55px' : name[3] == '12px' ? '20px 0 48px' : '20px 0 45px') : (name[3] == '20px' ? '65px 0 20px' : name[3] == '18px' ? '61px 0 20px' : name[3] == '15px' ? '55px 0 20px' : name[3] == '12px' ? '48px 0 20px' : '45px 0 20px')} !important; background-position:${name[1]} ${name[3]} center;  background-origin: padding-box; background-position-y: center; }  </style>
+` : name[1] == '1' && name[3][1] == '' ? `
+    <style>  
+        ${nolimBlocks[i].modoptions[4](name[6])}
+        .styleInput{background-repeat: no-repeat; background-size: 24px; padding: 0 ${name[0] == 'left' ? (name[2] == '20px' ? '20px 0 65px' : name[2] == '18px' ? '20px 0 61px' : name[2] == '15px' ? '20px 0 55px' : name[2] == '12px' ? '20px 0 48px' : '20px 0 45px') : (name[2] == '20px' ? '65px 0 20px' : name[2] == '18px' ? '61px 0 20px' : name[2] == '15px' ? '55px 0 20px' : name[2] == '12px' ? '48px 0 20px' : '45px 0 20px')} !important; background-position:${name[0]} ${name[2]} center;  background-origin: padding-box; background-position-y: center; }  
+    </style>
 ` : ''}
 
-    <script> $(document).ready(function() { setTimeout(function(){ var nameinput = '[name="${name[0]}"]'; for (let ig = 0; ig < $(nameinput).length; ig++) { let eg = '#' + $(nameinput).eq(ig).closest('.t-rec').attr('id'); $(eg).on('input focusin focusout', function(e) { e.preventDefault(); for (let i = 0; i < $(eg+' :-webkit-autofill').length; i++) { $(eg+' :-webkit-autofill').eq(i).val($(eg+' :-webkit-autofill').eq(i).val()); } }); } }, 700); }); </script> 
-
+<script>
+$(document).ready(function() {
+    let sI = setInterval(function(){
+        if($('.t396__artboard').length == $('.t396__artboard.rendered').length){
+            clearInterval();
+            var nameinput = '${nolimBlocks[i].modoptions[1](name[6])}';
+            nameinput = $(nameinput).addClass('styleInput');
+                for (let ig = 0; ig < $(nameinput).length; ig++) {
+                    let eg = '#' + $(nameinput).eq(ig).closest('.t-rec').attr('id');
+                    $(eg).on('input focusin focusout', function (e) {
+                        e.preventDefault();
+                        for (let i = 0; i < $(eg + ' :-webkit-autofill').length; i++) {
+                            $(eg + ' :-webkit-autofill').eq(i).val($(eg + ' :-webkit-autofill').eq(i).val());
+                        }
+                    });
+                }
+            }
+        },50)
+    });
+</script>
 `;
 
 },
@@ -1834,10 +1825,8 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "3",
     "title": "Активный пункт меню:",
-    "type": "text",
-    "value": ""
+    "type": "text"
 },
 {
     "id": "3",
@@ -1903,10 +1892,8 @@ modsettings: `[
     "value": ""
 },
 {
-    "id": "8",
     "title": "При наведении:",
-    "type": "text",
-    "value": ""
+    "type": "text"
 },
 {
     "id": "8",
@@ -1956,7 +1943,22 @@ modsettings: `[
 }
 ]`,
 
-moddefaultsettings: '["","","","100","100%","0","","","","100%","0",""]',
+moddefaultsettings: '["","","","","100","100%","0","","","","100%","0",""]',
+modInputChange: function modcontentfunc() {
+
+    if($('.noliminput[id="6"]').val() == '0'){
+        $('.noliminput[id="7"]').parents('.pe-form-group').hide()
+    } else {
+        $('.noliminput[id="7"]').parents('.pe-form-group').show();
+    }
+
+    if($('.noliminput[id="10"]').val() == '0'){
+        $('.noliminput[id="11"]').parents('.pe-form-group').hide()
+    } else {
+        $('.noliminput[id="11"]').parents('.pe-form-group').show();
+    }
+
+},
 modcontent: function modcontentfunc(name) {
   return `
 
@@ -1965,15 +1967,17 @@ modcontent: function modcontentfunc(name) {
 <style> 
 
     .${name[1]} .tn-atom { -webkit-transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out; transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out; } 
-    .${name[1]} .tn-atom:after { content: ''; position: absolute; left: 0; bottom: 20%; opacity: 0; width: 100%; height: 100%; border-bottom: ${name[9] == "2" ? "1" : name[9] == "3" ? "2" : name[9] == "4" ? "3" : name[9] == "5" ? "4" : "0"}px solid ${name[10]}; 
-    -webkit-box-shadow: inset 0px -1px 0px 0px ${name[10]}; 
-    -moz-box-shadow: inset 0px -1px 0px 0px ${name[10]}; box-shadow: inset 0px -1px 0px 0px ${name[10]}; 
+    .${name[1]} .tn-atom:after { content: ''; position: absolute; left: 0; bottom: 20%; opacity: 0; width: 100%; height: 100%; border-bottom: ${name[11] == "2" ? "1" : name[11] == "3" ? "2" : name[11] == "4" ? "3" : name[11] == "5" ? "4" : "0"}px solid ${name[12]}; 
+    -webkit-box-shadow: inset 0px ${name[11] == '0' ? '-0' : '-1'}px 0px 0px ${name[12]}; 
+    -moz-box-shadow: inset 0px ${name[11] == '0' ? '-0' : '-1'}px 0px 0px ${name[12]}; 
+    box-shadow: inset 0px ${name[11] == '0' ? '-0' : '-1'}px 0px 0px ${name[12]}; 
     -webkit-transition: all 0.3s ease; transition: all 0.3s ease; } 
-    .${name[1]} .tn-atom.t-active{ color: ${name[2]} !important; font-weight: ${name[3]} !important; opacity: ${name[4]} !important; } 
-    .${name[1]} .tn-atom.t-active:after { opacity: 1; bottom: -1px; border-bottom: ${name[5] == "2" ? "1" : name[5] == "3" ? "2" : name[5] == "4" ? "3" : name[5] == "5" ? "4" : "0"}px solid ${name[6]}; 
-    -webkit-box-shadow: inset 0px -1px 0px 0px ${name[6]}; 
-    -moz-box-shadow: inset 0px -1px 0px 0px ${name[6]}; box-shadow: inset 0px -1px 0px 0px ${name[6]}; } 
-    .${name[1]} .tn-atom:not(.t-active):not(.tooltipstered):hover { color: ${name[7]} !important; opacity: ${name[8]}; } 
+    .${name[1]} .tn-atom.t-active{ color: ${name[3]} !important; font-weight: ${name[4]} !important; opacity: ${name[5]} !important; } 
+    .${name[1]} .tn-atom.t-active:after { opacity: 1; bottom: -1px; border-bottom: ${name[6] == "2" ? "1" : name[6] == "3" ? "2" : name[6] == "4" ? "3" : name[6] == "5" ? "4" : "0"}px solid ${name[7]}; 
+    -webkit-box-shadow: inset 0px ${name[6] == '0' ? '-0' : '-1'}px 0px 0px ${name[7]}; 
+    -moz-box-shadow: inset 0px ${name[6] == '0' ? '-0' : '-1'}px 0px 0px ${name[7]}; 
+    box-shadow: inset 0px ${name[6] == '0' ? '-0' : '-1'}px 0px 0px ${name[7]}; } 
+    .${name[1]} .tn-atom:not(.t-active):not(.tooltipstered):hover { color: ${name[9]} !important; opacity: ${name[10]}; } 
     .${name[1]} .tn-atom:not(.t-active):not(.tooltipstered):hover::after { opacity: 1; bottom: -1px; } 
 
 </style>
@@ -3052,10 +3056,36 @@ modsettings: `[
         "Нет": "1"
     },
     "value": ""
+},
+{
+    "id": "5",
+    "title": "Цвет фона:",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Непрозрачность:",
+    "type": "select",
+    "options": {
+        "100%": "100",
+        "95%": "95",
+        "90%": "90",
+        "80%": "80",
+        "70%": "70",
+        "60%": "60",
+        "50%": "50",
+        "40%": "40",
+        "30%": "30",
+        "20%": "20",
+        "10%": "10",
+        "0%": "0%"
+    },
+    "value": ""
 }
 ]`,
-
-moddefaultsettings: '["","","","0"]',
+moddefaultsettings: '["","","","0","","100"]',
 modcontent: function modcontentfunc(name) {
     return `
 
@@ -3098,7 +3128,7 @@ modcontent: function modcontentfunc(name) {
     ${name[3] == '0' ? `
         ${name[0]} .t396:before {
             content:'';
-            background-color: #00000060;
+            background-color: ${name[4]}${name[5] != '100' ? `${name[5]}` : ''};
             position: fixed;
             width: 110%;
             height: 110%;
@@ -3108,7 +3138,7 @@ modcontent: function modcontentfunc(name) {
         .nolimPopUp {
             height: 100vh;
             min-height: 100vh;
-            overflow: hidden;
+            overflow: hidden!important;
         }
     </style>
 `;
@@ -6255,19 +6285,57 @@ modsettings: `[
     "type": "input",
     "placeholder": "#close",
     "value": ""
+},
+{
+    "id": "4",
+    "title": "Затемнение фона:",
+    "type": "select",
+    "options": {
+        "Да": "0",
+        "Нет": "1"
+    },
+    "value": ""
+},
+{
+    "id": "5",
+    "title": "Цвет фона:",
+    "type": "color",
+    "placeholder": "#000000",
+    "value": ""
+},
+{
+    "id": "6",
+    "title": "Непрозрачность:",
+    "type": "select",
+    "options": {
+        "100%": "100",
+        "95%": "95",
+        "90%": "90",
+        "80%": "80",
+        "70%": "70",
+        "60%": "60",
+        "50%": "50",
+        "40%": "40",
+        "30%": "30",
+        "20%": "20",
+        "10%": "10",
+        "0%": "0%"
+    },
+    "value": ""
 }
 ]`,
-moddefaultsettings: '["","",""]',
+moddefaultsettings: '["","","","0","","100"]',
 modcontent: function modcontentfunc(name) {
-  return `
+    return `
 
-<script> $(document).ready(function() { var o = "${name[0]}"; $('[href="${name[2]}"]').click(function() { 
+<script> 
+$(document).ready(function() { var o = "${name[0]}"; $('[href="${name[2]}"]').click(function() { 
     $('.t-body').removeClass('t-body_success-popup-showed'); 
     $('.t-body').removeClass('t-body_scroll-locked');
     $('.t-body').removeClass('nolimPopUp');
     $("${name[0]}").fadeOut(), $("html").css("overflow", "visible"), $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() }), $("${name[0]}" + " .t396__filter").click(function() { $('.t-body').removeClass('t-body_success-popup-showed'); $('.t-body').removeClass('t-body_scroll-locked'); $("${name[0]}").fadeOut(), $('.t-body').removeClass('nolimPopUp'); $("${name[0]}").css("overflow", "hidden"), "yes" == window.tcart_success && location.reload() });
 
-var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $('.t-body').addClass('nolimPopUp'); $("${name[0]}").css("overflow", "auto"), "y" === window.lazy && t_lazyload_update(), $("${name[1]} .t706").hide(), $('.t-form-success-popup').hide(); setTimeout(function() { $('${name[1]} .t-popup__close').trigger('click'); $('.nolim_popup_close').click(); }, 100); $('${name[1]} .js-successbox').hide(); $('${name[1]} .t653 .js-successbox').show(); typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}'); };
+    var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $('.t-body').addClass('nolimPopUp'); $("${name[0]}").css("overflow", "auto"), "y" === window.lazy && t_lazyload_update(), $("${name[1]} .t706").hide(), $('.t-form-success-popup').hide(); setTimeout(function() { $('${name[1]} .t-popup__close').trigger('click'); $('.nolim_popup_close').click(); }, 100); $('${name[1]} .js-successbox').hide(); $('${name[1]} .t653 .js-successbox').show(); typeof t_slds_updateSlider != "undefined" && t_slds_updateSlider('${name[0].replace('#rec','')}'); t396_doResize('${name[0].replace('#rec','')}'); };
 
     if(typeof window.NolimSuccessFunction${name[1].replace('#rec','')} == "undefined") {
         window.NolimSuccessFunction${name[1].replace('#rec','')} = [];
@@ -6282,9 +6350,16 @@ var funcZeroSuccess = function($form) { $("${name[0]}").fadeIn(), $('.t-body').a
         }
     };
 
-setInterval(function(){ $("${name[1]} .js-form-proccess").each(function() { $(this).data("success-callback", 'window.mySuccessFunction${name[1].replace('#rec','')}') }) },1000); }); 
+    setInterval(function(){ $("${name[1]} .js-form-proccess").each(function() { $(this).data("success-callback", 'window.mySuccessFunction${name[1].replace('#rec','')}') }) },1000); }); 
+</script> 
 
-</script> <style> ${name[0]} .t396__filter{cursor:pointer}${name[0]}{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:100005;} ${name[1]} .t281__input-wrapper, ${name[1]} .t274__wrapper{ opacity: 1 !important; max-height: unset !important; .nolimPopUp{ height: 100vh; min-height: 100vh; overflow: hidden; } </style>
+<style> 
+    ${name[0]} .t396__filter{cursor:pointer}
+    ${name[0]}{display:none;position:fixed;left:0;top:0;right:0;bottom:0;z-index:100005; overflow: auto;} 
+    ${name[1]} .t281__input-wrapper, ${name[1]} .t274__wrapper{ opacity: 1 !important; max-height: unset !important; }
+    ${name[3] == '0' ? `${name[0]} .t396:before{ content: ''; background-color: ${name[4]}${name[5] != '100' ? `${name[5]}` : ''}; position: fixed; width: 110%; height: 110%; }` : ''}
+    .nolimPopUp{ height: 100vh; min-height: 100vh; overflow: hidden!important; } 
+</style>
 
 `;
 },
@@ -6667,14 +6742,15 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 });
 
 
-/*
+
 nolimBlocks.push({
 name: "",
 cod: "NLM065",
+filter: "Меню, Корзина и товары",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3838-3763-4064-b063-616332313866/Frame_61.jpg",
+icon: "https://static.tildacdn.com/tild3664-3462-4364-b535-343136323361/NLM065.svg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
@@ -6689,7 +6765,7 @@ modsettings: `[
 },
 {
     "id": "2",
-    "title": "Класс для кол-ва",
+    "title": "Класс для количества",
     "type": "input",
     "placeholder": "countZ",
     "value": ""
@@ -6713,7 +6789,7 @@ modsettings: `[
 },
 {
     "id": "5",
-    "title": "Показывать иконку корзины на экранах экранах меньше 980px",
+    "title": "Показывать иконку корзины на экранах меньше 980px",
     "type": "select",
     "options": {
         "Нет": "0",
@@ -6723,11 +6799,84 @@ modsettings: `[
 }
 ]`,
 
-moddefaultsettings: '["","","","",""]',
+moddefaultsettings: '["","","","0","0"]',
 modcontent: function modcontentfunc(name) {
   return `
+<style> 
+    [href="${name[0]}"]:hover {
+        transform: scale(1.05);
+        background-image: relative;
+    }
 
-<style> [href="${name[0]}"]:hover { transform: scale(1.05); background-image: relative; } @media screen and (min-width: 981px) { [href="${name[0]}"] { position: relative; display: block !important; } }  ${name[4] == "0" ? "@media screen and (min-width: 981px) {" : ""} .t1002__wishlisticon { display: none; } .t1002__wishlisticon-counter { display: none; } ${name[4] == "0" ? "}" : ""} @media screen and (max-width: 980px) { .${name[1]} {display:none;} [href="${name[0]}"] { display: none !important; } } .blkElem { pointer-events: none; } .cartcopyanim2 { -webkit-animation: t706__pulse-anim 0.6s; animation: t706__pulse-anim 0.6s; } </style><style id="cartcopyanim2${name[1]}"> .cartcopyanim2 { -webkit-animation: unset!important; animation: unset!important; } </style> <script> $(document).ready(function() { $('.t1002__wishlisticon-counter').clone().appendTo($('[href="${name[0]}"]')); $('[href="${name[0]}"]').click(function(e) { e.preventDefault(); if (window.twishlist.total > 0) { twishlist__openCart(); } else { ${typeof name[2] != "undefined" && name[2] != '' ? `$('[href="${name[2]}"]')[0].click();` : ''} } }); ${name[3] == '0' ? `$('.${name[1]}').hide();` : ''} $(".t1002").on('DOMSubtreeModified', ".t1002__wishlisticon-counter", function() { let nlcountz = window.twishlist.total; $('.${name[1]} .tn-atom').html(nlcountz); if (nlcountz == 0) { ${name[3] == '0' ? `$('.${name[1]}').hide();` : ''} ${name[2] == '' ? `$('[href="${name[0]}"]').parent().css('pointer-events', 'none');` : ''} } else { $('[href="${name[0]}"]').parent().css('pointer-events', 'all'); ${name[3] == '0' ? `$('.${name[1]}').show();` : ''} } $('[href="${name[0]}"]').addClass('cartcopyanim2'); setTimeout(function() { $('[href="${name[0]}"]').removeClass('cartcopyanim2'); }, 600); }); setTimeout(function() { $('#cartcopyanim2${name[1]}').remove(); },1200); }); </script> ${typeof name[2] != "undefined" && name[2] != '' ? `<a href="${name[2]}" style="display:none"></a>` : ''}
+    @media screen and (min-width: 981px) {
+        [href="${name[0]}"] {
+            position: relative;
+        }
+    }
+    ${name[4] == "0" ? "" : "@media screen and (min-width: 980px) {"}
+    .t1002__wishlisticon {
+        display: none;
+    }
+
+    .t1002__wishlisticon-counter {
+        display: none;
+    }
+    ${name[4] == "0" ? "" : "}"}
+
+    @media screen and (max-width: 980px) {
+        .${name[1]} {
+            display: none;
+        } 
+    }
+
+    .blkElem {
+        pointer-events: none;
+    }
+
+    .cartcopyanim2 {
+        -webkit-animation: t706__pulse-anim 0.6 s;
+        animation: t706__pulse-anim 0.6 s;
+    } 
+</style>
+
+<script> 
+$(document).ready(function(){
+    $('[href="${name[0]}"]').click(function(e){
+        e.preventDefault();
+        if (window.twishlist.total > 0){
+            twishlist__openCart();
+        } ${typeof name[2] != "undefined" && name[2] != '' ? `else{
+            $('[href="${name[2]}"]')[0].click();
+        }` : ''}
+    });
+    ${name[3] == '0' ? `$('.${name[1]}').hide();` : `$('.${name[1]}').css('display', 'table');`}
+    $(".t1002").on('DOMSubtreeModified', ".t1002__wishlisticon-counter", function() {
+        let nlcountz = window.twishlist.total;
+        $('.${name[1]} .tn-atom').html(nlcountz);
+        if (nlcountz == 0) { ${name[3] == '0' ? `$('.${name[1]}').hide();` : ''} ${name[2] == '' ? `$('[href="${name[0]}"]').parent().css('pointer-events', 'none');` : ''} 
+        } else{
+            $('[href="${name[0]}"]').parent().css('pointer-events', 'all');
+            ${name[3] == '0' ? `$('.${name[1]}').css('display', 'table');` : ''}
+        }
+        $('[href="${name[0]}"]').addClass('cartcopyanim2');
+        setTimeout(function () {
+            $('[href="${name[0]}"]').removeClass('cartcopyanim2');
+        }, 600);
+    });
+    setTimeout(function () {
+        $('#cartcopyanim2${name[1]}').remove();
+    }, 1200);
+}); 
+</script> 
+
+<style id="cartcopyanim2${name[1]}"> 
+    .cartcopyanim2 { 
+        -webkit-animation: unset!important; 
+        animation: unset!important; 
+    } 
+</style> 
+
+${typeof name[2] != "undefined" && name[2] != '' ? `<a href="${name[2]}" style="display:none"></a>` : ''}
 
 `;
 },
@@ -6742,7 +6891,7 @@ cod: "NLM066",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3838-3763-4064-b063-616332313866/Frame_61.jpg",
+icon: "https://static.tildacdn.com/tild3334-3164-4239-b562-623539396634/NLM066.svg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
@@ -6802,11 +6951,12 @@ cod: "NLM067",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3838-3763-4064-b063-616332313866/Frame_61.jpg",
+icon: "https://static.tildacdn.com/tild3663-3766-4831-b736-313565656437/NLM067.svg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
 title: "Как анимировать бордер у shape в Tilda?",
+grid: "yes",
 modsettings: `[
 {
     "id": "1",
@@ -7055,7 +7205,7 @@ cod: "NLM068",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://images.unsplash.com/photo-1593643946890-b5b85ade6451?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3178&q=80",
+icon: "https://static.tildacdn.com/tild3962-3562-4531-b635-633766346439/NLM068.svg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
@@ -7096,7 +7246,6 @@ modcontent: function modcontentfunc(name) {
 
 <script> $(document).ready(function() { let mynewstyle = '<style>'; let menus = ''; $('.${name[0]}').each(function(i, item) { let hr = $(item).find('a').attr('href'); $(hr).addClass('nolim_forMenu'); menus += \`\${hr},\`; mynewstyle += \`\${hr},\`; }); menus = menus.substring(0, menus.length - 1); mynewstyle = mynewstyle.substring(0, mynewstyle.length - 1); mynewstyle += \` { z-index: 9995; display: none; width: 100%;}\`; mynewstyle += \`</style>\`; $('body').after(mynewstyle); let sI = setInterval(function() { if ($('.${name[0]} .tn-atom').length > 0) { clearInterval(sI); var menu2 = menus; var href = $('.${name[0]} a'); var idM = $('.${name[0]} .tn-atom').parents('.t-rec'); var idMh = $('.${name[0]} .tn-atom').parents('.t-rec').children().children().css('height'); var idPos = $('.${name[0]} .tn-atom').parents('.t-rec').css('position'); if (idPos == 'fixed') { $(menu2).css('position', 'fixed'); $(menu2).css('top', idMh); } else if (idPos == 'static') { $(menu2).css('position', 'absolute'); $(menu2).css('margin-top', '0px'); } else if (idPos == 'absolute') { $(menu2).css('position', 'absolute'); $(menu2).css('top', idMh); } else {}; setTimeout(function(){ href.off('click').on('click', function(e) { e.preventDefault(); let id = $(e.currentTarget).attr('href'); if ($(id).css('display') == 'none') { $(menu2).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $(id).${name[2] == "0" ? 'slideDown()' : 'fadeIn()'}; } else { $(id).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'} }; }); ${name[1] == "0" ? "href.mouseover(function(e) { e.preventDefault(); let id = $(e.currentTarget).attr('href'); if ($(id).css('display') == 'none') { $(menu2)." + (name[2] == "0" ? "slideUp()" : "fadeOut()") + "; $(id)." + (name[2] == "0" ? "slideDown()" : "fadeIn()") + "}; });" : ""} },600); $(document).on('${name[1] == "0" ? 'pointermove mousemove' : 'pointerup mouseup'}', (function(e) { if ($(menu2).has(e.target).length === 0 && $(idM).has(e.target).length === 0 && !$(menu2).is(e.target)) { $(menu2).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; }; })); }; }, 50); }); </script>
 
-
 `;
 },
 
@@ -7110,7 +7259,7 @@ cod: "NLM069",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://static.tildacdn.com/tild3838-3763-4064-b063-616332313866/Frame_61.jpg",
+icon: "https://static.tildacdn.com/tild3162-3065-4336-b334-346637306362/NLM069.svg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
@@ -7178,7 +7327,7 @@ cod: "NLM070",
 descr: "",
 descr_ru: "",
 disableforplan0: "y",
-icon: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2369&q=80",
+icon: "https://static.tildacdn.com/tild6661-3930-4461-b630-623939393763/NLM070.svg",
 icon2: "/files/tplsthumbs/other-block-02.png",
 id: "131",
 inlib: "y",
@@ -7252,7 +7401,6 @@ modcontent: function modcontentfunc(name) {
 },
 
 });
-*/
 
 
 
