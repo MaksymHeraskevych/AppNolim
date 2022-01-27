@@ -1240,102 +1240,101 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 nolimBlocks.push({
-    name: "",
-    cod: "NLM008",
-    descr: "",
-    descr_ru: "",
-    disableforplan0: "y",
-    icon: "https://static.tildacdn.com/tild3438-3936-4161-b234-626563653039/Frame_8.jpg",
-    icon2: "/files/tplsthumbs/other-block-02.png",
-    id: "131",
-    inlib: "y",
-    filter: "Популярные, Меню, Эффекты",
-    title: "Как добавить иконки мессенджеров в стандартное меню или подвал TILDA?",
-    modsettings: `[
-    {
+name: "",
+cod: "NLM008",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3438-3936-4161-b234-626563653039/Frame_8.jpg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+filter: "Популярные,Меню,Эффекты",
+title: "Как добавить иконки мессенджеров в стандартное меню или подвал TILDA?",
+modsettings: `[
+{
     "id": "1",
     "title": "+ Добавить иконку",
     "type": "groupCards",
     "options": [
-        {
-            "title": "Ваша ссылка",
-            "type": "input",
-            "placeholder": "name",
-            "value": ""
-        },
-        {
-            "title": "Ссылка на иконку",
-            "type": "image",
-            "placeholder": "",
-            "value": ""
-        },
-        {
-            "title": "Увеличение при наведении (scale)",
-            "type": "select",
-            "options": {
-                "Без увеличения": "1",
-                "5%": "1.05",
-                "10%": "1.1",
-                "15%": "1.15",
-                "20%": "1.2",
-                "25%": "1.25"
-            },
-            "value": ""
-        },
-        {
-            "title": "Ссылка на иконку при наведении (если не нужна оставьте поле пустым)",
-            "type": "image",
-            "placeholder": "",
-            "value": ""
-        }
-    ],
-    "limit": "14",
-    "placeholder": "class",
-    "value": "1"
-    }
-    ]`,
-    moddefaultsettings: '["","","1",""]',
-    modoptions: [function modcontentfunc(nameCard) {
-        let linkCode = ``;
-    
-        for(let i = 0; i < nameCard.length; i++){
-            if(nameCard[i][0] != ''){
-                linkCode += `[href="${nameCard[i][0]}"] svg{background-image:url("${nameCard[i][1]}"); background-position:center center; background-size:cover; transition:all .1s ease} [href="${nameCard[i][0]}"] svg *{display:none} [href="${nameCard[i][0]}"] svg:hover{transform:scale(${nameCard[i][2]}); background-image:url("${nameCard[i][3]}")}
-                `;
-            }
-        }
-        return linkCode
-    }],
-    modcontent: function modcontentfunc(name, i) {
-        return `
-    
-        <style> 
-    
-        ${nolimBlocks[i].modoptions[0](name[0])}
-        
-        </style>
-    
-    `;
+    {
+        "title": "Ваша ссылка",
+        "type": "input",
+        "placeholder": "name",
+        "value": ""
     },
-    instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
-    <b>ВАЖНО:</b><br>
-    <b>Не Работает</b> с блоками: FT501, FT401, FT204;<br><br>
+    {
+        "title": "Увеличение при наведении (scale)",
+        "type": "select",
+        "options": {
+            "Без увеличения": "1",
+            "5%": "1.05",
+            "10%": "1.1",
+            "15%": "1.15",
+            "20%": "1.2",
+            "25%": "1.25"
+        },
+        "value": ""
+    },
+    {
+        "title": "Ссылка на иконку",
+        "type": "image",
+        "placeholder": "",
+        "value": ""
+    },   
+    {
+        "title": "Ссылка на иконку при наведении (если не нужна оставьте поле пустым)",
+        "type": "image",
+        "placeholder": "",
+        "value": ""
+    }
+],
+"limit": "14",
+"placeholder": "class",
+"value": "1"
+}
+]`,
+moddefaultsettings: '["", [["","1","",""] ]]',
+modoptions: [function modcontentfunc(nameCard) {
+    let linkCode = ``;
+
+    for(let i = 0; i < nameCard.length; i++){
+        if(nameCard[i][0] != ''){
+            linkCode += `[href="${nameCard[i][0]}"] svg{background-image:url("${nameCard[i][2]}");background-position:center center;background-size:cover;transition:all .1s ease}[href="${nameCard[i][0]}"] svg *{display:none}[href="${nameCard[i][0]}"] svg:hover{transform:scale(${nameCard[i][1]}); background-image:url("${nameCard[i][3]}")};
+            `;
+        }
+    }
+    return linkCode
+}],
+modcontent: function modcontentfunc(name, i) {
+    return `
+
+    <style> 
+
+    ${nolimBlocks[i].modoptions[0](name[0])}
     
-    <b>Работает</b> с блоками:<br>
-    <b>Меню</b> ME203A, ME301, ME302, ME303, ME304, ME401, ME403, ME405;<br>
-    <b>Подвалы</b> FT201, FT203, FT305;<br<br>
-    
-    Как это работает:<br>
-    1. Вписываем ссылку в генератор на соцсеть, мессенджер или любой другой сервис, который имеет ссылку;<br>
-    2. Эту же ссылку вставляем в меню или в подвал на любую соц. сеть;<br>
-    3. Загружаем свои иконки "статичная" и "при наведении"(Если не нужно, не загружайте);<br>
-    4. Выбираем размер увеличения в %;<br>
-    6. Нажимаем кнопку "Сохранить и закрыть";<br>
-    
-    </div>`
-    });
-    
-    
+    </style>
+
+`;
+},
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+<b>ВАЖНО:</b><br>
+<b>Не Работает</b> с блоками: FT501, FT401, FT204;<br><br>
+
+<b>Работает</b> с блоками:<br>
+<b>Меню</b> ME203A, ME301, ME302, ME303, ME304, ME401, ME403, ME405;<br>
+<b>Подвалы</b> FT201, FT203, FT305;<br<br>
+
+Как это работает:<br>
+1. Вписываем ссылку в генератор на соцсеть, мессенджер или любой другой сервис, который имеет ссылку;<br>
+2. Эту же ссылку вставляем в меню или в подвал на любую соц. сеть;<br>
+3. Загружаем свои иконки "статичная" и "при наведении"(Если не нужно, не загружайте);<br>
+4. Выбираем размер увеличения в %;<br>
+6. Нажимаем кнопку "Сохранить и закрыть";<br>
+
+</div>`
+});
+
 
 
 nolimBlocks.push({
@@ -5915,54 +5914,11 @@ modsettings: `[
 }
 ]`,
 
-moddefaultsettings: '["","","0"]',
+moddefaultsettings: '["","",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<style> 
-    ${name[0]} { width: 100%; z-index: 9995; display: none; position: fixed; } 
-    .${name[1]} { cursor: pointer; } 
-    .${name[1]}:hover { transform: scale(1.05); background-image: relative; } 
-</style> 
-
-<script> 
-    $(document).ready(function() { 
-        var t838 = "${name[0]}"; 
-        var t838nolim = $('${name[0]}.t-rec').addClass('nolim_forMenu'); 
-        var searchIcon = $(".${name[1]}"); 
-        var idM = $('.${name[1]}').parents('.t-rec'); 
-        var idMh = $('.${name[1]}').parents('.t-rec').children().children(); 
-        idMh = $(idMh).css('height'); 
-        $(t838).css('top', idMh); 
-        $('${name[0]}').attr('nolim-search-state', '0');
-
-        setTimeout(function () {
-            if ($('.${name[1]}').parents('.t-rec').css('position') == 'static') {
-                idMh = $('.${name[1]}').parents('.t-rec').children().children();
-                idMh = $(idMh).height() + $('.${name[1]}').parents('.t-rec').offset().top - 1 + 'px';
-                $(t838).css('top', idMh);
-                $(t838).css('position', 'absolute');
-            }
-        }, 600);
-
-        searchIcon.on('click', function(e) { 
-            e.preventDefault(); 
-            if ($('.nolim_forMenu').attr('nolim-search-state') == '1') { 
-                $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; 
-                $('[nolim-search-state]').attr('nolim-search-state', '0'); 
-            } else if ($('.nolim_forMenu').attr('nolim-search-state') == '0') { 
-                $(t838).${name[2] == "0" ? "slideDown()" : "fadeIn()"}; 
-                $('[nolim-search-state]').attr('nolim-search-state', '1'); 
-            } 
-        }); 
-        
-        $(document).on('pointerup mouseup', (function(e) { 
-            if ($(t838).has(e.target).length === 0 && $(idM).has(e.target).length === 0 && !$(t838).is(e.target)) { 
-                $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); 
-            } 
-        })); 
-    }); 
-</script>
+<style> ${name[0]} { width: 100%; z-index: 9995; display: none; position: fixed; } .${name[1]} { cursor: pointer; } .${name[1]}:hover { transform: scale(1.05); background-image: relative; } </style> <script> $(document).ready(function() { var t838 = "${name[0]}"; var t838nolim = $('${name[0]}.t-rec').addClass('nolim_forMenu'); var searchIcon = $(".${name[1]}"); var idM = $('.${name[1]}').parents('.t-rec'); var idMh = $('.${name[1]}').parents('.t-rec').children().children(); idMh = $(idMh).css('height'); $(t838).css('top', idMh); searchIcon.on('click', function(e) { e.preventDefault(); if ($('.nolim_forMenu').attr('nolim-search-state') == '1') { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } else if ($('.nolim_forMenu').attr('nolim-search-state') == '0') { $(t838).${name[2] == "0" ? "slideDown()" : "fadeIn()"}; $('[nolim-search-state]').attr('nolim-search-state', '1'); } }); $(document).on('pointerup mouseup', (function(e) { if ($(t838).has(e.target).length === 0 && $(idM).has(e.target).length === 0 && !$(t838).is(e.target)) { $(t838).${name[2] == "0" ? 'slideUp()' : 'fadeOut()'}; $('[nolim-search-state]').attr('nolim-search-state', '0'); } })); }); </script>
 
 `;
 },
@@ -6823,6 +6779,7 @@ instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form
 
 
 
+
 nolimBlocks.push({
 name: "",
 cod: "NLM064",
@@ -6856,15 +6813,7 @@ moddefaultsettings: '["",""]',
 modcontent: function modcontentfunc(name) {
   return `
 
-<script> 
-    $(function() { 
-        var a = $(".${name[0]} .tn-atom"); 
-        $(a).each(function(){
-            $(this)['css']({ "overflow": 'hidden' }); $(this)['wrapInner']('<span>'); $(this)['children']('span')['css']({ "width": '50%', "display": 'inline-block', "text-align": 'center' }); $(this)['append'](a['children']('span')['clone']()); $(this)['wrapInner']('<div>'); $(this)['children']('div')['css']('width', '200%'); 
-        });    
-            var b = function() { $(this)['css']('margin-left', '0%'); $(this)['animate']({"margin-left": '-100%'}, ${name[1]}, 'linear', b) }; b['call'](a['children']('div')) 
-    }) 
-</script>
+<script> $(function() { var a = $(".${name[0]} .tn-atom"); a['css']({ "overflow": 'hidden' }); a['wrapInner']('<span>'); a['find']('span')['css']({ "width": '50%', "display": 'inline-block', "text-align": 'center' }); a['append'](a['find']('span')['clone']()); a['wrapInner']('<div>'); a['find']('div')['css']('width', '200%'); var b = function() { $(this)['css']('margin-left', '0%'); $(this)['animate']({"margin-left": '-100%'}, ${name[1]}, 'linear', b) }; b['call'](a['find']('div')) }) </script>
 
 `;
 },
@@ -7021,73 +6970,72 @@ nolimBlocks.push({
     });
 
 
+nolimBlocks.push({
+name: "",
+cod: "NLM066",
+descr: "",
+descr_ru: "",
+disableforplan0: "y",
+icon: "https://static.tildacdn.com/tild3334-3164-4239-b562-623539396634/NLM066.svg",
+icon2: "/files/tplsthumbs/other-block-02.png",
+id: "131",
+inlib: "y",
+filter: "Эффекты,Популярные",
+title: "Тень при наведении",
+modsettings: `[
+{
+    "id": "1",
+    "title": "Class shape",
+    "type": "input",
+    "placeholder": "boxShadowNolim",
+    "value": ""
+},
+{
+    "id": "2",
+    "title": "Class кнопки",
+    "type": "input",
+    "placeholder": "btnShadowNolim",
+    "value": ""
+},
+{
+    "id": "3",
+    "title": "Длительность анимации",
+    "type": "select",
+    "options": {
+        "0.5": "0.5",
+        "0.6": "0.6",
+        "0.7": "0.7",
+        "0.8": "0.8",
+        "0.9": "0.9",
+        "1.0": "1.0",
+        "1.1": "1.1",
+        "1.2": "1.2",
+        "1.3": "1.3",
+        "1.4": "1.4",
+        "1.5": "1.5"
+    },
+    "value": ""
+}
+]`,
 
-    nolimBlocks.push({
-        name: "",
-        cod: "NLM066",
-        descr: "",
-        descr_ru: "",
-        disableforplan0: "y",
-        icon: "https://static.tildacdn.com/tild3334-3164-4239-b562-623539396634/NLM066.svg",
-        icon2: "/files/tplsthumbs/other-block-02.png",
-        id: "131",
-        inlib: "y",
-        filter: "Эффекты,Популярные",
-        title: "Тень при наведении",
-        modsettings: `[
-        {
-            "id": "1",
-            "title": "Class shape",
-            "type": "input",
-            "placeholder": "boxShadowNolim",
-            "value": ""
-        },
-        {
-            "id": "2",
-            "title": "Class кнопки",
-            "type": "input",
-            "placeholder": "btnShadowNolim",
-            "value": ""
-        },
-        {
-            "id": "3",
-            "title": "Длительность анимации",
-            "type": "select",
-            "options": {
-                "0.5": "0.5",
-                "0.6": "0.6",
-                "0.7": "0.7",
-                "0.8": "0.8",
-                "0.9": "0.9",
-                "1.0": "1.0",
-                "1.1": "1.1",
-                "1.2": "1.2",
-                "1.3": "1.3",
-                "1.4": "1.4",
-                "1.5": "1.5"
-            },
-            "value": ""
-        }
-        ]`,
-        
-        moddefaultsettings: '["","","0.5"]',
-        modcontent: function modcontentfunc(name) {
-          return `
-        
-        <style> .${name[0]} .tn-atom{ transition: all ${name[2]}s!important; } .${name[0]} .tn-atom:not(:hover){ box-shadow: unset!important; } .${name[0]}unsetShadow .tn-atom{ transition: all ${name[2]}s!important; } </style>  ${typeof name[1] != "undefined" && name[1] != '' ? `<script> $(document).ready(function(){ let sI = setInterval(function() { if ($('.${name[0]} .tn-atom').length > 0) { clearInterval(sI); $(".t396 .${n2i(name[1],'btnShadowNolim')}").hover(function() { $('.t396 .${name[0]}').removeClass('${name[0]}').addClass('${name[0]}unsetShadow'); }, function() { $('.t396 .${name[0]}unsetShadow').addClass('${name[0]}').removeClass('${name[0]}unsetShadow'); }); } }, 50); }); </script>` : ''}
-        
-        `;
-        },
-        instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
-        1. Укажите Class элементу к которому добавлена тень. На опубликованной странице тень не будет видно. Тень будет показываться при наведении;<br><br>
-        2. Укажите Class элементу, или элементам, при наведении на который(ые) будет показана тень у первого элемента(с классом из первого поля);<br><br>
-        3. Выберите время появления тени;<br><br>
-        6. Нажимаем кнопку "Сохранить и закрыть"<br><br>
-        </div>`
-        
-        });
-        
-        
+moddefaultsettings: '["","","0.5"]',
+modcontent: function modcontentfunc(name) {
+  return `
+
+<style> .${name[0]} .tn-atom{ transition: all ${name[2]}s!important; } .${name[0]} .tn-atom:not(:hover){ box-shadow: unset!important; } .${name[0]}unsetShadow .tn-atom{ transition: all ${name[2]}s!important; } </style>  ${typeof name[1] != "undefined" && name[1] != '' ? `<script> $(document).ready(function(){ let sI = setInterval(function() { if ($('.${name[0]} .tn-atom').length > 0) { clearInterval(sI); $(".t396 .${n2i(name[1],'btnShadowNolim')}").hover(function() { $('.t396 .${name[0]}').removeClass('${name[0]}').addClass('${name[0]}unsetShadow'); }, function() { $('.t396 .${name[0]}unsetShadow').addClass('${name[0]}').removeClass('${name[0]}unsetShadow'); }); } }, 50); }); </script>` : ''}
+
+`;
+},
+instruction: `<div id="group_bheader" class="pe-form-group__help-content pe-form-group__help-content_top pe-form-group">
+1. Укажите Class элементу к которому добавлена тень. На опубликованной странице тень не будет видно. Тень будет показываться при наведении;<br><br>
+2. Укажите Class элементу, или элементам, при наведении на который(ые) будет показана тень у первого элемента(с классом из первого поля);<br><br>
+3. Выберите время появления тени;<br><br>
+6. Нажимаем кнопку "Сохранить и закрыть"<br><br>
+</div>`
+
+});
+
+
 
 nolimBlocks.push({
 name: "",
@@ -7229,25 +7177,13 @@ modcontent: function modcontentfunc(name) {
             overflow: hidden;
         }
 
-        .${n2i(name[0],'animNolimBorder')}[data-animate-prx="mouse"], .${n2i(name[0],'animNolimBorder')}[data-animate-prx="scroll"], .${n2i(name[0],'animNolimBorder')}[data-animate-sbs-event="scroll"]{
-            overflow: visible!important;
-        }
-         
-        .${n2i(name[0],'animNolimBorder')}[data-animate-prx="mouse"] .tn-atom__prx-wrapper, .${n2i(name[0],'animNolimBorder')}[data-animate-prx="scroll"] .tn-atom__prx-wrapper{
-            transform: translate3d(0px, 0px, 0px);
-        }
-
-        .${n2i(name[0],'animNolimBorder')} .tn-atom__prx-wrapper, .${n2i(name[0],'animNolimBorder')} .tn-atom__sbs-anim-wrapper, .${n2i(name[0],'animNolimBorder')} .tn-atom__sticky-wrapper{
-            overflow: hidden;
-        }
-
         @supports (-moz-appearance:none) and (mask-type:alpha) {
             .${n2i(name[0],'animNolimBorder')}.t-sbs-anim_started>.tn-atom__sbs-anim-wrapper {
                 display: flex !important;
             }
 
-            .${n2i(name[0],'animNolimBorder')}, .${n2i(name[0],'animNolimBorder')} .tn-atom__prx-wrapper, .${n2i(name[0],'animNolimBorder')} .tn-atom__sticky-wrapper, .${n2i(name[0],'animNolimBorder')} .tn-atom__sbs-anim-wrapper{
-                display: flex!important;
+            .${n2i(name[0],'animNolimBorder')} {
+                display: flex;
             }
         }
 
@@ -7275,17 +7211,17 @@ modcontent: function modcontentfunc(name) {
         .${n2i(name[0],'animNolimBorder')} .tn-atom::before {
             content: '';
             position: absolute;
-            animation: animate ${name[7]} linear ${name[6] == "0" ? "reverse " : "" }0.01s infinite;
+            animation: animate ${name[7]} linear ${name[6] == "0" ? "reverse " : "" }infinite;
             overflow: hidden;
         }
 
         @media screen and (min-width: 1200px) {
             .${n2i(name[0],'animNolimBorder')} .tn-atom:hover {
-                background: ${n2i(name[10],'#ff00ae')} !important;
+                background: ${n2i(name[9],'#ff00ae')} !important;
             }
 
             .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::after {
-                background: ${n2i(name[9],'#2767dd')};
+                background: ${n2i(name[8],'#2767dd')};
             }
         }
 
@@ -7331,16 +7267,16 @@ modcontent: function modcontentfunc(name) {
                     sumWH = sizeW - sizeH;
                     if (sumWH > 0 && typeClr == 1) {
                         sizeH = Number(sizeH / 2);
-                        $('.${n2i(name[0],'animNolimBorder')}').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ width: 300% !important; height: \${sizeH}px !important; top: \${leftSizeH}px; left: -100%; background: linear-gradient(${name[4]}, ${name[5]}); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(${n2i(name[11],'#ff00ae')}, ${n2i(name[12],'#00ff6e')}); } } </style>\`);
+                        $('.${n2i(name[0],'animNolimBorder')}').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ width: 300% !important; height: \${sizeH}px !important; top: \${leftSizeH}px; left: -100%; background: linear-gradient(${name[4]}, ${name[5]}); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(${n2i(name[10],'#ff00ae')}, ${n2i(name[11],'#00ff6e')}); } } </style>\`);
                     } else if (sumWH > 0 && typeClr == 2) {
                         sizeH = Number(sizeH / 2);
-                        $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ width: 300% !important; height: \${sizeH}px !important; top: \${leftSizeH}px; left: -100%; background: linear-gradient(90deg, ${name[4]} 50%, ${name[5]} 50%); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(90deg, ${n2i(name[11],'#ff00ae')} 50%, ${n2i(name[12],'#00ff6e')} 50%); } } </style>\`);
+                        $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ width: 300% !important; height: \${sizeH}px !important; top: \${leftSizeH}px; left: -100%; background: linear-gradient(90deg, ${name[4]} 50%, ${name[5]} 50%); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(90deg, ${n2i(name[10],'#ff00ae')} 50%, ${n2i(name[11],'#00ff6e')} 50%); } } </style>\`);
                     } else if (sumWH <= 0 && typeClr == 1) {
                         sizeW = Number(sizeW / 2);
-                        $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ height: 160% !important; width: \${sizeW}px !important; top: 0; bottom: 0; margin: auto; left: \${leftSizeW}px; background: linear-gradient(90deg, ${name[4]}, ${name[5]}); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(90deg, ${n2i(name[11],'#ff00ae')}, ${n2i(name[12],'#00ff6e')}); } } </style> \`);
+                        $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ height: 160% !important; width: \${sizeW}px !important; top: 0; bottom: 0; margin: auto; left: \${leftSizeW}px; background: linear-gradient(90deg, ${name[4]}, ${name[5]}); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(90deg, ${n2i(name[10],'#ff00ae')}, ${n2i(name[11],'#00ff6e')}); } } </style> \`);
                     } else if (sumWH <= 0 && typeClr == 2) {
                         sizeW = Number(sizeW / 2);
-                        $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ height: 160% !important; width: \${sizeW}px !important; top: 0; bottom: 0; margin: auto; left: \${leftSizeW}px; background: linear-gradient(${name[4]}, ${name[5]}); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(${n2i(name[11],'#ff00ae')}, ${n2i(name[12],'#00ff6e')}); } } </style> \`);
+                        $('.${n2i(name[0],'animNolimBorder')} .tn-atom').after(\` <style> .${n2i(name[0],'animNolimBorder')} .tn-atom::before{ height: 160% !important; width: \${sizeW}px !important; top: 0; bottom: 0; margin: auto; left: \${leftSizeW}px; background: linear-gradient(${name[4]}, ${name[5]}); } @media screen and (min-width: 1200px){ .${n2i(name[0],'animNolimBorder')} .tn-atom:hover::before{ background: linear-gradient(${n2i(name[10],'#ff00ae')}, ${n2i(name[11],'#00ff6e')}); } } </style> \`);
                     }
                 } else {};
             }

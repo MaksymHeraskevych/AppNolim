@@ -1,5 +1,3 @@
-
-
 var nolimCategories = [];
 nolimCategories.push({
     id: "99",
@@ -70,10 +68,6 @@ function nolimCategorieLoad(){
                         $('#formbox'+id+' .tbtn-primary').trigger('click');
                     }
                 },50);
-
-
-
-
             }
             },100);
         }
@@ -117,8 +111,6 @@ function nolimEditRecordContentClick(){
                     
                 }
             },50);
-            
-            
         }
     }
     });
@@ -208,7 +200,6 @@ function nolimCreateInputs(modsetting,id,blockid,loadetsetting,mod){
 
                 break;
 
-                
 
             case "buttons_piker":
                     $('.edrec__wrapper').prepend(`<div class="pe-form-group nolim-input-grid"><label class="pe-label">${item.title}</label><div class="pe-field-recids">    
@@ -367,10 +358,6 @@ function nolimCreateInputs(modsetting,id,blockid,loadetsetting,mod){
 
 
 
-    
-
-    
-
 
     let nomer = blockid;
     nolimCloseLayer();
@@ -505,14 +492,7 @@ $('.nolim-save').click(function(e){
                     },50)
                 }
             },100);
-
-        
-                 
-
-        
     }
-    
-    
 });
 
 }
@@ -527,10 +507,7 @@ function nolimCloseLayer(){
             nolimStandartSettingsShow();
             $('#closelayer').unbind("click");
             $(document).off("keyup", edrec__keyUpFunc);
-
-        } else {
-
-        }
+        } else {}
     })
     $(document).off("keyup");
     $(document).keyup(function(e) {
@@ -811,19 +788,19 @@ var categoryCheck = setInterval(function(){
 
     function nolimHideStandartSettings(){
         $('body').append(`<div class="nolimHideStandartSettings"><style> 
-#editformsxl { 
-    display:none;
-}
-</style></div> 
-`);
-        setTimeout(function() {
-        var gth = setInterval(function() {
-            if($("#editformsxl div").length == 0){
-                $('.nolimHideStandartSettings').remove();
-                clearInterval(gth);
+            #editformsxl { 
+                display:none;
             }
-        },100);
-    },500);
+            </style></div> 
+            `);
+        setTimeout(function() {
+            var gth = setInterval(function() {
+                if($("#editformsxl div").length == 0){
+                    $('.nolimHideStandartSettings').remove();
+                    clearInterval(gth);
+                }
+            },100);
+        },500);
     }
 
 
@@ -1760,8 +1737,6 @@ function Nolim_add_actionsToRightIcons(){
 
 
 
-
-
 function nolim_tp__record__addEditUi(t, i) {
     "object" != typeof $tpls && (console.log("ERROR! $tpls is not set"),
     $tpls = []);
@@ -2102,30 +2077,30 @@ function NolimAddDeleHideRecordsButton(){
 
     $('.nolimHideBlocksT123').click( function(e){
 
-        if(localStorage.getItem('nolimHideT123Blocks') == 'off'){
-            nolimHideT123();
-            $('.nolimHideBlocksT123').text('Показать все блоки с кодом');
-        } else {
-            nolimShowT123();
-            $('.nolimHideBlocksT123').text('Скрыть все блоки с кодом');
-        }
-
-        // if($('.nolimHideBlocksT123').text() == 'Скрыть все блоки с кодом'){
+        // if(localStorage.getItem('nolimHideT123Blocks') == 'off'){
         //     nolimHideT123();
         //     $('.nolimHideBlocksT123').text('Показать все блоки с кодом');
-        // }else if($('.nolimHideBlocksT123').text() == 'Показать все блоки с кодом'){
+        // } else {
         //     nolimShowT123();
         //     $('.nolimHideBlocksT123').text('Скрыть все блоки с кодом');
         // }
+
+        if($('.nolimHideBlocksT123').text() == 'Скрыть все блоки с кодом'){
+            nolimHideT123();
+            $('.nolimHideBlocksT123').text('Показать все блоки с кодом');
+        }else if($('.nolimHideBlocksT123').text() == 'Показать все блоки с кодом'){
+            nolimShowT123();
+            $('.nolimHideBlocksT123').text('Скрыть все блоки с кодом');
+        }
     });
 
-    if(localStorage.getItem('nolimHideT123Blocks') == 'on'){
-        nolimHideT123();
-        $('.nolimHideBlocksT123').text('Показать все блоки с кодом');
-    } else {
-        nolimShowT123();
-        $('.nolimHideBlocksT123').text('Скрыть все блоки с кодом');
-    }
+    // if(localStorage.getItem('nolimHideT123Blocks') == 'on'){
+    //     nolimHideT123();
+    //     $('.nolimHideBlocksT123').text('Показать все блоки с кодом');
+    // } else {
+    //     nolimShowT123();
+    //     $('.nolimHideBlocksT123').text('Скрыть все блоки с кодом');
+    // }
 
     $(document).on('pointerup mouseup', (function (e) {
     if ($('.tp-menu__item.dropdown').has(e.target).length === 0 && $('.tp-menu__item.dropdown').has(e.target).length === 0 && !$('.tp-menu__item.dropdown').is(e.target)) {
@@ -2145,12 +2120,12 @@ function nolimHideT123() {
             }
         </style>`)
     }
-    localStorage.setItem('nolimHideT123Blocks', 'on');
+    // localStorage.setItem('nolimHideT123Blocks', 'on');
 }
 
 function nolimShowT123() {
     $('#nolimHideT123Blocks').remove();
-    localStorage.setItem('nolimHideT123Blocks', 'off');
+    // localStorage.setItem('nolimHideT123Blocks', 'off');
 }
 
 
